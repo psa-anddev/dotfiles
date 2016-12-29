@@ -1,0 +1,18 @@
+set relativenumber
+set surround
+let mapleader = ","
+
+map <leader>r :action Run<CR>
+map <leader>d :action Debug<CR>
+map <leader>R :action RunClass<CR>
+map <leader>D :action DebugClass<CR>
+map <leader>O :action OverrideMethods<CR>
+map <leader>o :action OptimizeImports<CR>
+map <leader>b :action GotoDeclaration<CR>
+map <leader>k :action ChangesView.Commit<CR>
+map <leader>K :action Vcs.Push<CR>
+map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>gp :action Github.Create.Pull.Request<CR>
+map <leader>s :action Android.SyncProject<CR>
+map <leader>l :action ReformatCode<CR>
+map <leader>e :action GotoNextError<CR>
