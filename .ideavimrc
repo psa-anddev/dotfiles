@@ -17,3 +17,4 @@ map <leader>s :action Android.SyncProject<CR>
 map <leader>l :action ReformatCode<CR>
 map <leader>e :action GotoNextError<CR>
 map <leader>u :action FindUsages<CR>
+map <leader>ca :action OpenCurrentActivity.Open<CR>
