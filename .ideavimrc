@@ -18,6 +18,6 @@ map <leader>l :action ReformatCode<CR>
 map <leader>e :action GotoNextError<CR>
 map <leader>u :action FindUsages<CR>
 map <leader>ca :action OpenCurrentActivity.Open<CR>
-map <leader>tb :action ToggleLineBreakpoint<CR>
+map <leader>B :action ToggleLineBreakpoint<CR>
 map <leader>gr :action Git.Revert<CR>
 map <leader>q :action CloseAllEditorsButActive<CR>
