@@ -1,4 +1,8 @@
 set relativenumber
+set ignorecase
+set smartcase
+set hls
+set incsearch
 set surround
 let mapleader = ","
 
