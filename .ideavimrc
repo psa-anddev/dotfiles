@@ -23,5 +23,9 @@ map <leader>e :action GotoNextError<CR>
 map <leader>u :action FindUsages<CR>
 map <leader>ca :action OpenCurrentActivity.Open<CR>
 map <leader>B :action ToggleLineBreakpoint<CR>
-map <leader>gr :action Git.Revert<CR>
+map <leader>gr :action ChangesView.Revert<CR>
 map <leader>q :action CloseAllEditorsButActive<CR>
+map <C-h> <C-w><h>
+map <C-l> <C-w><l>
+map <C-j> <C-w><j>
+map <C-k> <C-w><k>
