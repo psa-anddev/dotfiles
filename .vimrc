@@ -28,6 +28,9 @@ Plugin 'tpope/vim-fireplace' "Clojure integration with REPL
 Plugin 'tpope/vim-salve' "Integration with Leiningen
 Plugin 'tpope/vim-classpath' "Sets path for the Java classpath.
 
+"LaTex plug ins
+Plugin 'vim-latex/vim-latex'
+
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
@@ -36,6 +39,9 @@ set relativenumber
 
 " Enables syntax highlighting
 syntax on
+
+" Add LaTex as file type
+let g:tex_flavor='latex'
 
 "Set theme to Darcula
 colorscheme darcula
@@ -72,3 +78,7 @@ let mapleader=","
 
 vmap <leader>x :!pbcopy<CR><CR>
 vmap <leader>c :w !pbcopy<CR><CR>
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
