@@ -46,9 +46,11 @@ let g:tex_flavor='latex'
 "Set theme to Darcula
 colorscheme darcula
 
-"Set font ligatures
-set macligatures
-set guifont=Fira\ Code:h14
+"Set font ligatures for MacVim
+if has("gui_macvim") 
+	set macligatures
+	set guifont=Fira\ Code:h14
+endif
 
 " Load filetype-specific indent files
 filetype indent on
