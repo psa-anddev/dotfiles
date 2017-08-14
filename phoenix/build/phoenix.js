@@ -21856,6 +21856,9 @@ phoenix.core.notify = function(a) {
 phoenix.core.bind = function(a, b, c) {
   return Key.on(a, cljs.core.clj__GT_js.call(null, b), c);
 };
+phoenix.core.set_configuration = function(a, b) {
+  return Phoenix.set({openAtLogin:a, daemon:b});
+};
 phoenix.core.alert = function(a) {
   for (var b = [], c = arguments.length, d = 0;;) {
     if (d < c) {
@@ -21877,6 +21880,9 @@ phoenix.core.alert.cljs$core$IFn$_invoke$arity$variadic = function(a) {
 phoenix.core.alert.cljs$lang$maxFixedArity = 0;
 phoenix.core.alert.cljs$lang$applyTo = function(a) {
   return phoenix.core.alert.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null, a));
+};
+phoenix.core.launch_or_focus = function(a) {
+  return cljs.core.truth_(App.get(a)) ? App.get(a).focus() : App.launch(a);
 };
 phoenix.core.current_shortcuts = function() {
   return phoenix.core.alert.call(null, "Current shortcuts", "\nWindow movement\t\t\t\tApplications", "\nCtrl+/\t Shows this modal");
@@ -21916,8 +21922,16 @@ phoenix.core.move_to_bottom_half = function() {
   }
   return null;
 };
+phoenix.core.set_configuration.call(null, !0, !1);
 phoenix.core.bind.call(null, "/", new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl"], null), phoenix.core.current_shortcuts);
 phoenix.core.bind.call(null, "h", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "alt"], null), phoenix.core.move_to_left_half);
 phoenix.core.bind.call(null, "l", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "alt"], null), phoenix.core.move_to_right_half);
 phoenix.core.bind.call(null, "k", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "alt"], null), phoenix.core.move_to_top_half);
 phoenix.core.bind.call(null, "j", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "alt"], null), phoenix.core.move_to_bottom_half);
+phoenix.core.bind.call(null, "o", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "Opera"));
+phoenix.core.bind.call(null, ";", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "Thunderbird"));
+phoenix.core.bind.call(null, "j", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "Android Studio"));
+phoenix.core.bind.call(null, "k", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "MacVim"));
+phoenix.core.bind.call(null, "l", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "iTerm2"));
+phoenix.core.bind.call(null, "h", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["ctrl", "cmd"], null), cljs.core.partial.call(null, phoenix.core.launch_or_focus, "Franz"));
+phoenix.core.notify.call(null, "Configuration loaded");

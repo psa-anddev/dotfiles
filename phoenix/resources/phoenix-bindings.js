@@ -11,6 +11,7 @@ Phoenix.bind = function(key, modifiers, callback) {}
 Phoenix.on = function(event, callback) {}
 Phoenix.log = function(message) {}
 Phoenix.notify = function(message) {}
+Phoenix.set = function(config) {}
 
 //Bindings for Application handling.
 var App = function() {}
