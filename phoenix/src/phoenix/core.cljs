@@ -1,40 +1,14 @@
 (ns phoenix.core
-  (:require [clojure.string :as string]))
-
-;; Helper functions
-(defn notify [^String message]
-  "Displays a notification using the Notification center."
-  (.notify js/Phoenix message))
-
-(defn bind [key modifiers callback]
-  "Binds a shortcut to an action"
-  (.on js/Key key (clj->js modifiers) callback))
-
-(defn set-configuration [open-at-login daemon]
-  "Sets the Phoenix configuration"
-  (.set js/Phoenix #js {:openAtLogin open-at-login
-                     :daemon daemon}))
-
-(defn alert [& message]
-  "Shows a message in a dialog"
-  (let [modal (js/Modal.)
-        main-screen-rect (.flippedVisibleFrame (.main js/Screen))]
-    (set! (.-origin modal) #js {:x (/ (.-width main-screen-rect) 2)
-                                :y (/ (.-height main-screen-rect) 2)})
-    (set! (.-message modal) (string/join " " message))
-    (set! (.-duration modal) 2)
-    (.show modal)))
-
-(defn launch-or-focus [app]
-  "Launches an app when it is not started or focus it if it is already launched."
-  (if (.get js/App app)
-    (.focus (.get js/App app))
-    (.launch js/App app)))
+  (:require [clojure.string :as string]
+            [phoenix.notifications :as notifications]
+            [phoenix.windows :as windows]
+            [phoenix.helpers :as helpers]
+            [phoenix.mappings :as mappings]))
 
 ;; Mapping functions
 (defn current-shortcuts []
   "Shows a dialog with the current shortcuts"
-  (alert "Current shortcuts" "\nWindow movement\t\t\t\tApplications" "\nCtrl+/\t Shows this modal"))
+  (windows/alert "Current shortcuts" "\nWindow movement\t\t\t\tApplications" "\nCtrl+/\t Shows this modal"))
 
 (defn half-screen-width [window screen-frame]
   "Calculates the left half of the screen for a given window in a given screen frame"
@@ -43,52 +17,74 @@
      2))
 
 (defn move-to-left-half []
-  "Move a window to the left half of the screen"
-  (when-let [window (.focused js/Window)]
+  "Move and resizes the currently active window to extend to the left half of the screen"
+  (when-let [window (windows/get-active)]
     (let [screen-frame (.flippedVisibleFrame (.screen window))]
-      (.setFrame window #js {:x (.-x screen-frame)
-                             :y (.-y screen-frame)
-                             :width (half-screen-width window screen-frame)
-                             :height (.-height screen-frame)}))))
+      (windows/move-and-resize-window window 
+                              (.-x screen-frame)
+                              (.-y screen-frame)
+                              (half-screen-width window screen-frame)
+                              (.-height screen-frame)))))
+
 (defn move-to-right-half []
-  (when-let [window (.focused js/Window)]
+  "Moves and resizes the active window to extend to the right half of the screen"
+  (when-let [window (windows/get-active)]
     (let [screen-frame (.flippedVisibleFrame (.screen window))]
-      (.setFrame window #js {:x (+ (.-x screen-frame) (half-screen-width window screen-frame))
-                             :y (.-y screen-frame)
-                             :width (half-screen-width window screen-frame)
-                             :height (.-height screen-frame)}))))
+      (windows/move-and-resize-window window
+                              (+ (.-x screen-frame) (half-screen-width window screen-frame))
+                              (.-y screen-frame)
+                              (half-screen-width window screen-frame)
+                              (.-height screen-frame)))))
 (defn move-to-top-half []
-  (when-let [window (.focused js/Window)]
+  "Moves and resizes the currently active window to extend to the top half of the screen."
+  (when-let [window (windows/get-active)]
     (let [screen-frame (.flippedVisibleFrame (.screen window))]
-      (.setFrame window #js {:x (.-x screen-frame)
-                             :y (.-y screen-frame)
-                             :width (.-width screen-frame)
-                             :height (/ (.-height screen-frame) 2)}))))
+      (windows/move-and-resize-window window 
+                              (.-x screen-frame)
+                              (.-y screen-frame)
+                              (.-width screen-frame)
+                              (/ (.-height screen-frame) 2)))))
 
 (defn move-to-bottom-half []
-  (when-let [window (.focused js/Window)]
+  "Moves and resizes the currently active window to extend to the bottom half of the screen."
+  (when-let [window (windows/get-active)]
     (let [screen-frame (.flippedVisibleFrame (.screen window))]
-      (.setFrame window #js {:x (.-x screen-frame)
-                             :y (- (+ (.-y screen-frame)
-                                      (.-height screen-frame)) 
-                                   (/ (.-height screen-frame) 2))
-                             :width (.-width screen-frame)
-                             :height (/ (.-height screen-frame) 2)}))))
+      (windows/move-and-resize-window window
+                              (.-x screen-frame)
+                              (- (+ (.-y screen-frame)
+                                    (.-height screen-frame))
+                                 (/ (.-height screen-frame) 2))
+                              (.-width screen-frame)
+                              (/ (.-height screen-frame) 2)))))
+
+(defn maximize-active-window []
+  "Maximizes the active Window"
+  (windows/maximize (windows/get-active)))
+
+(defn center-active-window []
+  "Centers the active window in the screen the window is in."
+  (windows/center (windows/get-active)))
 
 ;; Set Phoenix configuration
-(set-configuration true false)
+(helpers/set-configuration true false)
 ;; Show mappings mappings
-(bind "/" ["ctrl"] current-shortcuts)
+(helpers/bind "/" ["ctrl"] current-shortcuts)
 ;; Window mappings
-(bind "h" ["ctrl" "alt"] move-to-left-half)
-(bind "l" ["ctrl" "alt"] move-to-right-half)
-(bind "k" ["ctrl" "alt"] move-to-top-half)
-(bind "j" ["ctrl" "alt"] move-to-bottom-half)
+(helpers/bind "h" ["ctrl" "alt"] move-to-left-half)
+(helpers/bind "l" ["ctrl" "alt"] move-to-right-half)
+(helpers/bind "k" ["ctrl" "alt"] move-to-top-half)
+(helpers/bind "j" ["ctrl" "alt"] move-to-bottom-half)
+(helpers/bind ";" ["ctrl" "alt"] maximize-active-window)
+(helpers/bind "'" ["ctrl" "alt"] center-active-window)
 ;; Application mappings
-(bind "o" ["ctrl" "cmd"] (partial launch-or-focus "Opera"))
-(bind ";" ["ctrl" "cmd"] (partial launch-or-focus "Thunderbird"))
-(bind "j" ["ctrl" "cmd"] (partial launch-or-focus "Android Studio"))
-(bind "k" ["ctrl" "cmd"] (partial launch-or-focus "MacVim"))
-(bind "l" ["ctrl" "cmd"] (partial launch-or-focus "iTerm2"))
-(bind "h" ["ctrl" "cmd"] (partial launch-or-focus "Franz"))
-(notify "Configuration loaded")
+(helpers/bind "o" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Opera")))
+(helpers/bind ";" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Thunderbird")))
+(helpers/bind "j" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Android Studio")))
+(helpers/bind "k" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "MacVim")))
+(helpers/bind "l" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "iTerm" "iTerm2")))
+(helpers/bind "h" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Franz")))
+
+;; Screen mappings
+(helpers/bind "l" ["ctrl" "shift"] mappings/move-window-to-next-screen)
+(helpers/bind "h" ["ctrl" "shift"] mappings/move-window-to-previous-screen)
+(notifications/notify "Configuration loaded")
