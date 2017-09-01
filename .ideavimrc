@@ -32,4 +32,4 @@ map <C-k> <C-w><k>
 map <leader>gb :action Git.Branches<CR>
 map <leader>gs :action Git.Stash<CR>
 map <leader>gu :action Git.Unstash<CR>
-map <leader>a :action AndroidDebuggerConnectAction<CR>
+map <leader>a :action AndroidConnectDebuggerAction<CR>
