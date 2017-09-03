@@ -30,6 +30,8 @@ Plugin 'tpope/vim-classpath' "Sets path for the Java classpath.
 
 "LaTex plug ins
 Plugin 'vim-latex/vim-latex'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plugin 'xuhdev/vim-latex-live-preview'
 
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
@@ -42,6 +44,7 @@ syntax on
 
 " Add LaTex as file type
 let g:tex_flavor='latex'
+let g:livepreview_previewer = 'open -a Skim'
 
 "Set theme to Darcula
 colorscheme darcula
