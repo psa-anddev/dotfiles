@@ -77,6 +77,10 @@ set hlsearch
 "Ignore case for searches
 set ignorecase
 
+"---- Python configuration for Neovim
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 "---- Key bindings ----
 "Set leader key to comma
 let mapleader=","
