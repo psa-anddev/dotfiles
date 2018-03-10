@@ -33,6 +33,9 @@ Plugin 'vim-latex/vim-latex'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plugin 'xuhdev/vim-latex-live-preview'
 
+"Syntax highlighting for Kotlin
+Plugin 'udalov/kotlin-vim'
+
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
