@@ -42,6 +42,7 @@ Plugin 'bazelbuild/vim-bazel'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
