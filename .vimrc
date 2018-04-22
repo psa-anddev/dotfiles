@@ -102,3 +102,6 @@ map <C-h> <C-w>h
 map <C-l> <C-w>l
 map <C-j> <C-w>j
 map <C-k> <C-w>k
+
+"---- NERDTree Configuration -----
+let NERDTreeShowHidden=1
