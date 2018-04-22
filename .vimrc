@@ -36,6 +36,13 @@ Plugin 'xuhdev/vim-latex-live-preview'
 "Syntax highlighting for Kotlin
 Plugin 'udalov/kotlin-vim'
 
+"Bazel
+Plugin 'google/vim-maktaba'
+Plugin 'bazelbuild/vim-bazel'
+
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
