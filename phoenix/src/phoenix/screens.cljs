@@ -4,13 +4,13 @@
 (defn find-next-screen [screen screens]
   (cond
     (<= (count screens) 1) screen
-    (= (first screens) screen) (first (next screens))
+    (= (first screens) (cycle screen)) (first (next (cycle screens)))
     :else (find-next-screen [screen (next screens)])))
 
 (defn find-previous-screen [screen screens]
   (cond
     (<= (count screens) 1) screen
-    (= (first (next screens)) screen) (first screen)
+    (= (first (next (cycle screens))) screen) (first (cycle screen))
     :else (find-previous-screen screen (next screens))))
 
 (defn get-all []
