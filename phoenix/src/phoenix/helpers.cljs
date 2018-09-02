@@ -18,6 +18,3 @@
   ([dockName activeName] (if (.get js/App activeName)
                            (.focus (.get js/App activeName))
                            (.launch js/App dockName))))
-
-
-
