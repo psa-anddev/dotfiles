@@ -1,6 +1,8 @@
 "---- General configuration ----
 "Remove compatibility with vi.
 set nocompatible
+" Add find in subdirectories
+set path+=**
 
 "Installation of Vundle, a package manager for Vim
 filetype off "Disabling the filetypes so that the plugin manager can be installed
