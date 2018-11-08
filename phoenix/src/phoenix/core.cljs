@@ -19,6 +19,7 @@
 ;; Application mappings
 (helpers/bind "o" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "qutebrowser")))
 (helpers/bind "o" ["ctrl" "cmd" "shift"] (fn [] (helpers/launch-or-focus "Opera")))
+(helpers/bind "o" ["ctrl" "cmd" "alt"] (fn [] (helpers/launch-or-focus "Google Chrome")))
 (helpers/bind ";" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Thunderbird")))
 (helpers/bind "j" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Android Studio")))
 (helpers/bind "k" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "MacVim")))
