@@ -91,4 +91,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export EDITOR=vim
 source ~/.oh-my-zsh/custom/plugins/vi-mode-agnoster.plugin.zsh
 
+# Set Android dependencies in the path
+export ANDROID_HOME=~/.android/
+export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+
 

@@ -6,6 +6,7 @@ set path+=**
 
 "Installation of Vundle, a package manager for Vim
 filetype off "Disabling the filetypes so that the plugin manager can be installed
+"Vundle
 set rtp+=~/.vim/bundle/Vundle.vim "Adds the Vundle folder to the runtime path
 call vundle#begin() "Starts the loading of the plug ins.
 
@@ -46,6 +47,8 @@ Plugin 'bazelbuild/vim-bazel'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" Gradle / Android
+Plugin 'hsanson/vim-android'
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
