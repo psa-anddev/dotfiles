@@ -25,8 +25,8 @@
 (helpers/bind "k" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "MacVim")))
 (helpers/bind "l" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "iTerm" "iTerm2")))
 (helpers/bind "h" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Rambox")))
-(helpers/bind "j" ["ctrl" "cmd" "shift"] (fn [] (helpers/launch-or-focus "Android Studio 3.3 Preview", "Android Studio")))
-(helpers/bind "j" ["ctrl" "cmd" "alt"] (fn [] (helpers/launch-or-focus "Android Studio 3.2 Preview", "Android Studio")))
+(helpers/bind "j" ["ctrl" "cmd" "shift"] (fn [] (helpers/launch-or-focus "Android Studio 3.4 Preview", "Android Studio")))
+(helpers/bind "j" ["ctrl" "cmd" "alt"] (fn [] (helpers/launch-or-focus "Android Studio 3.3 Preview", "Android Studio")))
 (helpers/bind "i" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "IntelliJ IDEA CE", "IntelliJ IDEA")))
 
 ;; Screen mappings
