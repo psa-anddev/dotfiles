@@ -3,6 +3,8 @@
 set nocompatible
 " Add find in subdirectories
 set path+=**
+" Disable autowrapping
+set nowrap
 
 "Installation of Vundle, a package manager for Vim
 filetype off "Disabling the filetypes so that the plugin manager can be installed
