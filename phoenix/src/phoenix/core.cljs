@@ -22,7 +22,7 @@
 (helpers/bind "o" ["ctrl" "cmd" "alt"] (fn [] (helpers/launch-or-focus "Google Chrome")))
 (helpers/bind ";" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Thunderbird")))
 (helpers/bind "j" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Android Studio")))
-(helpers/bind "k" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "MacVim")))
+(helpers/bind "k" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "zathura")))
 (helpers/bind "l" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "iTerm" "iTerm2")))
 (helpers/bind "h" ["ctrl" "cmd"] (fn [] (helpers/launch-or-focus "Rambox")))
 (helpers/bind "j" ["ctrl" "cmd" "shift"] (fn [] (helpers/launch-or-focus "Android Studio 3.4 Preview", "Android Studio")))
