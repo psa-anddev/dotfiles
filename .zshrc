@@ -96,3 +96,9 @@ export ANDROID_HOME=~/.android/
 export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 
+
+# added by travis gem
+[ -f /Users/pablo/.travis/travis.sh ] && source /Users/pablo/.travis/travis.sh
+
+# Launch neofetch
+neofetch
