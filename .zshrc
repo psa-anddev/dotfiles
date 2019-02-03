@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/$USER/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export EDITOR=vim
+export EDITOR=nvim
 source ~/.oh-my-zsh/custom/plugins/vi-mode-agnoster.plugin.zsh
 
 # Set Android dependencies in the path
@@ -98,7 +98,7 @@ export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 
 # added by travis gem
-[ -f /Users/pablo/.travis/travis.sh ] && source /Users/pablo/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # Launch neofetch
 neofetch
