@@ -1,0 +1,6 @@
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 20
+URxvt*background: #000000
+URxvt*foreground: green
+URxvt*scrollBar: false
