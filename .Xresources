@@ -4,3 +4,5 @@ URxvt*shading: 20
 URxvt*background: #000000
 URxvt*foreground: green
 URxvt*scrollBar: false
+URxvt*font: xft:monaco:pixelsize=12, xft:DejaVu Sans Mono for Powerline:pixelsize=12
+URxvt*boldFont: xft:monaco:bold:pixelsize=12, xft:DejaVu Sans Mono for Powerline:bold:pixelsize=12
