@@ -27,3 +27,5 @@ bind-key G end
 unbind-key Q
 bind-key q hard-quit
 bind-key ^S save
+
+macro v set browser "open -a vlc"; open-in-browser ; set browser "open"
