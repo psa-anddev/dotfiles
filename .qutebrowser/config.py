@@ -30,7 +30,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 # Same as `{column}`, but starting from index 0.
 # Type: ShellCommand
-c.editor.command = ['vimr', '{file}']
+c.editor.command = ['nvimr', '{file}']
 
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -42,3 +42,6 @@ c.editor.command = ['vimr', '{file}']
 # `:open google qutebrowser`.
 # Type: Dict
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'g': 'https://www.google.com/search?q={}', 'y': 'https://www.youtube.com/results?search_query={}', 'w': 'https://en.wikipedia.org/wiki/{}'}
+
+# Keep insert mode when page reloads
+config.set("input.insert_mode.leave_on_load", False)
