@@ -101,23 +101,26 @@
 #    "qutebrowser"
 # ]
 
-# open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# open terminal, iTerm
+ctrl + shift - return : open -na iTerm
 
 # open qutebrowser
-cmd + shift - o : open -a qutebrowser
+ctrl + shift - o : open -a qutebrowser
 
 # open Zathura
-cmd + shift - l : zathura
+ctrl + shift - l : zathura
 
 # open NeoVim
-cmd + shift - k : ~/dotfiles/.scripts/iterm.sh nvim
+ctrl + shift - k : ~/dotfiles/.scripts/iterm.sh nvim
 
 # open Newsboat
-cmd + shift - p : ~/dotfiles/.scripts/iterm.sh newsboat
+ctrl + shift - p : ~/dotfiles/.scripts/iterm.sh newsboat
 
-# open mpv
-cmd - m : open -na /Applications/mpv.app $(pbpaste)
+# open Rambox
+ctrl + shift - h: open -a Rambox
+
+# open VLC
+ctrl + shift - m : open -a VLC
 
 # close focused window
 alt - w : chunkc tiling::window --close
