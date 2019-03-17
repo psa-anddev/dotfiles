@@ -287,3 +287,7 @@ ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+
+# Restart WM
+cmd + shift - q: skhd --reload; \
+		 brew services restart chunkwm
