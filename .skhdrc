@@ -101,26 +101,36 @@
 #    "qutebrowser"
 # ]
 
+:: default : chunkc border::color 0xff0f6288
+# Application mode
+:: apps @ : chunkc border::color 0xff24ccaa
+cmd + shift - j ; apps
+# open Android Studio
+apps < cmd - j : open -a "Android Studio"
+
 # open terminal, iTerm
-ctrl + shift - return : open -na iTerm
+apps < cmd - return : open -na iTerm
 
 # open qutebrowser
-ctrl + shift - o : open -a qutebrowser
+apps < cmd - o : open -a qutebrowser
 
 # open Zathura
-ctrl + shift - l : zathura
+apps < cmd - l : zathura
 
 # open NeoVim
-ctrl + shift - k : ~/dotfiles/.scripts/iterm.sh nvim
+apps < cmd - k : ~/dotfiles/.scripts/iterm.sh nvim
 
 # open Newsboat
-ctrl + shift - p : ~/dotfiles/.scripts/iterm.sh newsboat
+apps < cmd - p : ~/dotfiles/.scripts/iterm.sh newsboat
 
 # open Rambox
-ctrl + shift - h: open -a Rambox
+apps < cmd - h: open -a Rambox
 
 # open VLC
-ctrl + shift - m : open -a VLC
+apps < cmd - m : open -a VLC
+
+# Return to default mode
+apps < cmd + shift - j ; default
 
 # close focused window
 alt - w : chunkc tiling::window --close
