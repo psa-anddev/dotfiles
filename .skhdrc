@@ -129,6 +129,9 @@ apps < cmd - h: open -a Rambox
 # open VLC
 apps < cmd - m : open -a VLC
 
+# open Google Chrome
+apps < cmd + shift - o: open -a "Google Chrome"
+
 # Return to default mode
 apps < cmd + shift - j ; default
 
