@@ -156,6 +156,25 @@ resize < cmd - return : chunkc tiling::desktop --equalize
 
 resize < cmd + shift - h ; default
 
+# Move mode
+:: move @ : chunkc border::color 0xff008800
+cmd + shift - k ; move
+
+
+# swap window
+move < alt + cmd - h : chunkc tiling::window --swap west
+move < alt + cmd - j : chunkc tiling::window --swap south
+move < alt + cmd - k : chunkc tiling::window --swap north
+move < alt + cmd - l : chunkc tiling::window --swap east
+
+# move window
+move < cmd - h : chunkc tiling::window --warp west
+move < cmd - j : chunkc tiling::window --warp south
+move < cmd - k : chunkc tiling::window --warp north
+move < cmd - l : chunkc tiling::window --warp east
+
+move < cmd + shift - k ; default
+
 # close focused window
 alt - w : chunkc tiling::window --close
 
@@ -167,18 +186,6 @@ alt - l : chunkc tiling::window --focus east
 
 cmd - j : chunkc tiling::window --focus prev
 cmd - k : chunkc tiling::window --focus next
-
-# swap window
-shift + alt - h : chunkc tiling::window --swap west
-shift + alt - j : chunkc tiling::window --swap south
-shift + alt - k : chunkc tiling::window --swap north
-shift + alt - l : chunkc tiling::window --swap east
-
-# move window
-shift + cmd - h : chunkc tiling::window --warp west
-shift + cmd - j : chunkc tiling::window --warp south
-shift + cmd - k : chunkc tiling::window --warp north
-shift + cmd - l : chunkc tiling::window --warp east
 
 # make floating window fill screen
 shift + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
