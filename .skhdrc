@@ -135,6 +135,27 @@ apps < cmd + shift - o: open -a "Google Chrome"
 # Return to default mode
 apps < cmd + shift - j ; default
 
+# Resize mode
+:: resize @ : chunkc border::color 0xff880000
+cmd + shift - h ; resize
+
+# increase region size
+resize < cmd - h : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+resize < cmd - j : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+resize < cmd - k : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+resize < cmd - l : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# decrease region size
+resize < alt + cmd - h : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+resize < alt + cmd - j : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+resize < alt + cmd - k : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+resize < alt + cmd - l : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+
+# equalize size of windows
+resize < cmd - return : chunkc tiling::desktop --equalize
+
+resize < cmd + shift - h ; default
+
 # close focused window
 alt - w : chunkc tiling::window --close
 
@@ -146,9 +167,6 @@ alt - l : chunkc tiling::window --focus east
 
 cmd - j : chunkc tiling::window --focus prev
 cmd - k : chunkc tiling::window --focus next
-
-# equalize size of windows
-shift + alt - 0 : chunkc tiling::desktop --equalize
 
 # swap window
 shift + alt - h : chunkc tiling::window --swap west
@@ -233,18 +251,6 @@ ctrl + cmd - c  : chunkc tiling::window --send-to-monitor next; chunkc tiling::m
 ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
 ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 ctrl + cmd - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
-
-# increase region size
-shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
-
-# decrease region size
-shift + cmd - a : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
-shift + cmd - s : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
-shift + cmd - w : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
-shift + cmd - d : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
 # set insertion point for focused container
 ctrl + alt - f : chunkc tiling::window --use-insertion-point cancel
