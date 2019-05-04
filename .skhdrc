@@ -100,7 +100,9 @@
 #    "terminal"
 #    "qutebrowser"
 # ]
-
+.blacklist [
+	"VirtualBox VM"
+]
 :: default : chunkc border::color 0xff0f6288
 # Application mode
 :: apps @ : chunkc border::color 0xff24ccaa
