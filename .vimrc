@@ -35,6 +35,7 @@ Plugin 'guns/vim-clojure-static' "Clojure syntax highlighting.
 Plugin 'tpope/vim-fireplace' "Clojure integration with REPL
 Plugin 'tpope/vim-salve' "Integration with Leiningen
 Plugin 'tpope/vim-classpath' "Sets path for the Java classpath.
+Plugin 'venantius/vim-eastwood' "Linter for Clojure
 
 "LaTex plug ins
 Plugin 'vim-latex/vim-latex'
@@ -126,4 +127,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_kotlin_checkers = ['kotlinc']
+let g:syntastic_clojure_checkers = ['eastwood']
 
