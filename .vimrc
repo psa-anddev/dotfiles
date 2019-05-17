@@ -25,6 +25,9 @@ Plugin 'blueshirts/darcula' "Darcula theme
 "Git integration
 Plugin 'tpope/vim-fugitive'
 
+"Lint Checking
+Plugin 'vim-syntastic/syntastic'
+
 "Lisp/Clojure plugins
 Plugin 'guns/vim-sexp' "Add textobjects for lispy-like functions and other stuff.
 Plugin 'tpope/vim-sexp-mappings-for-regular-people' "Add easier mappings to vim-sexp.
@@ -112,3 +115,15 @@ map <C-k> <C-w>k
 
 "---- NERDTree Configuration -----
 let NERDTreeShowHidden=1
+
+"---------- Syntastic configuration ------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_kotlin_checkers = ['kotlinc']
+

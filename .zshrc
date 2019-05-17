@@ -49,7 +49,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 # User configuration
 
@@ -102,3 +102,9 @@ export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 # Launch neofetch
 neofetch
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
