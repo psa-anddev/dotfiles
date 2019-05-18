@@ -129,3 +129,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_kotlin_checkers = ['kotlinc']
 let g:syntastic_clojure_checkers = ['eastwood']
 
+"---- Crontab configurations -------
+if has("mac")
+	autocmd FileType crontab setlocal nowritebackup
+endif
+
