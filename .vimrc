@@ -127,6 +127,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_kotlin_checkers = ['kotlinc']
+let g:syntastic_kotlin_kotlinc_config_file_enabled = 1
 let g:syntastic_clojure_checkers = ['eastwood']
 
 "---- Crontab configurations -------
