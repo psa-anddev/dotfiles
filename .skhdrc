@@ -128,8 +128,10 @@ apps < cmd - p : ~/dotfiles/.scripts/iterm.sh newsboat
 # open Rambox
 apps < cmd - h: open -a Rambox
 
+# open NeoMutt
+apps < cmd - m : ~/dotfiles/.scripts/iterm.sh neomutt
 # open VLC
-apps < cmd - m : open -a VLC
+apps < cmd + shift - m : open -a VLC
 
 # open Google Chrome
 apps < cmd + shift - o: open -a "Google Chrome"
