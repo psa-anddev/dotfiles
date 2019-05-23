@@ -55,6 +55,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Gradle / Android
 Plugin 'hsanson/vim-android'
+
+"Plugin for watching man pages with Vim
+Plugin 'jez/vim-superman'
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 

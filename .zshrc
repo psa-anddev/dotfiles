@@ -103,6 +103,11 @@ export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 # Launch neofetch
 neofetch
 
+# Add completions and alias for vman
+export PATH="$HOME/.vim/bundle/vim-superman/bin:$PATH"
+compdef vman="man"
+alias man="vman"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
