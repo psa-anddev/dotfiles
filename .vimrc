@@ -58,6 +58,8 @@ Plugin 'hsanson/vim-android'
 
 "Plugin for watching man pages with Vim
 Plugin 'jez/vim-superman'
+"Plugin to be able to comment lines 
+Plugin 'tpope/vim-commentary'
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
