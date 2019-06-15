@@ -49,7 +49,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
             'we': 'https://es.wikipedia.org/wiki/{}',
             'wd': 'https://de.wikipedia.org/wiki/{}',
             'a': 'https://wiki.archlinux.org/index.php?search={}',
-            's': 'https://stackoverflow.com/search?q={}'}
+            's': 'https://stackoverflow.com/search?q={}',
+            'c': 'https://dictionary.cambridge.org/dictionary/english/{}'}
 
 # Keep insert mode when page reloads
 config.set("input.insert_mode.leave_on_load", False)
