@@ -60,6 +60,8 @@ Plugin 'hsanson/vim-android'
 Plugin 'jez/vim-superman'
 "Plugin to be able to comment lines 
 Plugin 'tpope/vim-commentary'
+" Plugin to search using Ack/Ag
+Plugin 'mileszs/ack.vim'
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
@@ -80,6 +82,11 @@ colorscheme darcula
 if has("gui_macvim") 
 	set macligatures
 	set guifont=Fira\ Code:h14
+endif
+
+" Set ag as search program for ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 " Load filetype-specific indent files
@@ -139,4 +146,7 @@ let g:syntastic_clojure_checkers = ['eastwood']
 if has("mac")
 	autocmd FileType crontab setlocal nowritebackup
 endif
-
+"---------- Tabs as spaces -------------------
+set expandtab
+set smarttab
+set softtabstop=4
