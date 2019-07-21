@@ -150,3 +150,6 @@ endif
 set expandtab
 set smarttab
 set softtabstop=4
+
+" --------- Reminder to use folders
+set foldlevelstart=1
