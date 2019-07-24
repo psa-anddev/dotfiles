@@ -67,6 +67,8 @@ filetype plugin indent on "Reenables the filetypes.
 
 " Show relative line numbers
 set relativenumber
+" Show the number of the line in the cursor instead of 0
+set number
 
 " Enables syntax highlighting
 syntax on
