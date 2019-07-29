@@ -190,10 +190,8 @@
                     "to": {
                         "key_code": "illumination_decrement"
                     }
-                },
-                {
-                    "from": {
                 }
+                
             ],
             "fn_function_keys": [
                 {
