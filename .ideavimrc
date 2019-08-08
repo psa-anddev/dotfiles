@@ -5,6 +5,7 @@ set smartcase
 set hls
 set incsearch
 set surround
+set commentary
 let mapleader = ","
 
 map <leader>r :action Run<CR>
