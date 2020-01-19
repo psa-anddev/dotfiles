@@ -114,8 +114,8 @@ set hlsearch
 set ignorecase
 
 "---- Python configuration for Neovim
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python'
 
 "---- Key bindings ----
 "Set leader key to comma
