@@ -108,6 +108,16 @@ export PATH="$HOME/.vim/bundle/vim-superman/bin:$PATH"
 compdef vman="man"
 alias man="vman"
 
+# Fix error that prevents deleting when going from normal to insert mode
+bindkey "^?" backward-delete-char
+
+# Use Vim keys for autocompletion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
