@@ -152,7 +152,9 @@ endif
 "---------- Tabs as spaces -------------------
 set expandtab
 set smarttab
-set softtabstop=4
+set softtabstop=0
+set tabstop=8
+set shiftwidth=4
 
 " --------- Reminder to use folders
 set foldlevelstart=1
