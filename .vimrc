@@ -52,6 +52,8 @@ Plugin 'bazelbuild/vim-bazel'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
 
 " Gradle / Android
 Plugin 'hsanson/vim-android'
