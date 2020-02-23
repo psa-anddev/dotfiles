@@ -1,0 +1,17 @@
+- name: Install feh
+  become: yes
+  pacman:
+          name: feh
+          state: present
+
+- name: Symlink wallpapers
+  file: src={{ ansible_env.PWD }}/roles/feh/files/.wallpapers
+        path=~/.wallpapers
+        state=link
+        force=yes
+
+- name: Symlink fehbg file
+  file: src={{ ansible_env.PWD }}/roles/feh/files/.fehbg
+        path=~/.fehbg
+        state=link
+        force=yes

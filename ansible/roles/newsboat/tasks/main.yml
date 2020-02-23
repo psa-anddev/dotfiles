@@ -1,0 +1,13 @@
+- name: Install Newsboat
+  become: yes
+  pacman:
+          name: newsboat
+          state: present
+
+- name: Symlink Newsboat configuration
+  file:
+          src: "{{ ansible_env.PWD }}/roles/newsboat/files/.config/newsboat/"
+          path: ~/.config/newsboat
+          state: link
+          force: yes
+

@@ -1,0 +1,16 @@
+- name: Install URXVT
+  become: yes
+  pacman:
+          name: rxvt-unicode
+          state: present
+
+- name: Symlink .Xresources
+  file: src={{ ansible_env.PWD }}/roles/urxvt/files/.Xresources
+        path=~/.Xresources
+        state=link
+        force=yes
+
+- name: Install Powerline fonts
+  aur:
+          name: powerline-fonts-git
+          skip_installed: yes

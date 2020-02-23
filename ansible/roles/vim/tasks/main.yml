@@ -1,0 +1,26 @@
+- name: Install Neovim
+  become: yes
+  pacman:
+          name: neovim
+          state: present
+
+- name: Install Python support for Neovim
+  become: yes
+  pacman:
+          name: python-pynvim
+          state: present
+
+- name: Symlink configuration
+  file:
+          src: "{{ ansible_env.PWD }}/roles/vim/files/nvim"
+          path: ~/.config/nvim
+          state: link
+          force: yes
+
+- name: Install plugins
+  git:
+          repo: https://github.com/VundleVim/Vundle.vim.git
+          dest: ~/.vim/bundle/Vundle.vim
+
+- name: Configure Neovim
+  shell: nvim +PluginInstall +qa

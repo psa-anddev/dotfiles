@@ -1,0 +1,13 @@
+- name: Install Picom
+  become: yes
+  pacman:
+          name: picom
+          state: present
+
+- name: Symlink Picom configuration
+  file:
+          src: "{{ ansible_env.PWD }}/roles/compton/files/picom"
+          path: ~/.config/picom
+          state: link
+          force: yes
+

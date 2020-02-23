@@ -1,0 +1,39 @@
+- name: Install Zsh
+  become: yes
+  pacman:
+          name: zsh
+          state: present
+          name: zsh-completions
+          state: present
+          name: zsh-syntax-highlighting
+          state: present
+          name: zsh-autosuggestions
+          state: present
+
+- name: Set shell for user pablo
+  become: yes
+  user:
+          name: pablo
+          shell: /bin/zsh
+
+- name: Install Oh my zsh
+  aur:
+          name: oh-my-zsh-git
+          skip_installed: yes
+
+- name: Create local plugins directory
+  file:
+          path: ~/.oh-my-zsh/custom/plugins
+          state: directory
+
+- name: Install Vi mode agnoster plugin.
+  copy:
+          dest: ~/.oh-my-zsh/custom/plugins/vi-mode-agnoster.plugin.zsh
+          src: "{{ ansible_env.PWD }}/roles/zsh/files/vi-mode-agnoster.plugin.zsh"
+
+- name: Symlink Zsh configuration
+  file:
+          src: "{{ ansible_env.PWD }}/roles/zsh/files/.zshrc"
+          path: ~/.zshrc
+          state: link
+          force: yes

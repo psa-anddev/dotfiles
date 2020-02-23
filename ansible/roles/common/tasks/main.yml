@@ -1,0 +1,125 @@
+- name: Checkout Ansible module for AUR
+  git:
+          repo: https://aur.archlinux.org/ansible-aur-git.git
+          dest: ~/.tmp/ansible-aur
+          force: yes
+
+- name: Install Ansible module for AUR
+  command: makepkg -si
+  args:
+          chdir: ~/.tmp/ansible-aur
+          stdin: y
+
+- name: install yay
+  aur:
+          name: yay
+          skip_installed: yes
+
+- name: Full system upgrade
+  import_tasks: archupgrade.yml
+  when: ansible_facts['os_family']|lower == 'arch'
+
+- name: Install alsa utils
+  become: yes
+  pacman:
+          name: alsa-utils
+          state: present
+- name: Unmute channels
+  command: amixer sset Master unmute
+
+- name: Install X-Windows
+  become: yes
+  pacman:
+          name: xorg
+          state: present
+
+- name: Install LightDM
+  become: yes
+  pacman:
+          name: lightdm
+          state: present
+          name: lightdm-gtk-greeter
+          state: present
+
+- name: Install Slick greeter
+  aur:
+          name: lightdm-slick-greeter
+          skip_installed: yes
+          use: yay
+
+- name: Copy LightDM Configuration
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/common/files/lightdm.conf"
+          dest: /etc/lightdm/lightdm.conf
+
+- name: Create backgrounds directory
+  become: yes
+  file:
+          path: /usr/share/backgrounds
+          state: directory
+
+- name: Copy LightDM background
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/common/files/lightdm_background.png"
+          dest: /usr/share/backgrounds/lightdm_background.png
+
+- name: Copy Slick greeter configuration
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/common/files/slick-greeter.conf"
+          dest: /etc/lightdm/slick-greeter.conf
+
+- name: Enable LightDM Service
+  become: yes
+  systemd:
+          name: lightdm
+          enabled: yes
+
+- name: Install accounts service
+  become: yes
+  pacman:
+          name: accountsservice
+          state: present
+
+- name: Install dmenu
+  become: yes
+  pacman:
+          name: dmenu
+          state: present
+
+- name: Install qutebrowser
+  become: yes
+  pacman:
+          name: qutebrowser
+          state: present
+
+- name: Symlink qutebrowser configuration
+  file: src={{ ansible_env.PWD }}/roles/common/files/.qutebrowser/config.py
+        path=~/.config/qutebrowser/config.py
+        state=link
+        force=yes
+
+- name: Install neofetch
+  become: yes
+  pacman:
+          name: neofetch
+          state: present
+
+- name: Install clipmenu
+  become: yes
+  pacman:
+          name: clipmenu
+          state: present
+
+- name: Install Clipnotify
+  become: yes
+  pacman:
+          name: clipnotify
+          state: present
+- name: Install libnotify
+  become: yes
+  pacman:
+          name: libnotify
+          state: present

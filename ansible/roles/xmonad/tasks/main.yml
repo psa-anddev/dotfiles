@@ -1,0 +1,32 @@
+- name: Install Xmonad
+  become: yes
+  pacman:
+          name: xmonad
+          state: present
+          name: xmonad-contrib
+          state: present
+
+- name: Symlink Xmonad config
+  file: src={{ ansible_env.PWD }}/roles/xmonad/files/xmonad.hs
+        path=~/.xmonad/xmonad.hs
+        state=link
+        force=yes
+
+- name: Install Xmobar
+  become: yes
+  pacman:
+          name: xmobar
+          state: present
+- name: Symlink Xmobar configuration
+  file: src={{ ansible_env.PWD }}/roles/xmonad/files/.xmobarrc
+        path=~/.xmobarrc
+        state=link
+        force=yes
+  file:
+          path: ~/.config/xmobar
+          state: directory
+  file:
+          src: "{{ ansible_env.PWD }}/roles/xmonad/files/xpm"
+          path: ~/.config/xmobar/xpm
+          state: link
+          force: yes

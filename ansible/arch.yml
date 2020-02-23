@@ -1,0 +1,19 @@
+---
+- name: Configure ArchLinux machine
+  hosts: localhost
+  roles:
+          - common
+          - xmonad
+          - compton
+          - kitty
+          - feh
+          - vim
+          - zsh
+          - dunst
+          - speedcrunch
+          - zeal
+          - vlc
+          - newsboat
+          - betterlockscreen
+          - java
+          - android

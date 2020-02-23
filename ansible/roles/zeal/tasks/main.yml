@@ -1,0 +1,6 @@
+- name: Install Zeal
+  become: yes
+  pacman:
+          name: zeal
+          state: present
+

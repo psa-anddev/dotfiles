@@ -1,0 +1,16 @@
+- name: Install Java runtime commons package
+  become: yes
+  pacman:
+      name: java-runtime-common
+      state: present
+
+- name: Install Java environment commons package
+  become: yes
+  pacman:
+      name: java-environment-common
+      state: present
+
+- name: Install OpenJDK 8
+  become: yes
+  pacman:
+      name: jdk8-openjdk

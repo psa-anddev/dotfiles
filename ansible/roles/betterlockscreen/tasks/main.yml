@@ -1,0 +1,34 @@
+- name: Install imagemagick
+  become: yes
+  pacman:
+      name: imagemagick
+      state: present
+
+- name: Install betterlockscreen
+  aur:
+      name: betterlockscreen
+      skip_installed: yes
+      use: yay
+
+- name: Symlink betterlockscreen configuraion
+  file:
+          src: "{{ ansible_env.PWD }}/roles/betterlockscreen/files/betterlockscreenrc"
+          path: ~/.config/betterlockscreenrc
+          state: link
+          force: yes
+
+- name: Cache images
+  command: "betterlockscreen -u {{ ansible_env.PWD }}/roles/feh/files/.wallpapers"
+
+- name: Create service to lock on suspend and sleep
+  become: yes
+  copy:
+      src: "{{ ansible_env.PWD }}/roles/betterlockscreen/files/betterlockscreen@.service"
+      dest: "/etc/systemd/system/betterlockscreen@.service"
+
+- name: Enable lockscreen service
+  become: yes
+  systemd:
+      name: "betterlockscreen@pablo"
+      enabled: yes
+      state: stopped

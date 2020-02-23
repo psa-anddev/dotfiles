@@ -1,0 +1,9 @@
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 20
+URxvt*background: #000000
+URxvt*foreground: green
+URxvt*scrollBar: false
+URxvt*font: xft:DejaVu Sans Mono for Powerline:size=11, xft:Inconsolata Mono for Powerline:size=11
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=11, xft:Inconsolata Mono for Powerline:bold:size=11
+URxvt*leterSpace: 2

@@ -1,0 +1,12 @@
+- name: Install Android Studio
+  aur:
+      name: android-studio
+      skip_installed: yes
+      use: yay
+
+- name: Deeplink SDK location to .android
+  file:
+      src: "~/Android/Sdk"
+      path: ~/.android
+      state: link
+      force: yes

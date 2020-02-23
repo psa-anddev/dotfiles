@@ -1,0 +1,31 @@
+browser qutebrowser
+# Key Bindings
+unbind-key j
+bind-key J next-feed
+unbind-key k
+bind-key K prev-feed
+unbind-key DOWN
+bind-key j down
+unbind-key UP
+bind-key k up
+unbind-key ENTER
+bind-key l open
+unbind-key q
+bind-key h quit
+unbind-key PPAGE
+bind-key ^B pageup
+unbind-key NPAGE
+bind-key ^F pagedown
+unbind-key g
+bind-key s sort
+unbind-key G
+bind-key S rev-sort
+unbind-key HOME
+bind-key g home
+unbind-key END
+bind-key G end
+unbind-key Q
+bind-key q hard-quit
+bind-key ^S save
+
+macro v set browser "vlc"; open-in-browser ; set browser "qutebrowser"
