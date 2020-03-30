@@ -4,9 +4,9 @@
       skip_installed: yes
       use: yay
 
-- name: Deeplink SDK location to .android
+- name: Link IdeaVim configuration
   file:
-      src: "~/Android/Sdk"
-      path: ~/.android
+      src: "{{ ansible_env.PWD }}/roles/android/files/.ideavimrc"
+      path: ~/.ideavimrc
       state: link
       force: yes

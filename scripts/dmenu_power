@@ -1,0 +1,18 @@
+#!/bin/sh
+
+option=$(echo -e "Shutdown\nRestart\nSuspend\nHibernate" | dmenu -p "Choose operation")
+
+case $option in
+    Shutdown)
+        systemctl poweroff
+        ;;
+    Restart)
+        systemctl reboot
+        ;;
+    Suspend)
+        systemctl suspend
+        ;;
+    Hibernate)
+        systemctl hibernate
+        ;;
+esac

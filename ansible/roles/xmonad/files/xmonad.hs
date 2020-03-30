@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
+import XMonad.Util.EZConfig
 
 main = xmonad =<< statusBar upBar upBarConfiguration upBarToggleStructsKey configuration
 startup = do
@@ -12,11 +13,25 @@ startup = do
 
 configuration = defaultConfig
 	{ terminal = "kitty"
-	, modMask = mod1Mask
+	, modMask = mod4Mask
 	, borderWidth = 3
 	, startupHook = startup
-	}
+        , workspaces = workspacesConfiguration
+	} `additionalKeysP` myShortcuts
 
 upBar = "xmobar"
 upBarConfiguration = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" }
 upBarToggleStructsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+myShortcuts = 
+    [("M-C-q", spawn "betterlockscreen -l")
+    , ("M-<Space>", spawn "dmenu_run")
+    , ("M-p", sendMessage NextLayout)
+    , ("M-C-p", spawn "~/repos/dotfiles/scripts/dmenu_power")
+    , ("<XF86AudioRaiseVolume>", spawn "~/repos/dotfiles/scripts/volume_control -i 5")
+    , ("<XF86AudioLowerVolume>", spawn "~/repos/dotfiles/scripts/volume_control -d 5")
+    , ("<XF86AudioMute>", spawn "~/repos/dotfiles/scripts/volume_control -t")
+    ]
+
+workspacesConfiguration :: [String]
+workspacesConfiguration = ["dev", "www", "chat", "sys", "doc", "mus", "ex1", "ex2"]

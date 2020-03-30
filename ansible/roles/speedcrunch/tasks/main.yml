@@ -1,5 +1,5 @@
 - name: Install speedcrunch
   aur:
-          name: speedcrunch-git
+          name: speedcrunch
           skip_installed: yes
 

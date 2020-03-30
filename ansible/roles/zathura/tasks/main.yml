@@ -1,0 +1,41 @@
+- name: Install Zathura
+  become: yes
+  pacman:
+      name: zathura
+      state: present
+
+- name: Install PDF reader using MuPDF
+  become: yes
+  pacman:
+      name: zathura-pdf-mupdf
+      state: present
+
+- name: Install Postscript reader
+  become: yes
+  pacman:
+      name: zathura-ps
+      state: present
+
+- name: Install djvu reader
+  become: yes
+  pacman:
+      name: zathura-djvu
+      state: present
+
+- name: Install Comic Book reader
+  become: yes
+  pacman:
+      name: zathura-cb
+      state: present
+
+- name: Create Configuration folder
+  file:
+      path: ~/.config/zathura
+      state: directory
+
+- name: Symlink configuration file
+  file:
+      src: "{{ ansible_env.PWD }}/roles/zathura/files/zathurarc"
+      path: ~/.config/zathura/zathurarc
+      state: link
+      force: yes

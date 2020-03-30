@@ -14,3 +14,4 @@
   become: yes
   pacman:
       name: jdk8-openjdk
+      state: present

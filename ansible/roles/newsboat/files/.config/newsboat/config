@@ -29,3 +29,5 @@ bind-key q hard-quit
 bind-key ^S save
 
 macro v set browser "vlc"; open-in-browser ; set browser "qutebrowser"
+download-path "~/podcasts/%h/%n"
+player "vlc --one-instance --playlist-enqueue"

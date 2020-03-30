@@ -1,0 +1,19 @@
+- name: Install Bluetooth protocol stack
+  become: yes
+  pacman:
+      name: bluez
+      state: present
+
+- name: Install Bluetooth control utility
+  become: yes
+  pacman:
+      name: bluez-utils
+      state: present
+
+- name: Enable and start Bluetooth service
+  become: yes
+  systemd:
+      name: bluetooth
+      state: started
+      enabled: yes
+

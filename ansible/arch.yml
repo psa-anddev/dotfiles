@@ -3,6 +3,8 @@
   hosts: localhost
   roles:
           - common
+          - bluetooth
+          - pulseaudio
           - xmonad
           - compton
           - kitty
@@ -10,10 +12,13 @@
           - vim
           - zsh
           - dunst
-          - speedcrunch
           - zeal
           - vlc
           - newsboat
           - betterlockscreen
           - java
           - android
+          - openvpn
+          - openssh
+          - speedcrunch
+          - zathura

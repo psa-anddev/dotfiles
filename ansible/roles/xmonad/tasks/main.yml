@@ -18,10 +18,11 @@
           name: xmobar
           state: present
 - name: Symlink Xmobar configuration
-  file: src={{ ansible_env.PWD }}/roles/xmonad/files/.xmobarrc
-        path=~/.xmobarrc
-        state=link
-        force=yes
+  file: 
+    src: "{{ ansible_env.PWD }}/roles/xmonad/files/.xmobarrc"
+    path: ~/.xmobarrc
+    state: link
+    force: yes
   file:
           path: ~/.config/xmobar
           state: directory

@@ -1,0 +1,38 @@
+set relativenumber
+set number
+set ignorecase
+set smartcase
+set hls
+set incsearch
+set surround
+set commentary
+let mapleader = ","
+
+map <leader>r :action Run<CR>
+map <leader>d :action Debug<CR>
+map <leader>R :action RunClass<CR>
+map <leader>D :action DebugClass<CR>
+map <leader>O :action OverrideMethods<CR>
+map <leader>o :action OptimizeImports<CR>
+map <leader>b :action GotoDeclaration<CR>
+map <leader>k :action CheckinProject<CR>
+map <leader>K :action Vcs.Push<CR>
+map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>gp :action Github.Create.Pull.Request<CR>
+map <leader>s :action Android.SyncProject<CR>
+map <leader>l :action ReformatCode<CR>
+map <leader>e :action GotoNextError<CR>
+map <leader>u :action FindUsages<CR>
+map <leader>ca :action OpenCurrentActivity.Open<CR>
+map <leader>B :action ToggleLineBreakpoint<CR>
+map <leader>gr :action ChangesView.Revert<CR>
+map <leader>q :action CloseAllEditorsButActive<CR>
+map <C-h> <C-w><h>
+map <C-l> <C-w><l>
+map <C-j> <C-w><j>
+map <C-k> <C-w><k>
+map <leader>gb :action Git.Branches<CR>
+map <leader>gs :action Git.Stash<CR>
+map <leader>gu :action Git.Unstash<CR>
+map <leader>a :action AndroidConnectDebuggerAction<CR>
+map <leader>ys :action com.github.jk1.ytplugin.commands.OpenCommandWindowAction<CR>

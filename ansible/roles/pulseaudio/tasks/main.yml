@@ -1,0 +1,23 @@
+- name: Install PulseAudio
+  become: yes
+  pacman:
+      name: pulseaudio
+      state: present
+
+- name: Install PulseAudio Alsa
+  become: yes
+  pacman:
+      name: pulseaudio-alsa
+      state: present
+
+- name: Install PulseAudio Bluetooth
+  become: yes
+  pacman:
+      name: pulseaudio-bluetooth
+      state: present
+
+- name: Install PulseAudio command line mixer
+  become: yes
+  pacman:
+      name: pamixer
+      state: present

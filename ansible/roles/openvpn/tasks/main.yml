@@ -1,0 +1,5 @@
+- name: Install OpenVPN
+  become: yes
+  pacman:
+      name: openvpn
+      state: present

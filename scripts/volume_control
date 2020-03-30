@@ -1,0 +1,3 @@
+#!/bin/sh
+pamixer $@
+dunstify -r 9999 -t 2000 -h "STRING:volume:volume" "Volume" "$(pamixer --get-volume-human)"
