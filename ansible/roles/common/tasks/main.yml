@@ -88,6 +88,12 @@
   pacman:
           name: dmenu
           state: present
+- name: Set xprofile file
+  file:
+      src: "{{ ansible_env.PWD }}/roles/common/files/.xprofile"
+      path: ~/.xprofile
+      state: link
+      force: yes
 
 - name: Install qutebrowser
   become: yes
