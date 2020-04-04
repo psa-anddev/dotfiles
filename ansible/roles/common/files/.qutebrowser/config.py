@@ -30,7 +30,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 # Same as `{column}`, but starting from index 0.
 # Type: ShellCommand
-c.editor.command = ['nvimr', '{file}']
+c.editor.command = ['nvim', '{file}']
 
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -54,3 +54,6 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
 
 # Keep insert mode when page reloads
 config.set("input.insert_mode.leave_on_load", False)
+
+# Watch video in MPV
+config.bind(",v", "hint links spawn mpv {hint-url}")
