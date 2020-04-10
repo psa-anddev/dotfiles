@@ -1,0 +1,2 @@
+#!/bin/sh
+/Applications/Alacritty.app/Contents/MacOS/alacritty -e "$@"

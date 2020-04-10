@@ -111,7 +111,7 @@ cmd + shift - j ; apps
 apps < cmd - j : open -a "Android Studio"
 
 # open terminal, iTerm
-apps < cmd - return : open -na iTerm
+apps < cmd - return : open -na Alacritty
 
 # open qutebrowser
 apps < cmd - o : open -a qutebrowser
@@ -120,16 +120,16 @@ apps < cmd - o : open -a qutebrowser
 apps < cmd - l : zathura
 
 # open NeoVim
-apps < cmd - k : ~/dotfiles/.scripts/iterm.sh nvim
+apps < cmd - k : ~/dotfiles/.scripts/open-in-terminal nvim
 
 # open Newsboat
-apps < cmd - p : ~/dotfiles/.scripts/iterm.sh newsboat
+apps < cmd - p : ~/dotfiles/.scripts/open-in-terminal newsboat
 
 # open Rambox
 apps < cmd - h: open -a Rambox
 
 # open NeoMutt
-apps < cmd - m : ~/dotfiles/.scripts/iterm.sh neomutt
+apps < cmd - m : ~/dotfiles/.scripts/open-in-terminal neomutt
 # open VLC
 apps < cmd + shift - m : open -a VLC
 
