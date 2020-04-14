@@ -79,6 +79,9 @@ syntax on
 let g:tex_flavor='latex'
 let g:livepreview_previewer = 'open -a Skim'
 
+"Set True Color for Vim
+set termguicolors
+
 "Set theme to Darcula
 colorscheme darcula
 

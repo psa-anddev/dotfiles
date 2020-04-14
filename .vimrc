@@ -64,6 +64,8 @@ Plugin 'jez/vim-superman'
 Plugin 'tpope/vim-commentary'
 " Plugin to search using Ack/Ag
 Plugin 'mileszs/ack.vim'
+"Plugin for quickly moving with f and t
+Plugin 'unblevable/quick-scope'
 call vundle#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
@@ -79,6 +81,8 @@ syntax on
 let g:tex_flavor='latex'
 let g:livepreview_previewer = 'open -a Skim'
 
+"Set True Color for Vim
+set termguicolors
 "Set theme to Darcula
 colorscheme darcula
 
@@ -146,6 +150,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_kotlin_checkers = ['kotlinc']
 let g:syntastic_kotlin_kotlinc_config_file_enabled = 1
 let g:syntastic_clojure_checkers = ['eastwood']
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space at' }
 
 "---- Crontab configurations -------
 if has("mac")
@@ -160,3 +165,7 @@ set shiftwidth=4
 
 " --------- Reminder to use folders
 set foldlevelstart=1
+
+"---------- Quickscope configuration
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
