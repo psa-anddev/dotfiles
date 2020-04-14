@@ -8,6 +8,7 @@
           - xmonad
           - compton
           - kitty
+          - alacritty
           - feh
           - vim
           - zsh

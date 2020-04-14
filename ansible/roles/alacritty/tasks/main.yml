@@ -1,0 +1,17 @@
+- name: Install Alacritty
+  become: yes
+  pacman:
+      name: alacritty
+      state: present
+
+- name: Create Alacritty configuration folder
+  file:
+      path: "~/.config/alacritty"
+      state: directory
+
+- name: Symlink Alacritty configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/alacritty/files/alacritty.yml"
+      path: "~/.config/alacritty/alacritty.yml"
+      state: link
+      force: yes
