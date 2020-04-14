@@ -12,7 +12,7 @@ startup = do
         spawnOnce "dunst"
 
 configuration = defaultConfig
-	{ terminal = "kitty"
+	{ terminal = defaultTerminal
 	, modMask = mod4Mask
 	, borderWidth = 3
 	, startupHook = startup
@@ -22,6 +22,7 @@ configuration = defaultConfig
 upBar = "xmobar"
 upBarConfiguration = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" }
 upBarToggleStructsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+defaultTerminal = "alacritty"
 
 myShortcuts = 
     [("M-C-q", spawn "betterlockscreen -l")
