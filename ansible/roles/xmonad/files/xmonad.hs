@@ -32,6 +32,13 @@ myShortcuts =
     , ("<XF86AudioRaiseVolume>", spawn "~/repos/dotfiles/scripts/volume_control -i 5")
     , ("<XF86AudioLowerVolume>", spawn "~/repos/dotfiles/scripts/volume_control -d 5")
     , ("<XF86AudioMute>", spawn "~/repos/dotfiles/scripts/volume_control -t")
+    , ("M-S-b", spawn "qutebrowser")
+    , ("M-v", spawn (defaultTerminal ++ " -e nvim"))
+    , ("M-c", spawn "rambox")
+    , ("M-a", spawn "android-studio")
+    , ("M-s", spawn (defaultTerminal ++ " -e newsboat"))
+    , ("M-S-s", spawn (defaultTerminal ++ " -e podboat"))
+    , ("M-S-v", spawn "vlc")
     ]
 
 workspacesConfiguration :: [String]
