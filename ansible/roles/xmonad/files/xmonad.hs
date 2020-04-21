@@ -39,6 +39,7 @@ myShortcuts =
     , ("M-s", spawn (defaultTerminal ++ " -e newsboat"))
     , ("M-S-s", spawn (defaultTerminal ++ " -e podboat"))
     , ("M-S-v", spawn "vlc")
+    , ("M-S-m", spawn "~/repos/dotfiles/scripts/meetings")
     ]
 
 workspacesConfiguration :: [String]

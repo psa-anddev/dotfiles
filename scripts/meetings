@@ -1,0 +1,2 @@
+#!/bin/sh
+cat ~/.cache/meetings/meetings | tr ";" "\t" | dmenu -l 3 -p "Choose meeting:" | awk -F '\t' '{ print $2 }' | xargs xdg-open
