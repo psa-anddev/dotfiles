@@ -9,6 +9,7 @@ http://www.spiegel.de/schlagzeilen/tops/index.rss "News" "German"
 http://www.rogerebert.com/feed "Movies"
 https://distrowatch.com/news/dw.xml
 https://www.archlinux.org/feeds/news/ "Linux" "Arch"
+https://itsfoss.com/feed/ "Linux"
 https://martinfowler.com/feed.atom
 https://medium.com/feed/delivery-novastone
 https://spotthestation.nasa.gov/sightings/indexrss.cfm?country=United_Kingdom&region=England&city=London
@@ -57,6 +58,10 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCJ-vHE5CrGaL_ITEg-n3OeA
 https://www.youtube.com/feeds/videos.xml?channel_id=UC34Qdd5Z5KN30A8aJ2eIMPA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCXPHFM88IlFn68OmLwtPmZA
 https://www.youtube.com/feeds/videos.xml?channel_id=UCCIHOP7e271SIumQgyl6XBQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4ihNhN8iN9QPg2XTxiiPJw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBNG0osIBAprVcZZ3ic84vw
+https://www.youtube.com/feeds/videos.xml?channel_id=UCct9aR7HC79Cv2g-9oDOTLw
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2IYWWifoIht9T47z1Z5lJw
 https://feeds.megaphone.fm/HSW5625672489
 http://feeds.feedburner.com/dancarlin/history
