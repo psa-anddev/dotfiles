@@ -21,3 +21,9 @@
   pacman:
       name: pamixer
       state: present
+
+- name: Install PulseAudio ncurses mixer
+  become: yes
+  pacman:
+      name: pulsemixer
+      state: present
