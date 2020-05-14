@@ -1,0 +1,5 @@
+- name: Install LaTeX
+  become: yes
+  pacman:
+      name: texlive-most
+      state: present
