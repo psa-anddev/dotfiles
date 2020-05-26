@@ -174,7 +174,8 @@ autocmd BufReadPost *.kt setlocal filetype=kotlin
 
 let g:LanguageClient_serverCommands = {
     \ 'kotlin': ["~/repos/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
-    \ 'xml': ["java", "-jar", "~/repos/xml-lsp/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"]
+    \ 'xml': ["java", "-jar", "~/repos/xml-lsp/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"],
+    \ 'java': ["~/repos/eclipse.jdt.ls/start_server"]
     \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
