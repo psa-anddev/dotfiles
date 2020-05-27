@@ -75,6 +75,9 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 
+" Necessary to allow LSP to make modifications in several files
+set hidden
+
 " Show relative line numbers
 set relativenumber
 " Show the number of the line in the cursor instead of 0
