@@ -1,7 +1,6 @@
 - name: Install Android Studio
   aur:
       name: android-studio
-      skip_installed: yes
       use: yay
 
 - name: Link IdeaVim configuration

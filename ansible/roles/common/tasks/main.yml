@@ -13,7 +13,6 @@
 - name: install yay
   aur:
           name: yay
-          skip_installed: yes
 
 - name: Full system upgrade
   import_tasks: archupgrade.yml
@@ -44,7 +43,6 @@
 - name: Install Slick greeter
   aur:
           name: lightdm-slick-greeter
-          skip_installed: yes
           use: yay
 
 - name: Copy LightDM Configuration
@@ -129,3 +127,9 @@
   pacman:
           name: libnotify
           state: present
+
+- name: Install fzf
+  become: yes
+  pacman:
+      name: fzf
+      state: present

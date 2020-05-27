@@ -1,5 +1,4 @@
 - name: Install speedcrunch
   aur:
           name: speedcrunch
-          skip_installed: yes
 

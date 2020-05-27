@@ -19,7 +19,6 @@
 - name: Install Oh my zsh
   aur:
           name: oh-my-zsh-git
-          skip_installed: yes
 
 - name: Create local plugins directory
   file:
