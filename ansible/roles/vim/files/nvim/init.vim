@@ -67,6 +67,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+" FZF plugin
+Plug 'junegunn/fzf'
+
 " Colour previews
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end() "Ends the loading of the plug ins
@@ -168,3 +171,4 @@ let g:LanguageClient_serverCommands = {
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> ,rr :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> ,rq :call LanguageClient#textDocument_codeAction()<CR>
