@@ -2,12 +2,9 @@ source ~/.config/nvim/general_config.vim
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/latex_preview.vim
+source ~/.config/nvim/ack_config.vim
 
 
-" Set ag as search program for ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 "---- NERDTree Configuration -----
 let NERDTreeShowHidden=1
