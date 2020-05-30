@@ -3,16 +3,8 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/latex_preview.vim
 source ~/.config/nvim/ack_config.vim
-
-
-
-"---- NERDTree Configuration -----
-let NERDTreeShowHidden=1
-
-"---- Crontab configurations -------
-if has("mac")
-	autocmd FileType crontab setlocal nowritebackup
-endif
+source ~/.config/nvim/nerdtree_config.vim
+source ~/.config/nvim/crontab_config.vim
 
 " ---- Language Servers ------
 autocmd BufReadPost *.kt setlocal filetype=kotlin
