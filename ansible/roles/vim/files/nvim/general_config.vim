@@ -31,3 +31,5 @@ set shiftwidth=4
 " --------- Reminder to use folders
 set foldlevelstart=1
 
+" Reduce timeout len in order to display keybindings help
+set timeoutlen=500

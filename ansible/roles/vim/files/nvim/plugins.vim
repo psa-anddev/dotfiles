@@ -63,5 +63,8 @@ Plug 'junegunn/fzf'
 
 " Colour previews
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+" Keyboard shortcuts help
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
