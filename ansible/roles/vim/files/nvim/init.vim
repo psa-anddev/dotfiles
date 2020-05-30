@@ -1,10 +1,8 @@
 source ~/.config/nvim/general_config.vim
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/keybindings.vim
+source ~/.config/nvim/latex_preview.vim
 
-" Add LaTex as file type
-let g:tex_flavor='latex'
-let g:livepreview_previewer = 'open -a Skim'
 
 " Set ag as search program for ack.vim
 if executable('ag')
