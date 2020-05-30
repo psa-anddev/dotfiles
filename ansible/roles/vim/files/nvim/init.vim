@@ -5,12 +5,4 @@ source ~/.config/nvim/latex_preview.vim
 source ~/.config/nvim/ack_config.vim
 source ~/.config/nvim/nerdtree_config.vim
 source ~/.config/nvim/crontab_config.vim
-
-" ---- Language Servers ------
-autocmd BufReadPost *.kt setlocal filetype=kotlin
-
-let g:LanguageClient_serverCommands = {
-    \ 'kotlin': ["~/repos/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
-    \ 'xml': ["java", "-jar", "~/repos/xml-lsp/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"],
-    \ 'java': ["~/repos/dotfiles/scripts/start_java_lsp"]
-    \ }
+source ~/.config/nvim/lsp_config.vim
