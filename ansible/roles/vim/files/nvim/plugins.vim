@@ -65,7 +65,3 @@ Plug 'junegunn/fzf'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
-
-"Set theme to Darcula
-colorscheme darcula
-
