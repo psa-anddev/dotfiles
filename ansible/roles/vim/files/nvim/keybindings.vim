@@ -17,3 +17,5 @@ nnoremap <leader>gr :GRead<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gk :Gpush<CR>
+nnoremap <leader>gt :Gpull<CR>

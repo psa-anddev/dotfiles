@@ -13,6 +13,8 @@ let g:which_key_map.g.r = 'revert'
 let g:which_key_map.g.c = 'commit'
 let g:which_key_map.g.b = 'blame'
 let g:which_key_map.g.l = 'log'
+let g:which_key_map.g.k = 'push'
+let g:which_key_map.g.t = 'pull'
 
 " Register keyboard shortcuts dictionary.
 autocmd! User vim-which-key call which_key#register(mapleader, "g:which_key_map")
