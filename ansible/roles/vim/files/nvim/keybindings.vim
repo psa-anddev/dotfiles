@@ -12,8 +12,8 @@ nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> <leader>lrq :call LanguageClient#textDocument_codeAction()<CR>
 nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gw :GWrite<CR>
-nnoremap <leader>gr :GRead<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gl :Glog<CR>
