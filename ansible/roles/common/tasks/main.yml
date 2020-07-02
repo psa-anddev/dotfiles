@@ -133,3 +133,8 @@
   pacman:
       name: fzf
       state: present
+
+- name: install tldr++
+  aur:
+          name: tldr++
+          use: yay
