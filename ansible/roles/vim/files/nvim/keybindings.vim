@@ -1,5 +1,5 @@
 "Set leader key to comma
-let mapleader=","
+let mapleader=" "
 
 map <C-h> <C-w>h
 map <C-l> <C-w>l
