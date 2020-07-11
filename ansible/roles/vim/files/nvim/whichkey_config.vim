@@ -15,7 +15,11 @@ let g:which_key_map.g.b = 'blame'
 let g:which_key_map.g.l = 'log'
 let g:which_key_map.g.k = 'push'
 let g:which_key_map.g.t = 'pull'
+let g:which_key_map.g.f = 'find-files-in-repo'
+let g:which_key_map.g.F = 'find-files-in-repo-with-untracked'
 let g:which_key_map[" "] = 'find-file'
+let g:which_key_map.L = 'find-lines-in-project'
+let g:which_key_map.B = 'find-buffers'
 
 " Register keyboard shortcuts dictionary.
 autocmd! User vim-which-key call which_key#register(mapleader, "g:which_key_map")

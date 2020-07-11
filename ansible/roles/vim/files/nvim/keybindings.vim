@@ -19,4 +19,8 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gk :Gpush<CR>
 nnoremap <leader>gt :Gpull<CR>
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>gF :GFiles?<CR>
 nnoremap <leader><leader> :Files<CR>
+nnoremap <leader>L :Lines<CR>
+nnoremap <leader>B :Buffers<CR>
