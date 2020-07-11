@@ -60,6 +60,8 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " FZF plugin
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Colour previews
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
