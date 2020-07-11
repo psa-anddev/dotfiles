@@ -19,4 +19,4 @@ nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gk :Gpush<CR>
 nnoremap <leader>gt :Gpull<CR>
-nnoremap <leader><leader> :FZF<CR>
+nnoremap <leader><leader> :Files<CR>
