@@ -31,6 +31,7 @@ myShortcuts =
     , ("M-<Space>", spawn "dmenu_run")
     , ("M-p", sendMessage NextLayout)
     , ("M-C-p", spawn "~/repos/dotfiles/scripts/dmenu_power")
+    , ("M-S-p", spawn (defaultTerminal ++ " -e pulsemixer"))
     , ("<XF86AudioRaiseVolume>", spawn "~/repos/dotfiles/scripts/volume_control -i 5")
     , ("<XF86AudioLowerVolume>", spawn "~/repos/dotfiles/scripts/volume_control -d 5")
     , ("<XF86AudioMute>", spawn "~/repos/dotfiles/scripts/volume_control -t")
