@@ -22,15 +22,19 @@
   pacman:
           name: xmobar
           state: present
+
 - name: Symlink Xmobar configuration
   file: 
     src: "{{ ansible_env.PWD }}/roles/xmonad/files/.xmobarrc"
     path: ~/.xmobarrc
     state: link
     force: yes
+- name: Create Xmobar directory
   file:
           path: ~/.config/xmobar
           state: directory
+
+- name: Link to Xmobar images
   file:
           src: "{{ ansible_env.PWD }}/roles/xmonad/files/xpm"
           path: ~/.config/xmobar/xpm
