@@ -42,6 +42,7 @@
           force: yes
 
 - name: Set Xmonad as default desktop
+  become: yes
   copy:
       src: /usr/share/xsessions/xmonad.desktop
       dest: /usr/share/xsessions/default.desktop
