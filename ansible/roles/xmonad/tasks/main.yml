@@ -44,4 +44,4 @@
 - name: Set Xmonad as default desktop
   copy:
       src: /usr/share/xsessions/xmonad.desktop
-      dest: /usr/share/xsesions/default.desktop
+      dest: /usr/share/xsessions/default.desktop
