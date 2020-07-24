@@ -1,0 +1,43 @@
+- name: Install LightDM
+  become: yes
+  pacman:
+          name: lightdm
+          state: present
+          name: lightdm-gtk-greeter
+          state: present
+
+- name: Install Slick greeter
+  aur:
+          name: lightdm-slick-greeter
+          use: yay
+
+- name: Copy LightDM Configuration
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/lightdm/files/lightdm.conf"
+          dest: /etc/lightdm/lightdm.conf
+
+- name: Create backgrounds directory
+  become: yes
+  file:
+          path: /usr/share/backgrounds
+          state: directory
+
+- name: Copy LightDM background
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/lightdm/files/lightdm_background.png"
+          dest: /usr/share/backgrounds/lightdm_background.png
+
+- name: Copy Slick greeter configuration
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/lightdm/files/slick-greeter.conf"
+          dest: /etc/lightdm/slick-greeter.conf
+
+- name: Enable LightDM Service
+  become: yes
+  systemd:
+          name: lightdm
+          enabled: yes
+
