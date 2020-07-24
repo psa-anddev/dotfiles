@@ -6,6 +6,11 @@
           name: xmonad-contrib
           state: present
 
+- name: Create Xmonad configuration folder
+  file:
+      path: ~/.xmonad
+      state: directory
+
 - name: Symlink Xmonad config
   file: src={{ ansible_env.PWD }}/roles/xmonad/files/xmonad.hs
         path=~/.xmonad/xmonad.hs
