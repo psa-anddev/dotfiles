@@ -1,0 +1,4 @@
+- name: Install Rambox
+  aur:
+      name: rambox-bin
+      use: yay

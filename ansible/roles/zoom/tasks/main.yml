@@ -1,0 +1,4 @@
+- name: Install Zoom
+  aur:
+      name: zoom
+      use: yay
