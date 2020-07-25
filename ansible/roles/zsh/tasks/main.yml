@@ -5,14 +5,19 @@
           state: present
 - name: Install Zsh Completions
   become: yes
+  pacman:
           name: zsh-completions
           state: present
 
 - name: Install Zsh Syntax highlighting
+  become: yes
+  pacman:
           name: zsh-syntax-highlighting
           state: present
 
 - name: Install Zsh Autosuggestions
+  become: yes
+  pacman:
           name: zsh-autosuggestions
           state: present
 
