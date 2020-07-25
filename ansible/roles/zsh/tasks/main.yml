@@ -3,10 +3,16 @@
   pacman:
           name: zsh
           state: present
+- name: Install Zsh Completions
+  become: yes
           name: zsh-completions
           state: present
+
+- name: Install Zsh Syntax highlighting
           name: zsh-syntax-highlighting
           state: present
+
+- name: Install Zsh Autosuggestions
           name: zsh-autosuggestions
           state: present
 
