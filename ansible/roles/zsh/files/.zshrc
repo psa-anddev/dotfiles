@@ -105,7 +105,7 @@ export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 neofetch
 
 # Add completions and alias for vman
-export PATH="$HOME/.vim/bundle/vim-superman/bin:$PATH"
+export PATH="$HOME/.local/share/nvim/plugged/vim-superman/bin/:$PATH"
 compdef vman="man"
 alias man="vman"
 
