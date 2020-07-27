@@ -1,0 +1,5 @@
+- name: Install Youtube-dl
+  become: yes
+  pacman:
+      name: youtube-dl
+      state: present
