@@ -1,0 +1,12 @@
+- name: Install TaskWarrior
+  become: yes
+  pacman:
+      name: task
+      state: present
+
+- name: Set Taskwarrior configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/taskwarrior/files/.taskrc"
+      path: ~/.taskrc
+      state: link
+      force: yes
