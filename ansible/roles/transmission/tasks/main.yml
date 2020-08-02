@@ -1,0 +1,6 @@
+- name: Install transmission
+  become: yes
+  pacman:
+      name: transmission-cli
+      state: present
+
