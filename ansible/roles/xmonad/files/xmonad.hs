@@ -11,6 +11,7 @@ startup = do
         spawnOnce "picom"
         spawnOnce "clipmenud"
         spawnOnce "dunst"
+        spawnOnce "flameshot"
 
 configuration = defaultConfig
 	{ terminal = defaultTerminal
@@ -43,6 +44,8 @@ myShortcuts =
     , ("M-S-s", spawn (defaultTerminal ++ " -e podboat"))
     , ("M-S-v", spawn "vlc")
     , ("M-S-m", spawn "~/repos/dotfiles/scripts/meetings")
+    , ("<Print>", spawn "flameshot full -p ~/pictures/screenshots/")
+    , ("M-<Print>", spawn "flameshot gui")
     ]
 
 workspacesConfiguration :: [String]
