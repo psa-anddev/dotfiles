@@ -28,6 +28,6 @@ unbind-key Q
 bind-key q hard-quit
 bind-key ^S save
 
-macro v set browser "vlc"; open-in-browser ; set browser "qutebrowser"
+macro v set browser "mpv"; open-in-browser ; set browser "qutebrowser"
 download-path "~/podcasts/%n"
 player "vlc --one-instance --playlist-enqueue"
