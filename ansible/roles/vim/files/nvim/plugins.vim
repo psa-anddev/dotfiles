@@ -26,8 +26,6 @@ Plug 'tpope/vim-classpath' "Sets path for the Java classpath.
 
 "LaTex plug ins
 Plug 'vim-latex/vim-latex'
-" A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plug 'xuhdev/vim-latex-live-preview'
 
 "Syntax highlighting for Kotlin
 Plug 'udalov/kotlin-vim'
