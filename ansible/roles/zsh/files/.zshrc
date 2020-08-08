@@ -117,11 +117,3 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-export OP_SESSION_novastonemedia="9fpVy3JiIzKDsYmzaBDZeb9bg9Ty6y2AK8w4GO_SA1o"
