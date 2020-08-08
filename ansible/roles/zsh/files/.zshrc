@@ -125,4 +125,3 @@ if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export OP_SESSION_novastonemedia="9fpVy3JiIzKDsYmzaBDZeb9bg9Ty6y2AK8w4GO_SA1o"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
