@@ -12,9 +12,6 @@ Plug 'blueshirts/darcula' "Darcula theme
 "Git integration
 Plug 'tpope/vim-fugitive'
 
-"Lint Checking
-" Plug 'vim-syntastic/syntastic'
-
 "Lisp/Clojure plugins
 Plug 'guns/vim-sexp' "Add textobjects for lispy-like functions and other stuff.
 Plug 'tpope/vim-sexp-mappings-for-regular-people' "Add easier mappings to vim-sexp.
@@ -22,7 +19,6 @@ Plug 'guns/vim-clojure-static' "Clojure syntax highlighting.
 Plug 'tpope/vim-fireplace' "Clojure integration with REPL
 Plug 'tpope/vim-salve' "Integration with Leiningen
 Plug 'tpope/vim-classpath' "Sets path for the Java classpath.
-" Plug 'venantius/vim-eastwood' "Linter for Clojure
 
 "LaTex plug ins
 Plug 'vim-latex/vim-latex'
