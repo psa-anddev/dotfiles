@@ -1,0 +1,92 @@
+IMAPAccount personal
+Host imap.gmail.com
+User pablo.sanchez.alonso@gmail.com
+PassCmd "pass Personal/PersonalEmail/isyncPassword"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Subfolders Verbatim
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/INBOX
+
+Channel personal
+Master :personal-remote:
+Slave :personal-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount spam
+Host imap.gmail.com
+User pablo.sanchez.alonso.uk@gmail.com
+PassCmd "pass Personal/SpamEmail/password"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore spam-remote
+Account spam
+
+MaildirStore spam-local
+Subfolders Verbatim
+Path ~/.mail/spam/
+Inbox ~/.mail/spam/INBOX
+
+Channel spam
+Master :spam-remote:
+Slave :spam-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount development
+Host imap.gmail.com
+User psa.anddev@gmail.com
+PassCmd "pass Personal/DevelopmentEmail/password"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore development-remote
+Account development
+
+MaildirStore development-local
+Subfolders Verbatim
+Path ~/.mail/development/
+Inbox ~/.mail/development/INBOX
+
+Channel development
+Master :development-remote:
+Slave :development-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount clavelito
+Host imap.gmail.com
+User stjennypablo@gmail.com
+PassCmd "pass Personal/ClavelitoGmail/isyncPassword"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore clavelito-remote
+Account clavelito
+
+MaildirStore clavelito-local
+Subfolders Verbatim
+Path ~/.mail/clavelito/
+Inbox ~/.mail/clavelito/INBOX
+
+Channel clavelito
+Master :clavelito-remote:
+Slave :clavelito-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+

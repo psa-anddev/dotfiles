@@ -1,0 +1,15 @@
+set realname="Jenny Tan & Pablo Sánchez Alonso"
+
+set sendmail="/usr/bin/msmtp -a clavelito"
+
+set folder="~/.mail/clavelito/"
+unset record
+set spoolfile="+INBOX"
+set postponed="+\[Gmail\]/Drafts"
+set mbox_type=Maildir
+
+unmailboxes *
+mailboxes +INBOX +\[Gmail]/Drafts +\[Gmail]/All\ Mail +\[Gmail]/Important +\[Gmail]/Sent\ Mail +\[Gmail]/Spam +\[Gmail]/Starred +\[Gmail]/Trash
+
+bind index o noop
+macro index o '<shell-escape>mbsync clavelito<enter>' 'Sync with server'

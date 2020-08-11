@@ -1,0 +1,7 @@
+source ./personal
+
+bind index,pager i noop
+macro index,pager i1 '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>' 'Change to personal account'
+macro index,pager i2 '<sync-mailbox><enter-command>source ~/.mutt/spam<enter><change-folder>!<enter>' 'Change to spam account'
+macro index,pager i3 '<sync-mailbox><enter-command>source ~/.mutt/development<enter><change-folder>!<enter>' 'Change to spam account'
+macro index,pager i4 '<sync-mailbox><enter-command>source ~/.mutt/clavelito<enter><change-folder>!<enter>' 'Change to spam account'

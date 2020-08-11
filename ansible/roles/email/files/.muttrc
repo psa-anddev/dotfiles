@@ -1,0 +1,2 @@
+source ./.mutt/default
+set sort=reverse-date

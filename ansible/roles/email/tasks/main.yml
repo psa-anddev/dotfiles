@@ -1,0 +1,47 @@
+- name: Install iSync
+  become: yes
+  pacman:
+      name: isync
+      state: present
+
+- name: Link iSync configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/{{ email_config }}/.mbsyncrc"
+      path: ~/.mbsyncrc
+      state: link
+      force: yes
+
+- name: Install msmtp
+  become: yes
+  pacman:
+      name: msmtp
+      state: present
+
+- name: Link msmtp configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/{{ email_config }}/.msmtprc"
+      path: ~/.msmtprc
+      state: link
+      force: yes
+
+- name: Install neomutt
+  become: yes
+  pacman:
+      name: neomutt
+      state: present
+
+
+- name: Link neomutt accounts configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/{{ email_config }}/.mutt"
+      path: ~/.mutt
+      state: link
+      force: yes
+
+- name: Link neomutt configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/.muttrc"
+      path: ~/.muttrc
+      state: link
+      force: yes
+

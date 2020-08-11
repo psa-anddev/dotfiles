@@ -1,0 +1,15 @@
+set realname="Pablo Sánchez Alonso"
+
+set sendmail="/usr/bin/msmtp -a personal"
+
+set folder="~/.mail/personal/"
+unset record
+set spoolfile="+INBOX"
+set postponed="+\[Gmail\]/Borradores"
+set mbox_type=Maildir
+
+unmailboxes *
+mailboxes +INBOX +Notes +Recruiters +\[Gmail]/Borradores +\[Gmail]/Destacados +\[Gmail]/Enviados +\[Gmail]/Importantes +\[Gmail]/Papelera +\[Gmail]/Spam +\[Gmail]/Todos
+
+bind index o noop
+macro index o '<shell-escape>mbsync personal<enter>' 'Sync with server'

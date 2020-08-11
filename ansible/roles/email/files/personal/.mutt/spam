@@ -1,0 +1,15 @@
+set realname="Pablo Sánchez Alonso"
+
+set sendmail="/usr/bin/msmtp -a spam"
+
+set folder="~/.mail/spam/"
+unset record
+set spoolfile="+INBOX"
+set postponed="+\[Gmail\]/Borradores"
+set mbox_type=Maildir
+
+unmailboxes *
+mailboxes +INBOX +Personal +Receipts +Work +\[Gmail]/Borradores +\[Gmail]/Destacados +\[Gmail]/Enviados +\[Gmail]/Importantes +\[Gmail]/Papelera +\[Gmail]/Spam +\[Gmail]/Todos
+
+bind index o noop
+macro index o '<shell-escape>mbsync spam<enter>' 'Sync with server'
