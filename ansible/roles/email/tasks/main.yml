@@ -45,3 +45,31 @@
       state: link
       force: yes
 
+- name: Create extra mutt configuration folder
+  file:
+      path: ~/.config/mutt
+      state: directory
+
+- name: Symlink mailcap
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/mailcap"
+      path: ~/.config/mutt/mailcap
+      state: link
+      force: yes
+
+- name: Install urlview
+  aur:
+      name: urlview
+      use: yay
+
+- name: Symlink urlview configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/email/files/.urlview"
+      path: ~/.urlview
+      state: link
+      force: yes
+
+- name: Create mutt cache directory
+  file:
+      path: ~/.cache/mutt
+      state: directory

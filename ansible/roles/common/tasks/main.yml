@@ -83,3 +83,9 @@
   aur:
           name: tldr++
           use: yay
+
+- name: Install text-based web browser
+  become: yes
+  pacman:
+      name: w3m
+      state: present
