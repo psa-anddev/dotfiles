@@ -1,0 +1,12 @@
+- name: Install Cups
+  become: yes
+  pacman:
+      name: cups
+      state: present
+
+- name: Enable Cups
+  become: yes
+  systemd:
+      name: "org.cups.cupsd.service"
+      enabled: yes
+      state: started
