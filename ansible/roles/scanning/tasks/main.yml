@@ -1,0 +1,5 @@
+- name: Install sane-airscan
+  become: yes
+  pacman:
+      name: sane-airscan
+      state: present
