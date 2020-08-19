@@ -47,6 +47,7 @@ myShortcuts =
     , ("<Print>", spawn "flameshot full -p ~/pictures/screenshots/")
     , ("M-<Print>", spawn "flameshot gui")
     , ("M-C-m", spawn(defaultTerminal ++ " -e neomutt"))
+    , ("M-/", spawn "passmenu")
     ]
 
 workspacesConfiguration :: [String]
