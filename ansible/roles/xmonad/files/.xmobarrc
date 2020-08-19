@@ -1,21 +1,35 @@
 Config {
 	commands = [ Run StdinReader 
 	, Run Date "%a, %d %b %Y, %H:%M:%S" "date" 10
-	, Run Network "wlan0" ["-t", "<icon=net_up_20.xpm/><rx> Kb/s <icon=net_down_20.xpm/><tx> Kb/s"] 10
 	, Run Cpu ["-t", "<icon=cpu_20.xpm/> <total>%", "-H", "50", "--high", "red"] 10
 	, Run Memory ["-t", "<icon=memory-icon_20.xpm/> <usedratio>%"] 10
 	, Run DiskU [("/", "<icon=harddisk-icon_20.xpm/> <used>")] [] 3600
-        , Run BatteryP ["BAT0"] 
-                        [ "-t", "<icon=battery_20.xpm/> <left>% <acstatus>",
-                        "-L", "10", "-H", "80", "-p", "3",
-                        "--", "-O", "(Charging)", "-o", "(Time left: <timeleft>)", "-i", "",
-                        "-L", "-15", "-H", "-5", 
-                        "-l", "red", "-m", "blue", "-h", "green",
-                        "-a", "notify-send -u critical 'Battery running out!!'",
-                        "-A", "3"]
-                        600
+        , Run Battery        [ "--template" , "<icon=battery_20.xpm/> <acstatus>"
+                                , "--Low"      , "15"        -- units: %
+                                , "--High"     , "80"        -- units: %
+                                , "--low"      , "darkred"
+                                , "--normal"   , "darkorange"
+                                , "--high"     , "darkgreen"
+                                , "-a", "notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'"
+
+                                , "--" -- battery specific options
+                                -- discharging status
+                                , "-o"      , "<left>% (<timeleft>)"
+                                -- AC "on" status
+                                , "-O"        , "<fc=#dAA520>Charging</fc>"
+                                -- charged status
+                                , "-i"  , "<fc=#006000>Charged</fc>"
+                                , "-A", "10"
+                                ] 50
+        , Run DynNetwork     [ "--template" , "<icon=net_20.xpm/><dev><icon=net_up_20.xpm/><tx> kB/s <icon=net_down_20.xpm/><rx> kB/s"
+                                , "--Low"      , "1000"       -- units: B/s
+                                , "--High"     , "5000"       -- units: B/s
+                                , "--low"      , "darkgreen"
+                                , "--normal"   , "darkorange"
+                                , "--high"     , "darkred"
+                                ] 10
 	]
 	, iconRoot = "/home/pablo/.config/xmobar/xpm" -- default: "."
 	, alignSep = "}{"
-	, template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%wlan0%</fc> <icon=calendar-clock-icon_20.xpm/> <fc=#8BE9FD>%date%</fc>  "
+	, template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%dynnetwork%</fc> <icon=calendar-clock-icon_20.xpm/> <fc=#8BE9FD>%date%</fc>  "
 }
