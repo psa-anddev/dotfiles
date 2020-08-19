@@ -1,0 +1,18 @@
+- name: Install Avahi
+  become: yes
+  pacman:
+      name: avahi
+      state: present
+
+- name: Install Name resolution package
+  become: yes
+  pacman:
+      name: nss-mdns
+      state: present
+
+- name: Enable Avahi
+  become: yes
+  systemd:
+      name: "avahi-daemon.service"
+      enabled: yes
+      state: started
