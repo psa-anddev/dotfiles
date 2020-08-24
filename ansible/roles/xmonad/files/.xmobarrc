@@ -10,7 +10,6 @@ Config {
                                 , "--low"      , "darkred"
                                 , "--normal"   , "darkorange"
                                 , "--high"     , "darkgreen"
-                                , "-a", "notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'"
 
                                 , "--" -- battery specific options
                                 -- discharging status
@@ -20,6 +19,7 @@ Config {
                                 -- charged status
                                 , "-i"  , "<fc=#006000>Charged</fc>"
                                 , "-A", "10"
+                                , "-a", "notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'"
                                 ] 50
         , Run DynNetwork     [ "--template" , "<icon=net_20.xpm/><dev><icon=net_up_20.xpm/><tx> kB/s <icon=net_down_20.xpm/><rx> kB/s"
                                 , "--Low"      , "1000"       -- units: B/s
