@@ -1,0 +1,31 @@
+#!/bin/sh
+print_usage() {
+    printf "This script generates a QR code for a WIFI network.\n"
+    printf "\t-s\t\tThe SSID of the network\n"
+    printf "\t-t\t\tThe type of security in the network (WPA by default)\n"
+    printf "\t-p\t\tThe password for the network\n"
+    printf "\t-o\t\tThe output for the QR code image\n"
+}
+wrong_arguments="t"
+ssid=""
+type="WPA"
+password=""
+output=""
+while getopts 's:t:p:o:h' flag; do
+    wrong_arguments='f'
+    case "$flag" in
+        h) print_usage
+            exit ;;
+        s) ssid="${OPTARG}" ;;
+        p) password="${OPTARG}" ;;
+        t) type="${OPTARG}" ;;
+        o) output="${OPTARG}" ;;
+    esac
+done
+
+if [ "$wrong_arguments" = 't' ]; then
+    print_usage
+    exit 1
+fi
+
+qrencode -o "$output" "WIFI:T:$type;S:$ssid;P:$password;;"
