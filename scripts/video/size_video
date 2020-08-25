@@ -1,0 +1,10 @@
+#!/bin/sh
+input=$1
+output=$3
+duration=$(ffprobe -v error -show_streams -select_streams a "$input" | grep -Po "(?<=^duration\=)\d*\.\d*")
+size=$(($2 * 8192))
+bitrate=$(bc <<< "$size/$duration")
+audio_bitrate=128
+video_bitrate=$(($bitrate - $audio_bitrate))
+ffmpeg -y -i $input -c:v libx264 -b:v ${video_bitrate}k -pass 1 -an -f null /dev/null && ffmpeg -i $input -c:v libx264 -b:v ${video_bitrate}k -pass 2 -c:a aac -b:a ${audio_bitrate}k $output
+
