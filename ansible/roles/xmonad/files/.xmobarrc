@@ -1,5 +1,6 @@
 Config {
-	commands = [ Run StdinReader 
+        alpha = 100
+	,commands = [ Run StdinReader 
 	, Run Date "%a, %d %b %Y, %H:%M:%S" "date" 10
 	, Run Cpu ["-t", "<icon=cpu_20.xpm/> <total>%", "-H", "50", "--high", "red"] 10
 	, Run Memory ["-t", "<icon=memory-icon_20.xpm/> <usedratio>%"] 10
