@@ -62,5 +62,14 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Keyboard shortcuts help
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
+let g:deoplete#enable_at_startup = 1
