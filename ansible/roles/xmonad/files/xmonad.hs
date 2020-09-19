@@ -12,6 +12,7 @@ startup = do
         spawnOnce "clipmenud"
         spawnOnce "dunst"
         spawnOnce "flameshot"
+        spawnOnce "udiskie"
 
 configuration = defaultConfig
 	{ terminal = defaultTerminal

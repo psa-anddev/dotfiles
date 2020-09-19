@@ -89,3 +89,15 @@
   pacman:
       name: w3m
       state: present
+
+- name: Install udisks2
+  become: yes
+  pacman:
+      name: udisks2
+      state: present
+
+- name: Install udiskie
+  become: yes
+  pacman:
+      name: udiskie
+      state: present
