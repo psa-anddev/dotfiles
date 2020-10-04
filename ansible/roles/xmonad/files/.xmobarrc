@@ -1,12 +1,13 @@
 Config {
         alpha = 200
         , font = "xft:Hack Nerd Mono:pixelsize=14:antialising=true:hinting=true"
+        , additionalFonts = [ "xft:Hack Nerd Font:pixelsize=14:antialias=true:hinting=true" ]
 	,commands = [ Run StdinReader 
-	, Run Date "%a, %d %b %Y, %H:%M:%S" "date" 10
-	, Run Cpu ["-t", "<icon=cpu_20.xpm/> <total>%", "-H", "50", "--high", "red"] 10
-	, Run Memory ["-t", "<icon=memory-icon_20.xpm/> <usedratio>%"] 10
-	, Run DiskU [("/", "<icon=harddisk-icon_20.xpm/> <used>")] [] 3600
-        , Run Battery        [ "--template" , "<icon=battery_20.xpm/> <acstatus>"
+	, Run Date "<fc=white><fn=1>\xf073</fn></fc>   %a, %d %b %Y <fc=white><fn=1>\xf017</fn></fc>  %H:%M:%S" "date" 10
+	, Run Cpu ["-t", "<fc=white><fn=1>\xf109</fn>   </fc> <total>% ", "-H", "50", "--high", "red"] 10
+	, Run Memory ["-t", "<fc=white><fn=1>\xf233</fn>  </fc> <usedratio>% "] 10
+	, Run DiskU [("/", "<fc=white><fn=1>\xf0c7</fn> </fc> <used> ")] [] 3600
+        , Run Battery        [ "--template" , "<acstatus> "
                                 , "--Low"      , "15"        -- units: %
                                 , "--High"     , "80"        -- units: %
                                 , "--low"      , "darkred"
@@ -15,15 +16,15 @@ Config {
 
                                 , "--" -- battery specific options
                                 -- discharging status
-                                , "-o"      , "<left>% (<timeleft>)"
+                                , "-o"      , "<fc=white><fn=1>\xf241</fn>    </fc><left>% (<timeleft>)"
                                 -- AC "on" status
-                                , "-O"        , "<left>% (Charging)"
+                                , "-O"        , "<fc=white><fn=1>\xf1e6</fn>    </fc><left>% (Charging)"
                                 -- charged status
-                                , "-i"  , "<fc=#006000>Charged</fc>"
+                                , "-i"  , "<fc=white><fn=1>\xf240</fn>    </fc><fc=#006000>Charged</fc>"
                                 , "-A", "10"
                                 , "-a", "notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'"
                                 ] 50
-        , Run DynNetwork     [ "--template" , "<icon=net_20.xpm/><dev><icon=net_up_20.xpm/><tx> kB/s <icon=net_down_20.xpm/><rx> kB/s"
+        , Run DynNetwork     [ "--template" , "<fc=white><fn=1>\xf0c2</fn></fc>   <dev> <fc=white><fn=1>\xf01b</fn></fc>  <tx> kB/s <fc=white><fn=1>\xf01a</fn></fc>  <rx> kB/s"
                                 , "--Low"      , "1000"       -- units: B/s
                                 , "--High"     , "5000"       -- units: B/s
                                 , "--low"      , "darkgreen"
@@ -33,5 +34,5 @@ Config {
 	]
 	, iconRoot = "/home/pablo/.config/xmobar/xpm" -- default: "."
 	, alignSep = "}{"
-	, template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%dynnetwork%</fc> <icon=calendar-clock-icon_20.xpm/> <fc=#8BE9FD>%date%</fc>  "
+	, template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %StdinReader% }{ <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%dynnetwork%</fc>  <fc=#8BE9FD>%date%</fc>  "
 }
