@@ -64,3 +64,6 @@ homeFolder = expanduser("~")
 config.bind(",tm", "hint links spawn transmission-remote localhost -a \"{hint-url}\" -w " + homeFolder + "/movies")
 # Download torrents to downloads folder
 config.bind(",td", "hint links spawn transmission-remote localhost -a \"{hint-url}\" -w " + homeFolder + "/downloads")
+
+# Enable dark mode
+config.set("colors.webpage.darkmode.enabled", True)
