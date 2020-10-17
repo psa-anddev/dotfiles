@@ -67,3 +67,6 @@ config.bind(",td", "hint links spawn transmission-remote localhost -a \"{hint-ur
 
 # Enable dark mode
 config.set("colors.webpage.darkmode.enabled", True)
+
+# Load autoconfiguration (mainly for avoiding having to grant permission to things over and over)
+config.load_autoconfig()
