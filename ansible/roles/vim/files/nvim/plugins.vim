@@ -73,6 +73,8 @@ endif
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+" Coloured parenthesis (for Lisp)
+Plug 'luochen1990/rainbow'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
 let g:deoplete#enable_at_startup = 1
