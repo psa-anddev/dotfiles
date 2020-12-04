@@ -5,6 +5,7 @@
           - common
           - bluetooth
           - pulseaudio
+          - monitors
           - xmonad
           - lightdm
           - compton

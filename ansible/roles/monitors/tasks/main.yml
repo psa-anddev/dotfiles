@@ -1,0 +1,25 @@
+- name: Install autorandr
+  become: yes
+  pacman:
+      name: autorandr
+      state: present
+
+- name: Install evdi
+  aur:
+      name: evdi
+
+- name: Install DisplayLink
+  aur:
+      name: displaylink
+
+- name: Enable DisplayLink service
+  become: yes
+  systemd:
+      name: displaylink
+      enabled: yes
+
+- name: Copy EVI device configuration
+  become: yes
+  copy:
+      src: "{{ ansible_env.PWD }}/roles/monitors/files/20-evidevice.conf"
+      dest: /usr/share/X11/xorg.conf.d/20-evidevice.conf
