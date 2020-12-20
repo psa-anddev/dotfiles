@@ -13,6 +13,7 @@ startup = do
         spawnOnce "dunst"
         spawnOnce "flameshot"
         spawnOnce "udiskie"
+        spawnOnce "~/repos/dotfiles/scripts/tasks_notify"
 
 configuration = defaultConfig
 	{ terminal = defaultTerminal

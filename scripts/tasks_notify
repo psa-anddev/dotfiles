@@ -1,0 +1,2 @@
+#/bin/sh
+notify-send "Pending Tasks" "$(task limit:5 rc.verbose: rc.report.next.columns=description rc.report.next.labels=D)"
