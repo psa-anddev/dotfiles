@@ -3,6 +3,9 @@ import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
+import XMonad.Prompt
+import XMonad.Prompt.Input
+import Text.Printf
 
 main = xmonad =<< statusBar upBar upBarConfiguration upBarToggleStructsKey configuration
 startup = do
@@ -50,6 +53,7 @@ myShortcuts =
     , ("M-<Print>", spawn "flameshot gui")
     , ("M-C-m", spawn(defaultTerminal ++ " -e neomutt"))
     , ("M-/", spawn "passmenu")
+    , ("M-C-a", taskWarriorPrompt promptConfig)
     ]
 
 workspacesConfiguration :: [String]
@@ -57,3 +61,20 @@ workspacesConfiguration = ["dev", "www", "chat", "sys", "doc", "mus", "ex1", "ex
 
 -- Layouts
 layoutHookConfiguration = Tall 1 (3/100) (1/2) ||| noBorders Full ||| Mirror(Tall 1 (3/100) (1/2))
+
+-- Prompts
+myFont :: String
+myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=9:antialias=true:hinting=true"
+
+promptConfig:: XPConfig
+promptConfig = def
+    { font = myFont
+    , position = Top
+    }
+
+taskWarriorPrompt::XPConfig->X()
+taskWarriorPrompt cfg = do
+    str <- inputPrompt cfg "New Task: "
+    case str of
+        Just s  -> spawn $ printf "task add %s" s
+        Nothing -> pure ()
