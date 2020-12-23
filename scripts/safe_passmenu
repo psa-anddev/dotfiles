@@ -1,0 +1,8 @@
+#!/bin/sh
+# This scripts disables clipmenu before calling passmenu in order to
+# prevent the passwords to be persisted into clipmenu.
+# This is done because XMonad doesn't play nice with xdotool which
+# effectively disables the mechanism to ignore certain programs. 
+clipctl disable 
+passmenu
+clipctl enable
