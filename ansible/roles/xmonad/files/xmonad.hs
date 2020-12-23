@@ -52,7 +52,7 @@ myShortcuts =
     , ("<Print>", spawn "flameshot full -p ~/pictures/screenshots/")
     , ("M-<Print>", spawn "flameshot gui")
     , ("M-C-m", spawn(defaultTerminal ++ " -e neomutt"))
-    , ("M-/", spawn "passmenu")
+    , ("M-/", spawn "~/repos/dotfiles/scripts/safe_passmenu")
     , ("M-C-a", taskWarriorPrompt promptConfig)
     , ("M-C-v", spawn "clipmenu")
     ]
