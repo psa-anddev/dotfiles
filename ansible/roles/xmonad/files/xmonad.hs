@@ -54,6 +54,7 @@ myShortcuts =
     , ("M-C-m", spawn(defaultTerminal ++ " -e neomutt"))
     , ("M-/", spawn "passmenu")
     , ("M-C-a", taskWarriorPrompt promptConfig)
+    , ("M-C-v", spawn "clipmenu")
     ]
 
 workspacesConfiguration :: [String]
