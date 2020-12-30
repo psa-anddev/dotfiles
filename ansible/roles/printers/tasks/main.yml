@@ -7,6 +7,6 @@
 - name: Enable Cups
   become: yes
   systemd:
-      name: "org.cups.cupsd.service"
+      name: "cups.service"
       enabled: yes
       state: started
