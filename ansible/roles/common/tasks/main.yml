@@ -101,3 +101,10 @@
   pacman:
       name: udiskie
       state: present
+
+- name: Set profile file
+  file:
+      src: "{{ ansible_env.PWD }}/roles/common/files/.profile"
+      path: ~/.profile
+      state: link
+      force: yes
