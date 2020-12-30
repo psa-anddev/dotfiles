@@ -1,0 +1,10 @@
+#!/bin/sh
+operation=$(printf "vpn\naudio" | dmenu -p "Preferences: ")
+case $operation in
+    vpn )
+        expressvpn_menu
+        ;;
+    audio)
+        $TERMINAL -e pulsemixer
+        ;;
+esac
