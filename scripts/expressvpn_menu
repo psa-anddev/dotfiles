@@ -1,0 +1,51 @@
+#!/bin/sh
+pick_mirror() {
+    expressvpn ls all | tail -n +3 | dmenu -p "Pick mirror" -l 20 | awk '{ print $1 }'
+}
+
+perform_connected_operation() {
+    operation=$@
+    case $operation in
+        reconnect )
+            expressvpn disconnect && expressvpn connect
+            ;;
+        "change mirror")
+            expressvpn disconnect && expressvpn connect $(pick_mirror)
+            ;;
+        disconnect)
+            expressvpn disconnect
+            ;;
+    esac
+}
+
+connected_menu() {
+    perform_connected_operation $(printf "reconnect\nchange mirror\ndisconnect" | dmenu -p "Choose operation:")
+}
+
+perform_disconnected_operation() {
+    operation=$@
+    case $operation in
+        latest )
+            expressvpn connect
+            ;;
+        "choose mirror")
+            expressvpn connect $(pick_mirror)
+            ;;
+    esac
+}
+
+
+disconnected_menu() {
+    perform_disconnected_operation $(printf "latest\nchoose mirror" | dmenu -p "Choose operation:")
+}
+
+
+status=$(expressvpn status | awk '/[Cc]onnected/ { gsub(/\x1B\[[0-9];[0-9]+;[0-9]+[mK]/, "", $0); print $1 }' || echo "Uninstalled")
+case $status in
+    Connected)
+        connected_menu
+        ;;
+    Not)
+        disconnected_menu
+        ;;
+esac
