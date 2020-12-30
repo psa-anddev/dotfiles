@@ -16,7 +16,7 @@ startup = do
         spawnOnce "dunst"
         spawnOnce "flameshot"
         spawnOnce "udiskie"
-        spawnOnce "~/repos/dotfiles/scripts/tasks_notify"
+        spawnOnce "tasks_notify"
 
 configuration = defaultConfig
 	{ terminal = defaultTerminal
@@ -36,11 +36,11 @@ myShortcuts =
     [("M-C-q", spawn "betterlockscreen -l")
     , ("M-<Space>", spawn "dmenu_run")
     , ("M-p", sendMessage NextLayout)
-    , ("M-C-p", spawn "~/repos/dotfiles/scripts/dmenu_power")
-    , ("M-S-p", spawn (defaultTerminal ++ " -e pulsemixer"))
-    , ("<XF86AudioRaiseVolume>", spawn "~/repos/dotfiles/scripts/volume_control -i 5")
-    , ("<XF86AudioLowerVolume>", spawn "~/repos/dotfiles/scripts/volume_control -d 5")
-    , ("<XF86AudioMute>", spawn "~/repos/dotfiles/scripts/volume_control -t")
+    , ("M-C-p", spawn "dmenu_power")
+    , ("M-S-p", spawn "preferences_menu")
+    , ("<XF86AudioRaiseVolume>", spawn "volume_control -i 5")
+    , ("<XF86AudioLowerVolume>", spawn "volume_control -d 5")
+    , ("<XF86AudioMute>", spawn "volume_control -t")
     , ("M-S-b", spawn "qutebrowser")
     , ("M-v", spawn (defaultTerminal ++ " -e nvim"))
     , ("M-c", spawn "rambox")
@@ -48,11 +48,11 @@ myShortcuts =
     , ("M-s", spawn (defaultTerminal ++ " -e newsboat"))
     , ("M-S-s", spawn (defaultTerminal ++ " -e podboat"))
     , ("M-S-v", spawn "vlc")
-    , ("M-S-m", spawn "~/repos/dotfiles/scripts/meetings")
+    , ("M-S-m", spawn "meetings")
     , ("<Print>", spawn "flameshot full -p ~/pictures/screenshots/")
     , ("M-<Print>", spawn "flameshot gui")
     , ("M-C-m", spawn(defaultTerminal ++ " -e neomutt"))
-    , ("M-/", spawn "~/repos/dotfiles/scripts/safe_passmenu")
+    , ("M-/", spawn "safe_passmenu")
     , ("M-C-a", taskWarriorPrompt promptConfig)
     , ("M-C-v", spawn "clipmenu")
     ]
