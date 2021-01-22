@@ -1,2 +1,2 @@
 #!/bin/sh
-expressvpn status | awk '/onnected/ { print ($1=="Not")?$1 " " $2 " ":substr($1, 11) " - " $5 "(" $3 ") " }' || echo "Not installed "
+type expressvpn > /dev/null && expressvpn status | awk '/onnected/ { print ($1=="Not")?$1 " " $2 " ":substr($1, 11) " - " $5 "(" $3 ") " }' || echo "Not installed "
