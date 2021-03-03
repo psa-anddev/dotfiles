@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
 import XMonad.Prompt
@@ -18,7 +19,7 @@ startup = do
         spawnOnce "udiskie"
         spawnOnce "tasks_notify"
 
-configuration = defaultConfig
+configuration = ewmh defaultConfig
 	{ terminal = defaultTerminal
 	, modMask = mod4Mask
 	, borderWidth = 3
