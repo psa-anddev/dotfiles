@@ -1,0 +1,2 @@
+#!/bin/sh
+youtube-dl $1 -o - | mpv -
