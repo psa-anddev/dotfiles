@@ -29,5 +29,6 @@ bind-key q hard-quit
 bind-key ^S save
 
 macro v set browser "mpv"; open-in-browser ; set browser "qutebrowser"
+macro V set browser "ytdl-mpv"; open-in-browser; set browser "qutebrowser"
 download-path "~/podcasts/%n"
 player "vlc --one-instance --playlist-enqueue"
