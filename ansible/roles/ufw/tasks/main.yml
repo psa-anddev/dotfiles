@@ -1,0 +1,12 @@
+- name: Install ufw
+  become: yes
+  pacman:
+      name: ufw
+      state: present
+
+- name: Enable ufw service
+  become: yes
+  systemd:
+      name: "ufw.service"
+      enabled: yes
+      state: started
