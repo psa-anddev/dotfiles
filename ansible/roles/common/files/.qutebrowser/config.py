@@ -71,7 +71,7 @@ config.bind(",tm", "hint links spawn transmission-remote localhost -a \"{hint-ur
 config.bind(",td", "hint links spawn transmission-remote localhost -a \"{hint-url}\" -w " + homeFolder + "/downloads")
 
 # Enable dark mode
-config.set("colors.webpage.darkmode.enabled", True)
+config.set("colors.webpage.darkmode.enabled", False)
 
 # Load autoconfiguration (mainly for avoiding having to grant permission to things over and over)
 config.load_autoconfig()
