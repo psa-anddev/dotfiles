@@ -1,4 +1,5 @@
 set realname="Pablo Sánchez Alonso"
+set from=psa.anddev@gmail.com
 
 set sendmail="/usr/bin/msmtp -a development"
 

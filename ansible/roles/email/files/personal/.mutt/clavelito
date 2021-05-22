@@ -1,4 +1,5 @@
 set realname="Jenny Tan & Pablo Sánchez Alonso"
+set from=stjennypablo@gmail.com
 
 set sendmail="/usr/bin/msmtp -a clavelito"
 

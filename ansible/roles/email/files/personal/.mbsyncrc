@@ -21,6 +21,29 @@ Create Both
 Expunge Both
 SyncState *
 
+IMAPAccount tansanchez
+Host mail.tansanchez.net
+User pablo
+PassCmd "pass Personal/tansanchez/password"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore tansanchez-remote
+Account tansanchez
+
+MaildirStore tansanchez-local
+Subfolders Verbatim
+Path ~/.mail/tansanchez/
+Inbox ~/.mail/tansanchez/INBOX
+
+Channel tansanchez
+Master :tansanchez-remote:
+Slave :tansanchez-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
 IMAPAccount spam
 Host imap.gmail.com
 User pablo.sanchez.alonso.uk@gmail.com
