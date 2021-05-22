@@ -30,3 +30,9 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/no-color.theme
 
 default.project=inbox
+taskd.server=tansanchez.net:53589
+taskd.credentials=tansanchez/pablo/65ade99a-c3c4-4a09-bcd2-c3afacb19cff
+taskd.certificate=~/.task/pablo.cert.pem
+taskd.key=~/.task/pablo.key.pem
+taskd.ca=~/.task/ca.cert.pem
+taskd.trust=strict
