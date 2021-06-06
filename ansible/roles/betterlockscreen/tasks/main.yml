@@ -6,7 +6,7 @@
 
 - name: Install betterlockscreen
   aur:
-      name: betterlockscreen
+      name: betterlockscreen-git
       use: yay
 
 - name: Symlink betterlockscreen configuraion
