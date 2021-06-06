@@ -31,5 +31,9 @@ set shiftwidth=4
 " --------- Reminder to use folders
 set foldlevelstart=1
 
+" ----- Treesitter folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 " Reduce timeout len in order to display keybindings help
 set timeoutlen=500

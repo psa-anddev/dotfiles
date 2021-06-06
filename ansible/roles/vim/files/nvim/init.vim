@@ -8,3 +8,4 @@ source ~/.config/nvim/crontab_config.vim
 source ~/.config/nvim/lsp_config.vim
 source ~/.config/nvim/whichkey_config.vim
 source ~/.config/nvim/rainbow_config.vim
+luafile ~/.config/nvim/treesitter.lua

@@ -7,10 +7,13 @@ Plug 'tpope/vim-surround' "Surround plugin - Adds operation to change the surrou
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'blueshirts/darcula' "Darcula theme
+Plug 'doums/darcula' "Darcula theme
 
 "Git integration
 Plug 'tpope/vim-fugitive'
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "Lisp/Clojure plugins
 Plug 'guns/vim-sexp' "Add textobjects for lispy-like functions and other stuff.
