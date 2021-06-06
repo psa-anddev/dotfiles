@@ -9,3 +9,4 @@ source ~/.config/nvim/lsp_config.vim
 source ~/.config/nvim/whichkey_config.vim
 source ~/.config/nvim/rainbow_config.vim
 luafile ~/.config/nvim/treesitter.lua
+source ~/.config/nvim/completion.vim

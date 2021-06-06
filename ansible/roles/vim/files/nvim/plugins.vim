@@ -50,10 +50,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 
 " Language Server client
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neovim/nvim-lspconfig'
 
 " FZF plugin
 Plug 'junegunn/fzf'
@@ -66,13 +63,8 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Keyboard shortcuts help
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'nvim-lua/completion-nvim'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -81,4 +73,3 @@ Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-projectionist'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
-let g:deoplete#enable_at_startup = 1
