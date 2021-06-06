@@ -1,8 +1,6 @@
 - name: Install Neovim
-  become: yes
-  pacman:
-          name: neovim
-          state: present
+  aur:
+          name: neovim-nightly-bin
 
 - name: Install Python support for Neovim
   become: yes
