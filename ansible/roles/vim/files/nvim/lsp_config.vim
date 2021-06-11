@@ -39,5 +39,6 @@ end
 nvim_lsp.texlab.setup{ on_attach = on_attach }
 nvim_lsp.clojure_lsp.setup{ on_attach = on_attach }
 nvim_lsp.kotlin_language_server.setup { on_attach = on_attach }
+nvim_lsp.pyright.setup { on_attach = on_attach }
 
 EOF
