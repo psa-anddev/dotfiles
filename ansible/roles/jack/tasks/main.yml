@@ -1,0 +1,35 @@
+- name: Install Jack 2
+  become: yes
+  pacman:
+    name: jack2
+    state: present
+
+- name: Install Jack 2 DBUS
+  become: yes
+  pacman:
+    name: jack2-dbus
+    state: present
+
+- name: Install Jack bridge with PulseAudio
+  become: yes
+  pacman:
+    name: pulseaudio-jack
+    state: present
+
+- name: Install Cadence
+  become: yes
+  pacman:
+    name: cadence
+    state: present
+
+- name: Install Realtime privileges
+  become: yes
+  pacman:
+    name: realtime-privileges
+    state: present
+
+- name: Add current user to audio and realtime groups
+  user:
+    name: '{{ user }}'
+    groups: audio,realtime
+    append: yes

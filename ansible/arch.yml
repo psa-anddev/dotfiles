@@ -6,6 +6,7 @@
           - ufw
           - bluetooth
           - pulseaudio
+          - jack
           - monitors
           - xmonad
           - lightdm
