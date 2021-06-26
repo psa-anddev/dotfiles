@@ -51,6 +51,7 @@ Plug 'mileszs/ack.vim'
 
 " Language Server client
 Plug 'neovim/nvim-lspconfig'
+Plug 'mfussenegger/nvim-jdtls'
 
 " FZF plugin
 Plug 'junegunn/fzf'
