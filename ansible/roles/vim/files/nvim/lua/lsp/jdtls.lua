@@ -8,9 +8,23 @@ function M.setup()
 
         buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+        require'formatter'.setup({
+            filetype = {
+                java = {
+                    function()
+                        return {
+                            exe = os.getenv('HOME') .. '/.local/bin/google-formater',
+                            args = { vim.api.nvim_buf_get_name(0) },
+                            stdin = true
+                        }
+                    end
+                }
+            }
+        })
+
         -- Mappings.
         local opts = { noremap=true, silent=true }
-    
+
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         buf_set_keymap('n', '<leader>lgD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
         buf_set_keymap('n', '<leader>lgd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -28,7 +42,8 @@ function M.setup()
         buf_set_keymap('n', '<leader>ldp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
         buf_set_keymap('n', '<leader>ldn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
         buf_set_keymap('n', '<leader>ldl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-        buf_set_keymap("n", "<Leader>l=", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        buf_set_keymap("n", "<leader>l=", "<cmd>Format<CR>", opts)
+
     end
     local config = {
         flags = {
@@ -39,9 +54,14 @@ function M.setup()
 
     }
     config.cmd = {'start_java_lsp'}
+    config.on_attach = on_attach
     config.on_init = function(client, _)
         client.notify('workspace/didChangeConfiguration', { settings = config.settings })
     end
+    config.settings = {
+        ['java.format.settings.url'] = os.getenv('HOME') .. "/.config/java/google-style.xml",
+        ['java.format.settings.profile'] = "GoogleStyle"
+    }
     require('jdtls').start_or_attach(config)
 end
 

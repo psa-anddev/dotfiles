@@ -65,6 +65,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 Plug 'nvim-lua/completion-nvim'
+Plug 'mhartington/formatter.nvim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
