@@ -5,3 +5,4 @@ set header_cache=~/.cache/mutt
 auto_view text/html
 macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 macro attach 'V' "<pipe-entry>iconv -c --to-code=UTF8 > ~/.cache/mutt/mail.html<enter><shell-escape>qutebrowser ~/.cache/mutt/mail.html<enter>"
+set edit_headers=yes
