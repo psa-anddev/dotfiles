@@ -54,4 +54,6 @@ augroup jdtls_lsp
 augroup END
 ]], true)
 
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
 EOF
