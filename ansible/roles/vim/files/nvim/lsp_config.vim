@@ -44,6 +44,7 @@ nvim_lsp.clojure_lsp.setup{ on_attach = on_attach }
 nvim_lsp.kotlin_language_server.setup { on_attach = on_attach }
 nvim_lsp.pyright.setup { on_attach = on_attach }
 nvim_lsp.vimls.setup { on_attach = on_attach }
+nvim_lsp.hls.setup { on_attach = on_attach }
 require('lsp.sumneko_lua').setup(on_attach)
 
 vim.api.nvim_exec([[
