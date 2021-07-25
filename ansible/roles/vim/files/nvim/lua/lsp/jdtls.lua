@@ -29,7 +29,7 @@ function M.setup()
             l = {
                 name = 'lsp',
                 k = { function() require('lspsaga.signaturehelp').signature_help() end, 'signature help' },
-                [ "=" ] = { "<cmd>Format<CR>", "reformat" },
+                [ "=" ] = { function() vim.cmd("Format") end, "reformat" },
                 t = { function () vim.lsp.buf.type_definition() end, 'type definition' },
                 g = {
                     name = "go to",
