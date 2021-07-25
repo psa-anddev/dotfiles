@@ -31,7 +31,7 @@ l = {
         r = {
                 name = "refactor",
                 r = { function () vim.lsp.buf.rename() end, 'rename' },
-                q = { function () require('lspsaga.codeaction').code_action() end, 'code actions' }
+                q = { function () require('telescope.builtin').lsp_code_actions() end, 'code actions' }
             },
         d = {
                 name = 'diagnostics',
