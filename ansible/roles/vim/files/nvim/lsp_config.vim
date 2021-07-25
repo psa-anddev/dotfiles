@@ -15,32 +15,32 @@ l = {
         name = "lsp",
         g = {
                 name = "go-to",
-                D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'declaration' },
-                d = { '<Cmd>lua vim.lsp.buf.definition()<CR>', 'definition' },
-                i = {  '<cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation' },
-                r = {  '<cmd>lua vim.lsp.buf.references()<CR>', 'references' }
+                D = { function () vim.lsp.buf.declaration() end, 'declaration' },
+                d = { function () vim.lsp.buf.definition() end, 'definition' },
+                i = {  function () vim.lsp.buf.implementation() end, 'implementation' },
+                r = {  function () vim.lsp.buf.references() end, 'references' }
             },
-        k = { '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', 'signature help' }, 
+        k = { function () require('lspsaga.signaturehelp').signature_help() end, 'signature help' }, 
         w = {
                 name = "workspace",
-                a = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'add folder' },
-                r = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'remove folder' },
-                l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'list folders' } 
+                a = { function () vim.lsp.buf.add_workspace_folder() end, 'add folder' },
+                r = { function () vim.lsp.buf.remove_workspace_folder() end, 'remove folder' },
+                l = { function () print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'list folders' } 
             },
-        t = {  '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition' },
+        t = {  function () vim.lsp.buf.type_definition() end, 'type definition' },
         r = {
                 name = "refactor",
-                r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
-                q = { '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', 'code actions' }
+                r = { function () vim.lsp.buf.rename() end, 'rename' },
+                q = { function () require('lspsaga.codeaction').code_action() end, 'code actions' }
             },
         d = {
                 name = 'diagnostics',
-                s = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'show line' },
-                p = {  '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'go to previous' },
-                n = {  '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'go to next' },
-                l = {  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'set local list' }
+                s = { function () vim.lsp.diagnostic.show_line_diagnostics() end, 'show line' },
+                p = {  function () vim.lsp.diagnostic.goto_prev() end, 'go to previous' },
+                n = {  function () vim.lsp.diagnostic.goto_next() end, 'go to next' },
+                l = {  function () vim.lsp.diagnostic.set_loclist() end, 'set local list' }
             },
-        [ "=" ] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", 'reformat' } 
+        [ "=" ] = { function () vim.lsp.buf.formatting() end, 'reformat' } 
     }
 }, { prefix = "<leader>" })
 end
