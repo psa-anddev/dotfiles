@@ -1,43 +1,48 @@
-" autocmd BufReadPost *.kt setlocal filetype=kotlin
-
-" let g:LanguageClient_serverCommands = {
-"     \ 'kotlin': ["~/repos/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
 "     \ 'xml': ["java", "-jar", "~/repos/xml-lsp/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"],
-"     \ 'java': ["~/repos/dotfiles/scripts/start_java_lsp"],
-"     \ 'tex' : ["~/repos/latex-lsp/texlab"],
-"     \ 'clojure': ["sh", "-c", "~/repos/clojure-lsp/clojure-lsp"]
-"     \ }
 
 autocmd BufReadPost *.tex setlocal filetype=tex
 lua << EOF
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
-local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
 buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 -- Mappings.
-local opts = { noremap=true, silent=true }
-
--- See `:help vim.lsp.*` for documentation on any of the below functions
-buf_set_keymap('n', '<leader>lgD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-buf_set_keymap('n', '<leader>lgd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-buf_set_keymap('n', 'K', '<Cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', opts)
-buf_set_keymap('n', '<leader>lgi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-buf_set_keymap('n', '<leader>lk', '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', opts)
-buf_set_keymap('n', '<leader>lwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-buf_set_keymap('n', '<leader>lwr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-buf_set_keymap('n', '<leader>lwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-buf_set_keymap('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-buf_set_keymap('n', '<leader>lrr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-buf_set_keymap('n', '<leader>lrq', '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', opts)
-buf_set_keymap('n', '<Leader>lgr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-buf_set_keymap('n', '<leader>lds', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-buf_set_keymap('n', '<leader>ldp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-buf_set_keymap('n', '<leader>ldn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-buf_set_keymap('n', '<leader>ldl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-buf_set_keymap("n", "<Leader>l=", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+local wk = require('which-key')
+wk.register({ K = { '<Cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', 'hover docs' } }, {})
+wk.register({
+l = {
+        name = "lsp",
+        g = {
+                name = "go-to",
+                D = { '<Cmd>lua vim.lsp.buf.declaration()<CR>', 'declaration' },
+                d = { '<Cmd>lua vim.lsp.buf.definition()<CR>', 'definition' },
+                i = {  '<cmd>lua vim.lsp.buf.implementation()<CR>', 'implementation' },
+                r = {  '<cmd>lua vim.lsp.buf.references()<CR>', 'references' }
+            },
+        k = { '<cmd>lua require(\'lspsaga.signaturehelp\').signature_help()<CR>', 'signature help' }, 
+        w = {
+                name = "workspace",
+                a = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'add folder' },
+                r = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'remove folder' },
+                l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'list folders' } 
+            },
+        t = {  '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition' },
+        r = {
+                name = "refactor",
+                r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename' },
+                q = { '<cmd>lua require(\'lspsaga.codeaction\').code_action()<CR>', 'code actions' }
+            },
+        d = {
+                name = 'diagnostics',
+                s = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'show line' },
+                p = {  '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'go to previous' },
+                n = {  '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'go to next' },
+                l = {  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'set local list' }
+            },
+        [ "=" ] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", 'reformat' } 
+    }
+}, { prefix = "<leader>" })
 end
 nvim_lsp.texlab.setup{ on_attach = on_attach }
 nvim_lsp.clojure_lsp.setup{ on_attach = on_attach }
