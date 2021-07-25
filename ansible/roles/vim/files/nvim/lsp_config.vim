@@ -9,7 +9,7 @@ buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 -- Mappings.
 local wk = require('which-key')
-wk.register({ K = { '<Cmd>lua require(\'lspsaga.hover\').render_hover_doc()<CR>', 'hover docs' } }, {})
+wk.register({ K = { function () require('lspsaga.hover').render_hover_doc() end, 'hover docs' } }, {})
 wk.register({
 l = {
         name = "lsp",
