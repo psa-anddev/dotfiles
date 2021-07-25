@@ -3,6 +3,7 @@ let mapleader=" "
 
 lua << EOF
 local wk = require('which-key')
+local telescope = require('telescope.builtin')
 wk.register({
 f = { function() vim.cmd("NERDTreeToggle") end, "toggle file browser" },
 g = {
@@ -16,11 +17,15 @@ g = {
         k = { function () vim.cmd("Git push") end, 'push' },
         t = { function () vim.cmd("Git pull") end, 'pull' },
         m = { function () vim.cmd("Git mergetool") end, 'merge tool' },
-        f = { function () vim.cmd("GFiles") end, 'find files in repository' },
-        F = { function () vim.cmd("GFiles?") end, 'find files in repository with untracked' }
+        f = {
+            name = "find",
+            f = { function () telescope.git_files() end, 'find files in repository' },
+            s = { function () telescope.git_status() end, 'find files in repository that are staged' },
+            b = { function () telescope.git_branches() end, 'find branches' },
+        }
     },
-["<leader>"] = { function () vim.cmd("Files") end, "find files" },
-L = { function () vim.cmd("Lines") end, "find lines" },
-B = { function () vim.cmd("Buffers") end, "find buffers" }
+["<leader>"] = { function () telescope.find_files() end, "find files" },
+L = { function () telescope.live_grep() end, "find lines" },
+B = { function () telescope.buffers() end, "find buffers" }
 }, { prefix = "<leader>" })
 EOF
