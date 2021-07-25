@@ -38,6 +38,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Gradle / Android
 Plug 'hsanson/vim-android'
@@ -59,11 +60,16 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 " Colour previews
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Keyboard shortcuts help
-" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'folke/which-key.nvim'
 
 Plug 'nvim-lua/completion-nvim'

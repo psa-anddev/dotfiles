@@ -6,6 +6,7 @@ source ~/.config/nvim/ack_config.vim
 source ~/.config/nvim/nerdtree_config.vim
 source ~/.config/nvim/crontab_config.vim
 lua require('whichkey')
+lua require('finder')
 source ~/.config/nvim/lsp_config.vim
 source ~/.config/nvim/completion.vim
 source ~/.config/nvim/rainbow_config.vim
