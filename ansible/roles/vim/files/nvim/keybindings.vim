@@ -4,23 +4,23 @@ let mapleader=" "
 lua << EOF
 local wk = require('which-key')
 wk.register({
-f = { "<cmd>NERDTreeToggle<CR>", "toggle file browser" },
+f = { function() vim.cmd("NERDTreeToggle") end, "toggle file browser" },
 g = {
         name = 'git',
-        s = { '<cmd>Git<CR>', 'status' },
-        w = { '<cmd>Gwrite<CR>', 'stage' },
-        r = { '<cmd>Gread<CR>', 'revert changes' },
-        c = { '<cmd>Git commit<CR>', 'commit' },
-        b = { '<cmd>Git blame<CR>', 'blame' }, 
-        l = { '<cmd>Git log<CR>', 'log' },
-        k = { '<cmd>Git push<CR>', 'push' },
-        t = { '<cmd>Git pull<CR>', 'pull' },
-        m = { '<cmd>Git mergetool<CR>', 'merge tool' },
-        f = { '<cmd>GFiles<CR>', 'find files in repository' },
-        F = { '<cmd>GFiles?<CR>', 'find files in repository with untracked' }
+        s = { function () vim.cmd("Git") end, 'status' },
+        w = { function () vim.cmd("Gwrite") end, 'stage' },
+        r = { function () vim.cmd("Gread") end, 'revert changes' },
+        c = { function () vim.cmd("Git commit") end, 'commit' },
+        b = { function () vim.cmd("Git blame") end, 'blame' }, 
+        l = { function () vim.cmd("Git log") end, 'log' },
+        k = { function () vim.cmd("Git push") end, 'push' },
+        t = { function () vim.cmd("Git pull") end, 'pull' },
+        m = { function () vim.cmd("Git mergetool") end, 'merge tool' },
+        f = { function () vim.cmd("GFiles") end, 'find files in repository' },
+        F = { function () vim.cmd("GFiles?") end, 'find files in repository with untracked' }
     },
-["<leader>"] = { "<cmd>Files<CR>", "find files" },
-L = { "<cmd>Lines<CR>", "find lines" },
-B = { "<cmd>Buffers<CR>", "find buffers" }
+["<leader>"] = { function () vim.cmd("Files") end, "find files" },
+L = { function () vim.cmd("Lines") end, "find lines" },
+B = { function () vim.cmd("Buffers") end, "find buffers" }
 }, { prefix = "<leader>" })
 EOF
