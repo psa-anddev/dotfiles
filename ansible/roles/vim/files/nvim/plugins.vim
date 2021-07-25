@@ -55,11 +55,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'glepnir/lspsaga.nvim'
 
-" FZF plugin
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
