@@ -55,6 +55,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'glepnir/lspsaga.nvim'
 
+" Debugger Adapter Protocol
+Plug 'mfussenegger/nvim-dap'
+
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'

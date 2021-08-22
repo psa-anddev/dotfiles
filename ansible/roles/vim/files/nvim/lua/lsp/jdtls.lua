@@ -1,7 +1,10 @@
 local M = {}
+local server = require('jdtls')
 
 function M.setup()
     local on_attach = function (client, bufnr)
+        server.setup_dap()
+        require('jdtls.dap').setup_dap_main_class_configs()
         require 'jdtls.setup'.add_commands()
         local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -64,9 +67,14 @@ function M.setup()
             allow_incremental_sync = true
         },
         on_attach = on_attach, 
-        root_dir = require('jdtls.setup').find_root({'build.gradle', 'build.gradle.kts', 'pom.xml'})
+        root_dir = require('jdtls.setup').find_root({'settings.gradle', 'settings.gradle.kts', 'pom.xml'})
 
     }
+    local bundles = {
+        vim.fn.glob(os.getenv("HOME") .. "/repos/dap/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+    };
+    vim.list_extend(bundles, vim.split(vim.fn.glob(os.getenv("HOME") .. "/repos/lsp/java/vscode-java-test/server/*.jar"), "\n"))
+
     config.cmd = {'start_java_lsp'}
     config.on_attach = on_attach
     config.on_init = function(client, _)
@@ -76,7 +84,10 @@ function M.setup()
         ['java.format.settings.url'] = os.getenv('HOME') .. "/.config/java/google-style.xml",
         ['java.format.settings.profile'] = "GoogleStyle"
     }
-    require('jdtls').start_or_attach(config)
+    config['init_options'] = {
+        bundles = bundles
+    }
+    server.start_or_attach(config)
 end
 
 local finders = require'telescope.finders'
