@@ -33,12 +33,12 @@ function M.setup()
                 name = 'lsp',
                 k = { function() require('lspsaga.signaturehelp').signature_help() end, 'signature help' },
                 [ "=" ] = { function() vim.cmd("Format") end, "reformat" },
-                t = { function () vim.lsp.buf.type_definition() end, 'type definition' },
                 g = {
                     name = "go to",
                     D = { function () vim.lsp.buf.declaration() end, 'declaration' },
                     d = {  function () vim.lsp.buf.definition() end, 'definition' },
                     i = {  function () vim.lsp.buf.implementation() end, 'implementation' },
+                    t = { function () vim.lsp.buf.type_definition() end, 'type definition' },
                     r = {  function () vim.lsp.buf.references() end, 'references' }
                 },
                 w = {
@@ -58,6 +58,11 @@ function M.setup()
                     p = { function () vim.lsp.diagnostic.goto_prev() end, 'go to previous' },
                     n = {function () vim.lsp.diagnostic.goto_next() end, 'go to next' },
                     l = {function () vim.lsp.diagnostic.set_loclist() end, 'set local list' },
+                },
+                t = {
+                    name = "test",
+                    c = { function() server.test_class() end, "class" },
+                    n = { function() server.test_nearest_method() end, "nearest" }
                 }
             }
         }, { prefix = "<leader>"})
