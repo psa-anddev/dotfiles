@@ -1,0 +1,22 @@
+- name: Install mpd
+  become: yes
+  pacman:
+    name: mpd
+    state: present
+
+- name: Install mpc
+  become: yes
+  pacman:
+    name: mpc
+    state: present
+
+- name: Symlink MPD configuration
+  file:
+    src: "{{ ansible_env.PWD }}/roles/mpd/files/mpd"
+    path: ~/.config/mpd
+    state: link
+
+- name: Create playlists directory
+  file:
+    path: ~/.local/share/mpd/playlists
+    state: directory

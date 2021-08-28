@@ -1,0 +1,4 @@
+#!/bin/sh
+mpc update
+echo "$1" | sed 's@'"$HOME"/'@@' | mpc add
+
