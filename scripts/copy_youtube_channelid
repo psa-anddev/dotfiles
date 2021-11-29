@@ -1,0 +1,2 @@
+#/bin/sh
+curl $1 | grep 'channelId" content=".\{25\}' -o | cut -d'=' -f2 | sed 's/"//g' | xsel -ib
