@@ -21,3 +21,15 @@
     src: "{{ ansible_env.PWD }}/roles/dav/files/khal"
     path: ~/.config/khal
     state: link
+
+- name: Install Khard
+  become: yes
+  pacman:
+    name: khard
+    state: present
+
+- name: Symlink khard configuration files
+  file:
+    src: "{{ ansible_env.PWD }}/roles/dav/files/khard"
+    path: ~/.config/khard
+    state: link
