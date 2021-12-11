@@ -1,0 +1,11 @@
+- name: Install vdirsyncer
+  become: yes
+  pacman:
+    name: vdirsyncer
+    state: present
+
+- name: Symlink vdirsyncer configuration files
+  file:
+    src: "{{ ansible_env.PWD }}/roles/dav/files/vdirsyncer"
+    path: ~/.config/vdirsyncer
+    state: link
