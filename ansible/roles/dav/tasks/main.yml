@@ -9,3 +9,15 @@
     src: "{{ ansible_env.PWD }}/roles/dav/files/vdirsyncer"
     path: ~/.config/vdirsyncer
     state: link
+
+- name: Install Khal
+  become: yes
+  pacman: 
+    name: khal
+    state: present
+
+- name: Symlink khal configuration files
+  file:
+    src: "{{ ansible_env.PWD }}/roles/dav/files/khal"
+    path: ~/.config/khal
+    state: link
