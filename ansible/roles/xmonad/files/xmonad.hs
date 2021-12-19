@@ -79,5 +79,5 @@ taskWarriorPrompt::XPConfig->X()
 taskWarriorPrompt cfg = do
     str <- inputPrompt cfg "New Task: "
     case str of
-        Just s  -> spawn $ printf "task add %s" s
+        Just s  -> spawn $ printf "task add %s && task sync" s
         Nothing -> pure ()
