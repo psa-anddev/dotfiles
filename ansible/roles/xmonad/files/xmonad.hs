@@ -18,6 +18,7 @@ startup = do
         spawnOnce "flameshot"
         spawnOnce "udiskie"
         spawnOnce "tasks_notify"
+        spawnOnce "vdirsyncer sync"
 
 configuration = ewmh defaultConfig
 	{ terminal = defaultTerminal
