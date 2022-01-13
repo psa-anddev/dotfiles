@@ -32,3 +32,8 @@ macro v set browser "mpv"; open-in-browser ; set browser "qutebrowser"
 macro V set browser "ytdl-mpv"; open-in-browser; set browser "qutebrowser"
 download-path "~/podcasts/%n"
 player "podcast_player"
+
+urls-source "ocnews"
+ocnews-url "https://nextcloud.tansanchez.net"
+ocnews-login "pablo"
+ocnews-passwordeval "pass Personal/tansanchez/nextcloud/newsboat/pablo"
