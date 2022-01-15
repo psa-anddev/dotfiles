@@ -32,8 +32,9 @@ Config {
                                 , "--high"     , "darkred"
                                 ] 10
         , Run Com "/home/pablo/repos/dotfiles/scripts/expressvpn_xmobar" [] "expressvpn" 10
+        , Run CommandReader "pymodoro -pp '<fc=white><fn=1> </fn></fc>' -bp '<fc=white><fn=1></fn></fc>'" "pomodoro"
 	]
 	, iconRoot = "/home/pablo/.config/xmobar/xpm" -- default: "."
 	, alignSep = "}{"
-	, template = " <fc=white><fn=1> </fn></fc> <fc=#666666>|</fc> %StdinReader% }{ <fc=white><fn=1> </fn></fc> <fc=darkorange>%expressvpn%</fc> <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%dynnetwork%</fc>  <fc=#8BE9FD>%date%</fc>  "
+	, template = " <fc=white><fn=1> </fn></fc> <fc=#666666>|</fc> %StdinReader% }{ <fc=red>%pomodoro%</fc> <fc=white><fn=1> </fn></fc> <fc=darkorange>%expressvpn%</fc> <fc=#779900>%battery%</fc> <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%dynnetwork%</fc>  <fc=#8BE9FD>%date%</fc>  "
 }
