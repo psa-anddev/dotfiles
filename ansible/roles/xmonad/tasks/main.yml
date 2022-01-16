@@ -46,3 +46,15 @@
   copy:
       src: /usr/share/xsessions/xmonad.desktop
       dest: /usr/share/xsessions/default.desktop
+
+- name: Ensure the hooks folder for Pacman exists
+  become: yes
+  file:
+    path: /etc/pacman.d/hooks
+    state: directory
+
+- name: Hook to recompile Xmonad upon update
+  become: yes
+  template:
+    src: "{{ ansible_env.PWD }}/roles/xmonad/templates/pacman-hook.j2"
+    dest: "/etc/pacman.d/hooks/xmonad-{{ ansible_user_id }}.hook"
