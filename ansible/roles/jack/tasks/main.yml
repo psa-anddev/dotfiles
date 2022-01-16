@@ -29,7 +29,8 @@
     state: present
 
 - name: Add current user to audio and realtime groups
+  become: yes
   user:
-    name: '{{ user }}'
+    name: '{{ ansible_user_id }}'
     groups: audio,realtime
     append: yes
