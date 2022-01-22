@@ -1,0 +1,60 @@
+- name: Installs Pipewire
+  become: yes
+  pacman:
+    name: pipewire
+    state: present
+
+- name: Remove PulseAudio Jack
+  become: yes
+  pacman:
+    name: pulseaudio-jack
+    state: absent
+
+- name: Remove pulsemixer
+  become: yes
+  pacman:
+    name: pulsemixer
+    state: absent
+
+- name: Remove PulseAudio Bluetooth
+  become: yes
+  pacman:
+    name: pulseaudio-bluetooth
+    state: absent
+
+- name: Remove Pulse Alsa bridge to use pipewire
+  become: yes
+  pacman:
+    name: pulseaudio-alsa
+    state: absent
+
+- name: Remove PulseAudio
+  become: yes
+  pacman:
+    name: pulseaudio
+    state: absent
+
+
+- name: Install Pipewire bridge to PulseAudio
+  become: yes
+  pacman:
+    name: pipewire-alsa
+    state: present
+
+- name: Install Pipewire drop-in replacement for PulseAudio
+  become: yes
+  pacman:
+    name: pipewire-pulse
+    state: present
+
+- name: Remove Jack
+  become: yes
+  pacman:
+    name: jack2
+    state: absent
+
+- name: Install pipewire drop-in replacement for Jack
+  become: yes
+  pacman:
+    name: pipewire-jack
+    state: present
