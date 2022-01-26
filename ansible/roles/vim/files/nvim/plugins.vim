@@ -71,12 +71,19 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Keyboard shortcuts help
 Plug 'folke/which-key.nvim'
 
-Plug 'nvim-lua/completion-nvim'
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'mhartington/formatter.nvim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 " Coloured parenthesis (for Lisp)
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-projectionist'

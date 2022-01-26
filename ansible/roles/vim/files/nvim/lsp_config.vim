@@ -44,13 +44,15 @@ l = {
     }
 }, { prefix = "<leader>" })
 end
-nvim_lsp.texlab.setup{ on_attach = on_attach }
-nvim_lsp.clojure_lsp.setup{ on_attach = on_attach }
-nvim_lsp.kotlin_language_server.setup { on_attach = on_attach }
-nvim_lsp.pyright.setup { on_attach = on_attach }
-nvim_lsp.vimls.setup { on_attach = on_attach }
-nvim_lsp.hls.setup { on_attach = on_attach }
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+nvim_lsp.texlab.setup{ on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.clojure_lsp.setup{ on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.kotlin_language_server.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.pyright.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.vimls.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.hls.setup { on_attach = on_attach, capabilities = capabilities }
 require('lsp.sumneko_lua').setup(on_attach)
+nvim_lsp.racket_langserver.setup{ on_attach = on_attach, capabilities = capabilities }
 
 vim.api.nvim_exec([[
 augroup jdtls_lsp

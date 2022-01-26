@@ -1,8 +1,19 @@
 set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-autocmd BufEnter * lua require'completion'.on_attach()
-let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
-let g:completion_matching_smart_case = 1
 
+lua <<EOF
+    local cmp = require'cmp'
 
+    cmp.setup({
+        snippet = {
+            expand = function(args)
+                vim.fn["UltiSnips#Anon"](args.body)
+            end,
+        },
+        sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+            { name = 'ultisnips' },
+        }, {
+            { name = 'buffer' },
+        })
+    })
+EOF
