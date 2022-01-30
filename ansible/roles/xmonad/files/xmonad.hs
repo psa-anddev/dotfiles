@@ -2,32 +2,34 @@ import XMonad
 import XMonad.Util.SpawnOnce
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
+import XMonad.Layout.ShowWName
 import XMonad.Prompt
 import XMonad.Prompt.Input
 import Text.Printf
 
 main = xmonad =<< statusBar upBar upBarConfiguration upBarToggleStructsKey configuration
-startup = do
-	spawnOnce "xrdb -merge ~/.Xresources"
-	spawnOnce "~/.fehbg"
-        spawnOnce "picom"
-        spawnOnce "clipmenud"
-        spawnOnce "dunst"
-        spawnOnce "flameshot"
-        spawnOnce "udiskie"
-        spawnOnce "tasks_notify"
-        spawnOnce "vdirsyncer sync"
+startup = do 
+    spawnOnce "xrdb -merge ~/.Xresources"
+    spawnOnce "~/.fehbg"
+    spawnOnce "picom"
+    spawnOnce "clipmenud"
+    spawnOnce "dunst"
+    spawnOnce "flameshot"
+    spawnOnce "udiskie"
+    spawnOnce "tasks_notify"
+    spawnOnce "vdirsyncer sync"
 
-configuration = ewmh defaultConfig
-	{ terminal = defaultTerminal
-	, modMask = mod4Mask
-	, borderWidth = 3
-	, startupHook = startup
-        , workspaces = workspacesConfiguration
-        , layoutHook = layoutHookConfiguration
-	} `additionalKeysP` myShortcuts
+configuration = ewmh def
+    { terminal = defaultTerminal
+    , modMask = mod4Mask
+    , borderWidth = 3
+    , startupHook = startup
+    , workspaces = workspacesConfiguration
+    , layoutHook = layoutHookConfiguration
+    } `additionalKeysP` myShortcuts
 
 upBar = "xmobar"
 upBarConfiguration = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" }
@@ -63,7 +65,12 @@ workspacesConfiguration :: [String]
 workspacesConfiguration = ["dev", "www", "chat", "sys", "doc", "mus", "ex1", "ex2"]
 
 -- Layouts
-layoutHookConfiguration = Tall 1 (3/100) (1/2) ||| noBorders Full ||| Mirror(Tall 1 (3/100) (1/2))
+tall = Tall 1 (3/100) (1/2)
+full = noBorders Full
+mirrorTall = Mirror tall
+layoutHookConfiguration = showWName' windowNameConfiguration defaultLayouts
+    where
+        defaultLayouts = tall ||| full ||| mirrorTall
 
 -- Prompts
 myFont :: String
@@ -81,3 +88,11 @@ taskWarriorPrompt cfg = do
     case str of
         Just s  -> spawn $ printf "task add %s && task sync" s
         Nothing -> pure ()
+
+-- Show workspace name configuration
+windowNameConfiguration :: SWNConfig
+windowNameConfiguration = def
+    { swn_font = "xft:SauceCodePro Nerd Font Mono:bold:size=60:antialias=true:hinting=true"
+    , swn_bgcolor = "#1c1f24"
+    , swn_color = "#ffffff"
+    }
