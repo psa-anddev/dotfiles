@@ -59,6 +59,8 @@ myShortcuts =
     , ("M-/", spawn "safe_passmenu")
     , ("M-C-a", taskWarriorPrompt promptConfig)
     , ("M-C-v", spawn "clipmenu")
+    , ("M-t p b", spawn "touch ~/.cache/pomodoro_session")
+    , ("M-t p e", spawn "rm ~/.cache/pomodoro_session")
     ]
 
 workspacesConfiguration :: [String]
