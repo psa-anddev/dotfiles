@@ -10,6 +10,20 @@ import XMonad.Prompt
 import XMonad.Prompt.Input
 import Text.Printf
 
+-- Theme --
+colorBackground = "#282a36"
+colorCurrentLine = "#44475a"
+colorComment = "#6272a4"
+colorForeground = "#f8f8f2"
+colorCyan = "#8be9fd"
+colorGreen = "#50fa7b"
+colorOrange = "#ffb86c"
+colorPink = "#ff79c6"
+colorPurple = "#bd93f9"
+colorRed = "#ff5555"
+colorYellow = "#f1fa8c"
+
+
 main = xmonad =<< statusBar upBar upBarConfiguration upBarToggleStructsKey configuration
 startup = do 
     spawnOnce "xrdb -merge ~/.Xresources"
@@ -26,13 +40,24 @@ configuration = ewmh def
     { terminal = defaultTerminal
     , modMask = mod4Mask
     , borderWidth = 3
+    , normalBorderColor = colorCurrentLine
+    , focusedBorderColor = colorOrange
     , startupHook = startup
     , workspaces = workspacesConfiguration
     , layoutHook = layoutHookConfiguration
     } `additionalKeysP` myShortcuts
 
 upBar = "xmobar"
-upBarConfiguration = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" }
+upBarConfiguration = xmobarPP { 
+    ppCurrent = xmobarColor colorGreen "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ colorGreen ++ ">") "</box>"
+    ,ppVisible = xmobarColor colorGreen "" 
+    ,ppHidden = xmobarColor colorComment "" 
+    ,ppHiddenNoWindows = xmobarColor colorYellow ""
+    ,ppUrgent = xmobarColor colorRed "" . wrap "¡" "!"
+    ,ppTitle = xmobarColor colorOrange "" . shorten 60
+    ,ppSep = "<fc=" ++ colorForeground ++ "> | </fc>"
+    ,ppOrder = \(ws:l:t:ex) -> [ws, l] ++ [t] ++ ex
+}
 upBarToggleStructsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 defaultTerminal = "alacritty"
 
@@ -97,6 +122,6 @@ taskWarriorPrompt cfg = do
 windowNameConfiguration :: SWNConfig
 windowNameConfiguration = def
     { swn_font = "xft:SauceCodePro Nerd Font Mono:bold:size=60:antialias=true:hinting=true"
-    , swn_bgcolor = "#1c1f24"
-    , swn_color = "#ffffff"
+    , swn_bgcolor = colorBackground
+    , swn_color = colorForeground
     }
