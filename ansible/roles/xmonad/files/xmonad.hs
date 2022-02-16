@@ -51,8 +51,8 @@ upBar = "xmobar"
 upBarConfiguration = xmobarPP { 
     ppCurrent = xmobarColor colorGreen "" . wrap ("<box type=Bottom width=2 mb=2 color=" ++ colorGreen ++ ">") "</box>"
     ,ppVisible = xmobarColor colorGreen "" 
-    ,ppHidden = xmobarColor colorComment "" 
-    ,ppHiddenNoWindows = xmobarColor colorYellow ""
+    ,ppHidden = xmobarColor colorYellow "" 
+    ,ppHiddenNoWindows = xmobarColor colorComment ""
     ,ppUrgent = xmobarColor colorRed "" . wrap "¡" "!"
     ,ppTitle = xmobarColor colorOrange "" . shorten 60
     ,ppSep = "<fc=" ++ colorForeground ++ "> | </fc>"
