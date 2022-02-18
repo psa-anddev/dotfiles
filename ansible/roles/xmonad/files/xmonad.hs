@@ -95,7 +95,7 @@ workspacesConfiguration :: [String]
 workspacesConfiguration = ["dev", "www", "chat", "sys", "doc", "mus", "ex1", "ex2"]
 
 -- Layouts
-tall = spacingRaw False (Border 5 0 5 0) True (Border 0 5 0 5) True $ Tall 1 (3/100) (1/2)
+tall = spacingRaw True (Border 5 0 5 0) True (Border 0 5 0 5) True $ smartBorders $ Tall 1 (3/100) (1/2)
 full = noBorders Full
 mirrorTall = Mirror tall
 layoutHookConfiguration = showWName' windowNameConfiguration defaultLayouts
