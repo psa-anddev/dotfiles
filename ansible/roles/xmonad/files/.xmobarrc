@@ -6,7 +6,7 @@ Config {
         , additionalFonts = [ "xft:Hack Nerd Font:pixelsize=14:antialias=true:hinting=true" ]
 	,commands = [ Run StdinReader 
 	, Run Date "\xf073  %a, %d %b %Y \xf017 %H:%M:%S" "date" 10
-	, Run Cpu ["-t", " \xf109   <total>% ", "-H", "50", "--high", "red"] 10
+	, Run Cpu ["-t", " \xf109   <total>% ", "-H", "50", "--high", "#ff5555,#f1fa8c"] 10
 	, Run Memory ["-t", " \xf233  <usedratio>% "] 10
 	, Run DiskU [("/", " \xf0c7 <used> ")] [] 3600
         , Run Battery        [ "--template" , "<acstatus>"
