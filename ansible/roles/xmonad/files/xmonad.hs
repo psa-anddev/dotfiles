@@ -6,6 +6,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ShowWName
+import XMonad.Layout.Spacing
 import XMonad.Prompt
 import XMonad.Prompt.Input
 import Text.Printf
@@ -94,7 +95,7 @@ workspacesConfiguration :: [String]
 workspacesConfiguration = ["dev", "www", "chat", "sys", "doc", "mus", "ex1", "ex2"]
 
 -- Layouts
-tall = Tall 1 (3/100) (1/2)
+tall = spacingRaw False (Border 5 0 5 0) True (Border 0 5 0 5) True $ Tall 1 (3/100) (1/2)
 full = noBorders Full
 mirrorTall = Mirror tall
 layoutHookConfiguration = showWName' windowNameConfiguration defaultLayouts
