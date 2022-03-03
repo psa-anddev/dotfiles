@@ -65,6 +65,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'nvim-telescope/telescope-dap.nvim'
+
 
 " Colour previews
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
