@@ -41,6 +41,25 @@
           dest: ~/.oh-my-zsh/custom/plugins/vi-mode-agnoster.plugin.zsh
           src: "{{ ansible_env.PWD }}/roles/zsh/files/vi-mode-agnoster.plugin.zsh"
 
+- name: Install Dracula lib
+  become: yes
+  copy:
+          dest: /usr/share/oh-my-zsh/themes/
+          src: "{{ ansible_env.PWD }}/roles/zsh/files/dracula/lib"
+          directory_mode:
+
+- name: Install Dracula theme
+  become: yes
+  copy:
+          dest: /usr/share/oh-my-zsh/themes/dracula.zsh-theme
+          src: "{{ ansible_env.PWD }}/roles/zsh/files/dracula/dracula.zsh-theme"
+
+- name: Install Dracula theme for syntax highlighting
+  copy:
+          dest: ~/.oh-my-zsh/dracula-zsh-syntax-highlighting.sh
+          src: "{{ ansible_env.PWD }}/roles/zsh/files/dracula-zsh-syntax-highlighting.sh"
+
+
 - name: Symlink Zsh configuration
   file:
           src: "{{ ansible_env.PWD }}/roles/zsh/files/.zshrc"

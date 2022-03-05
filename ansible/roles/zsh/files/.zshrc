@@ -5,7 +5,7 @@ export ZSH=/usr/share/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="dracula"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,9 +88,23 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=nvim
+source ~/.oh-my-zsh/dracula-zsh-syntax-highlighting.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/custom/plugins/vi-mode-agnoster.plugin.zsh
+
+bindkey -v
+
+zle-line-init zle-keymap-select () {
+case $KEYMAP in
+    vicmd) DRACULA_CUSTOM_VARIABLE="Normal";;
+    visual) DRACULA_CUSTOM_VARIABLE="Visual";;
+    viins|main) DRACULA_CUSTOM_VARIABLE="Insert";;
+esac
+zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # Set Android dependencies in the path
 export ANDROID_HOME=~/.android/
