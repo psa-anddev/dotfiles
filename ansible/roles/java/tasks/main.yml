@@ -15,3 +15,20 @@
   pacman:
       name: jdk8-openjdk
       state: present
+
+- name: Install Gradle
+  become: yes
+  pacman:
+    name: gradle
+    state: present
+
+- name: Install Maven
+  become: yes
+  pacman:
+    name: maven
+    state: present
+
+- name: Install JDTLS LSP
+  aur:
+    name: jdtls
+    use: yay
