@@ -1,3 +1,4 @@
+source ~/.config/mutt/dracula.muttrc
 source ./.mutt/default
 set sort=reverse-date
 set mailcap_path = ~/.config/mutt/mailcap
