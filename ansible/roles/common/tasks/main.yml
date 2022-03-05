@@ -44,6 +44,13 @@
       path: ~/.config/qutebrowser
       state: directory
 
+- name: Add theme
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/dracula-qutebrowser"
+    path: "~/.config/qutebrowser/dracula"
+    state: link
+    force: yes
+
 - name: Symlink qutebrowser configuration
   file: src={{ ansible_env.PWD }}/roles/common/files/.qutebrowser/config.py
         path=~/.config/qutebrowser/config.py
