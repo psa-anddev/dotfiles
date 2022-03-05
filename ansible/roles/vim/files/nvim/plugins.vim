@@ -7,7 +7,7 @@ Plug 'tpope/vim-surround' "Surround plugin - Adds operation to change the surrou
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'doums/darcula' "Darcula theme
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 "Git integration
 Plug 'tpope/vim-fugitive'

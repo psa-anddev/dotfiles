@@ -1,5 +1,5 @@
 "Set theme to Darcula
-colorscheme darcula
+colorscheme dracula
 
 " Disable autowrapping
 set nowrap
