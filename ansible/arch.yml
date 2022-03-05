@@ -12,6 +12,7 @@
           - lightdm
           - compton
           - gtk
+          - qt
           - kitty
           - alacritty
           - feh

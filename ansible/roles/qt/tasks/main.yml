@@ -1,0 +1,17 @@
+- name: Install QT5
+  become: yes
+  pacman:
+    name: qt5-base
+    state: present
+
+- name: Install QT5 theme changer
+  become: yes
+  pacman:
+    name: qt5ct
+    state: present
+
+- name: Copy default QT5 configuration
+  copy:
+    src: "{{ ansible_env.PWD }}/roles/qt/files/qt5ct"
+    dest: "~/.config"
+    directory_mode:
