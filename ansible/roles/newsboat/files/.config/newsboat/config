@@ -27,6 +27,7 @@ bind-key G end
 unbind-key Q
 bind-key q hard-quit
 bind-key ^S save
+bind-key ^U toggle-show-read-feeds
 
 macro v set browser "mpv"; open-in-browser ; set browser "qutebrowser"
 macro V set browser "ytdl-mpv"; open-in-browser; set browser "qutebrowser"
@@ -34,6 +35,8 @@ download-path "~/podcasts/%n"
 player "podcast_player"
 
 include dracula
+reload-threads 100
+auto-reload yes
 
 urls-source "ocnews"
 ocnews-url "https://nextcloud.tansanchez.net"
