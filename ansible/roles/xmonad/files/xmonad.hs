@@ -89,6 +89,11 @@ myShortcuts =
     , ("M-c e", spawn "element-desktop")
     , ("M-c m", spawn(defaultTerminal ++ " -e neomutt"))
     , ("M-c t", spawn(defaultTerminal ++ " -e tg"))
+    , ("M-n c", spawn "dunstctl close")
+    , ("M-n a", spawn "dunstctl close-all")
+    , ("M-n p", spawn "dunstctl set-paused toggle")
+    , ("M-n x", spawn "dunstctl context")
+    , ("M-n h", spawn "dunstctl history-pop")
     ]
 
 workspacesConfiguration :: [String]
