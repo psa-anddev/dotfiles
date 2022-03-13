@@ -2,8 +2,7 @@ Config {
         alpha = 255
         , bgColor = "#282a36"
         , fgColor = "#f8f8f2"
-        , font = "xft:Hack Nerd Font:pixelsize=14:antialising=true:hinting=true"
-        , additionalFonts = [ "xft:Hack Nerd Font:pixelsize=14:antialias=true:hinting=true" ]
+        , font = "xft:Hack Nerd Font:pixelsize=11:antialising=true:hinting=true"
 	,commands = [ Run StdinReader 
 	, Run Date "\xf073  %a, %d %b %Y \xf017 %H:%M:%S" "date" 10
 	, Run Cpu ["-t", " \xf109   <total>% ", "-H", "50", "--high", "#ff5555,#f1fa8c"] 10
