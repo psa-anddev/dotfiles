@@ -1,0 +1,22 @@
+- name: Install zip
+  become: yes
+  pacman:
+    name: zip
+    state: present
+
+- name: Install unzip
+  become: yes
+  pacman:
+    name: unzip
+    state: present
+
+- name: Install Rar
+  aur:
+    name: rar
+    use: yay
+
+- name: Install 7zip
+  become: yes
+  pacman:
+    name: p7zip
+    state: present
