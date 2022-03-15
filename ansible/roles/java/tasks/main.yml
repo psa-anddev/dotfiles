@@ -16,6 +16,18 @@
       name: jdk8-openjdk
       state: present
 
+- name: Install OpenJDK 11
+  become: yes
+  pacman:
+      name: jdk11-openjdk
+      state: present
+
+- name: Install last version of OpenJDK
+  become: yes
+  pacman:
+      name: jdk-openjdk
+      state: present
+
 - name: Install Gradle
   become: yes
   pacman:
