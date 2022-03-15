@@ -115,3 +115,8 @@
       path: ~/.profile
       state: link
       force: yes
+
+- name: Install Dragon drag and drop
+  aur:
+    name: dragon-drag-and-drop-git
+    use: yay
