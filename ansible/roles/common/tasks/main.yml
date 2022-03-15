@@ -2,6 +2,12 @@
   import_tasks: archupgrade.yml
   when: ansible_facts['os_family']|lower == 'arch'
 
+- name: Install Pacman contrib
+  become: yes
+  pacman:
+    name: pacman-contrib
+    state: present
+
 - name: Install alsa utils
   become: yes
   pacman:
