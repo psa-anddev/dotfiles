@@ -1,6 +1,6 @@
 #!/bin/sh
-GRADLE_HOME=$HOME/gradle 
-JAVA_HOME=/usr/lib/jvm/java-11-openjdk 
+export GRADLE_HOME=$HOME/gradle 
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk 
 jdtls \
     -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044 \
     -Dlog.level=ALL \
