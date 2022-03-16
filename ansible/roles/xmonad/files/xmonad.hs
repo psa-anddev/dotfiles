@@ -36,6 +36,9 @@ startup = do
     spawnOnce "udiskie"
     spawnOnce "tasks_notify"
     spawnOnce "vdirsyncer sync"
+    spawnOnce "mpd"
+    spawnOnce "mpDris2"
+    spawnOnce "playerctl daemon"
 
 configuration = ewmh def
     { terminal = defaultTerminal
@@ -94,6 +97,10 @@ myShortcuts =
     , ("M-n p", spawn "dunstctl set-paused toggle")
     , ("M-n x", spawn "dunstctl context")
     , ("M-n h", spawn "dunstctl history-pop")
+    , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+    , ("<XF86AudioStop>", spawn "playerctl stop")
+    , ("<XF86AudioPrev>", spawn "playerctl previous")
+    , ("<XF86AudioNext>", spawn "playerctl next")
     ]
 
 workspacesConfiguration :: [String]

@@ -1,0 +1,16 @@
+- name: Install mpris plugin for mpv
+  become: yes
+  pacman:
+    name: mpv-mpris
+    state: present
+
+- name: Install mpris plugin for mpd
+  aur:
+    name: mpdris2
+    use: yay
+
+- name: Install playerctl
+  become: yes
+  pacman:
+    name: playerctl
+    state: present
