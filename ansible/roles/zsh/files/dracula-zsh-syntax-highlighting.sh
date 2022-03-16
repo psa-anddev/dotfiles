@@ -10,7 +10,7 @@
 # @author George Pickering <@bigpick>
 # @author Zeno Rocha <hi@zenorocha.com>
 # Paste this files contents inside your ~/.zshrc before you activate zsh-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 typeset -gA ZSH_HIGHLIGHT_STYLES
 # Default groupings per, https://spec.draculatheme.com, try to logically separate
 # possible ZSH_HIGHLIGHT_STYLES settings accordingly...?
@@ -87,4 +87,4 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=#FF5555'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=#F8F8F2'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#F8F8F2'
 ZSH_HIGHLIGHT_STYLES[default]='fg=#F8F8F2'
-ZSH_HIGHLIGHT_STYLES[cursor]='standout'
+ZSH_HIGHLIGHT_STYLES[cursor]='normal'
