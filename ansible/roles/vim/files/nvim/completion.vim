@@ -14,6 +14,10 @@ lua <<EOF
             { name = 'ultisnips' },
         }, {
             { name = 'buffer' },
-        })
+        }),
+        
+        mapping = {
+            ['<CR>'] = cmp.mapping.confirm({ select = true })
+        }
     })
 EOF
