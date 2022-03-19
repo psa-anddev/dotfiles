@@ -51,7 +51,7 @@ function M.setup()
                 r = {
                     name = "refactor",
                     r = { function () vim.lsp.buf.rename() end, 'rename' },
-                    q = { function () jdtls.code_action() end, 'code actions' },
+                    q = { function () vim.lsp.buf.code_action() end, 'code actions' },
                     o = { function () jdtls.organize_imports() end, 'organize imports' },
                     e = {
                         name = 'extract',
