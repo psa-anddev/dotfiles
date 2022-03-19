@@ -26,6 +26,7 @@ function M.setup()
 
         -- Mappings.
         local wk = require('which-key')
+        local jdtls = require('jdtls')
 
         wk.register({ K = { function() require('lspsaga.hover').render_hover_doc() end, 'hover doc' }}, {})
         wk.register({
@@ -50,7 +51,14 @@ function M.setup()
                 r = {
                     name = "refactor",
                     r = { function () vim.lsp.buf.rename() end, 'rename' },
-                    q = { function () require('jdtls').code_action() end, 'code actions' }
+                    q = { function () jdtls.code_action() end, 'code actions' },
+                    o = { function () jdtls.organize_imports() end, 'organize imports' },
+                    e = {
+                        name = 'extract',
+                        v = { function () jdtls.extract_variable() end, 'variable' },
+                        c = { function () jdtls.extract_constant() end, 'constant' },
+                        m = { function () jdtls.extract_method() end, 'method' }
+                    }
                 },
                 d = {
                     name = "diagnostics",
@@ -66,12 +74,26 @@ function M.setup()
                 }
             }
         }, { prefix = "<leader>"})
+        wk.register({
+            l = {
+                name = 'lsp',
+                r = {
+                    name = "refactor",
+                    e = {
+                        name = 'extract',
+                        v = { '<ESC>:lua require("jdtls").extract_variable(true)<CR>', 'variable' },
+                        c = { '<ESC>:lua require("jdtls").extract_constant(true)<CR>', 'constant' },
+                        m = { '<ESC>:lua require("jdtls").extract_method(true)<CR>', 'method' }
+                    }
+                }
+            }
+        }, { prefix = "<leader>", mode = "v"})
     end
     local config = {
         flags = {
             allow_incremental_sync = true
         },
-        on_attach = on_attach, 
+        on_attach = on_attach,
         root_dir = require('jdtls.setup').find_root({'settings.gradle', 'settings.gradle.kts', 'pom.xml'})
 
     }
@@ -79,8 +101,9 @@ function M.setup()
         vim.fn.glob(os.getenv("HOME") .. "/repos/dap/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
     };
     vim.list_extend(bundles, vim.split(vim.fn.glob(os.getenv("HOME") .. "/repos/lsp/java/vscode-java-test/server/*.jar"), "\n"))
+    local workspace_path = os.getenv('HOME') .. '/.cache/workspace/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
-    config.cmd = {'start_java_lsp'}
+    config.cmd = {'start_java_lsp', '-data', workspace_path }
     config.on_attach = on_attach
     config.on_init = function(client, _)
         client.notify('workspace/didChangeConfiguration', { settings = config.settings })
