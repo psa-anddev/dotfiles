@@ -38,7 +38,7 @@ startup = do
     spawnOnce "vdirsyncer sync"
     spawnOnce "mpd"
     spawnOnce "mpDris2"
-    spawnOnce "playerctl daemon"
+    spawnOnce "playerctld daemon"
 
 configuration = ewmh def
     { terminal = defaultTerminal
