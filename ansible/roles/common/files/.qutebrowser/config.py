@@ -61,7 +61,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
 config.set("input.insert_mode.leave_on_load", False)
 
 # Watch video in MPV
-config.bind(",v", "hint links spawn -d mpv {hint-url}")
+config.bind(",v", "hint links spawn -d mpv \"{hint-url}\"")
 
 # Watch video in MPV through youtube-dl
 config.bind(",V", "hint links spawn -d ytdl-mpv {hint-url}")
