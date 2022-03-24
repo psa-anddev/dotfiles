@@ -64,7 +64,7 @@ config.set("input.insert_mode.leave_on_load", False)
 config.bind(",v", "hint links spawn -d mpv \"{hint-url}\"")
 
 # Watch video in MPV through youtube-dl
-config.bind(",V", "hint links spawn -d ytdl-mpv {hint-url}")
+config.bind(",V", "hint links spawn -d ytdl-mpv \"{hint-url}\"")
 
 homeFolder = expanduser("~")
 
