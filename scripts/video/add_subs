@@ -1,0 +1,44 @@
+#!/bin/sh
+help() {
+    echo "$(basename "$0") -v <video> -s <subtitles> -l <language> -o <output> -- Program to add a subtitle track to a given video
+
+    where:
+        -v <video> video file to add subtitles to
+        -s <subtitles> subtitles file to add
+        -l <language> language to show in the player
+        -o <output> name of the resulting video file"
+}
+
+while [ "$1" ]; do 
+    case $1 in
+        -v|--video )
+            shift
+            video=$1
+            ;;
+
+        -s|--subs)
+            shift
+            subs=$1
+            ;;
+        -l|--language)
+            shift
+            language=$1
+        ;;
+        -o|--output)
+            shift
+            output=$1
+        ;;   
+
+    -h|--help)
+        help
+        exit 0
+        ;;
+
+    *)
+        echo "Invalid parameter" >&2
+        exit 1
+        ;;
+    esac
+    shift
+done
+ffmpeg -i $video -i $subs -map 0:0 -map 0:1 -map 1:0 -c:v copy -c:a copy -metadata:s:s:0 language=$language -disposition:s:0 default $output
