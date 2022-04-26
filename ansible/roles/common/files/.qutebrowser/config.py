@@ -73,8 +73,12 @@ config.bind(",tm", "hint links spawn transmission-remote localhost -a \"{hint-ur
 # Download torrents to downloads folder
 config.bind(",td", "hint links spawn transmission-remote localhost -a \"{hint-url}\" -w " + homeFolder + "/downloads")
 
+# Fill from Bitwarden
+config.bind(",fb", "spawn --userscript qute-bitwarden -p 'dmenu -p \"Master Password\" -l 0' -d 'dmenu -p Bitwarden'")
+
 # Enable dark mode
 config.set("colors.webpage.darkmode.enabled", False)
+config.set("colors.webpage.preferred_color_scheme", "dark")
 
 # Load autoconfiguration (mainly for avoiding having to grant permission to things over and over)
 config.load_autoconfig()
