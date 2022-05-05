@@ -8,6 +8,18 @@
     name: pacman-contrib
     state: present
 
+- name: Ensure the hooks folder for Pacman exists
+  become: yes
+  file:
+    path: /etc/pacman.d/hooks
+    state: directory
+
+- name: Copy clean cache hook
+  become: yes
+  copy:
+    src: "{{ ansible_env.PWD }}/roles/common/files/hooks/clean-cache.hook" 
+    dest: /etc/pacman.d/hooks/clean-cache.hook
+
 - name: Install alsa utils
   become: yes
   pacman:

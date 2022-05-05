@@ -39,6 +39,7 @@ startup = do
     spawnOnce "mpd"
     spawnOnce "mpDris2"
     spawnOnce "playerctld daemon"
+    spawnOnce "conky"
 
 configuration = ewmh def
     { terminal = defaultTerminal

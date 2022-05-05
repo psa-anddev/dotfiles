@@ -1,0 +1,17 @@
+- name: Install Conky
+  become: yes
+  pacman:
+    name: conky
+    state: present
+
+- name: Create Conky configuration directory
+  file:
+    path: ~/.config/conky
+    state: directory
+
+- name: Link Conky configuration
+  file:
+    src: "{{ ansible_env.PWD }}/roles/conky/files/conky.conf"
+    path: ~/.config/conky/conky.conf
+    state: link 
+    force: yes
