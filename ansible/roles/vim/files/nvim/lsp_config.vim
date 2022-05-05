@@ -53,6 +53,12 @@ nvim_lsp.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.hls.setup { on_attach = on_attach, capabilities = capabilities }
 require('lsp.sumneko_lua').setup(on_attach)
 nvim_lsp.racket_langserver.setup{ on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.groovyls.setup{
+        cmd = { "/usr/lib/jvm/java-11-openjdk/bin/java", "-jar", 
+        "/usr/share/java/groovy-language-server/groovy-language-server-all.jar" },
+        on_attach = on_attach, 
+        capabilities = capabilities
+}
 
 vim.api.nvim_exec([[
 augroup jdtls_lsp
