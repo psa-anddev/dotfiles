@@ -40,6 +40,7 @@ startup = do
     spawnOnce "mpDris2"
     spawnOnce "playerctld daemon"
     spawnOnce "conky"
+    spawnOnce "nextcloud --background"
 
 configuration = ewmh def
     { terminal = defaultTerminal
