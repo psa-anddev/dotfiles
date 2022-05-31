@@ -23,7 +23,8 @@ function M.setup()
             },
             j = { function() dap.down() end, "down-stack" },
             k = { function() dap.up() end, "up-stack" },
-            K = { function() require('dap.ui.widgets').hover() end, "hover-value" }
+            K = { function() require('dap.ui.widgets').hover() end, "hover-value" },
+            r = { function() dap.repl.open() end, "repl" }
         }
     }, { prefix = "<leader>" })
 end
