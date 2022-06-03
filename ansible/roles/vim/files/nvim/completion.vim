@@ -16,8 +16,8 @@ lua <<EOF
             { name = 'buffer' },
         }),
         
-        mapping = {
+        mapping = cmp.mapping.preset.insert({
             ['<CR>'] = cmp.mapping.confirm({ select = true })
-        }
+        })
     })
 EOF
