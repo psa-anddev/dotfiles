@@ -10,6 +10,12 @@
           name: python-pynvim
           state: present
 
+- name: Install Lua language server
+  become: yes
+  pacman:
+    name: lua-language-server
+    state: present
+
 - name: Symlink configuration
   file:
           src: "{{ ansible_env.PWD }}/roles/vim/files/nvim"

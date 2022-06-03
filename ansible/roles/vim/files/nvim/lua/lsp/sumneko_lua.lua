@@ -4,7 +4,6 @@ local root_path = os.getenv('HOME') .. '/repos/lsp/lua/lua-language-server'
 function M.setup(on_attach)
     local runtime_path = M.add_lua_files_to_runtime_path()
     require'lspconfig'.sumneko_lua.setup {
-        cmd = {M.get_sumneko_bin_path(), "-E", root_path .. '/main.lua'};
         on_attach = on_attach,
         settings = {
             Lua = {
