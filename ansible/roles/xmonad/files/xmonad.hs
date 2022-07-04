@@ -10,6 +10,10 @@ import XMonad.Layout.Spacing
 import XMonad.Prompt
 import XMonad.Prompt.Input
 import Text.Printf
+import XMonad.StackSet as W 
+import XMonad.ManageHook
+import XMonad.Util.NamedScratchpad
+import XMonad.Util.Scratchpad (scratchpadSpawnAction)
 
 -- Theme --
 colorBackground = "#282a36"
@@ -40,6 +44,7 @@ startup = do
     spawnOnce "mpDris2"
     spawnOnce "playerctld daemon"
     spawnOnce "conky"
+    spawnOnce "gnome-keyring-daemon --start"
     spawnOnce "nextcloud --background"
 
 configuration = ewmh def
@@ -49,8 +54,9 @@ configuration = ewmh def
     , normalBorderColor = colorCurrentLine
     , focusedBorderColor = colorOrange
     , startupHook = startup
-    , workspaces = workspacesConfiguration
+    , XMonad.workspaces = workspacesConfiguration
     , layoutHook = layoutHookConfiguration
+    , manageHook = namedScratchpadManageHook scratchpads
     } `additionalKeysP` myShortcuts
 
 upBar = "xmobar"
@@ -103,6 +109,7 @@ myShortcuts =
     , ("<XF86AudioStop>", spawn "playerctl stop")
     , ("<XF86AudioPrev>", spawn "playerctl previous")
     , ("<XF86AudioNext>", spawn "playerctl next")
+    , ("M-d <Return>", namedScratchpadAction scratchpads "terminal")
     ]
 
 workspacesConfiguration :: [String]
@@ -140,3 +147,8 @@ windowNameConfiguration = def
     , swn_bgcolor = colorBackground
     , swn_color = colorForeground
     }
+
+-- scratchpads 
+scratchpads = [
+    NS "terminal" (defaultTerminal ++ " -t terminalns") (title =? "terminalns") (customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)) 
+    ]
