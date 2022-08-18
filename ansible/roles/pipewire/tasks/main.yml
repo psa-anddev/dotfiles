@@ -47,14 +47,9 @@
     name: pipewire-pulse
     state: present
 
-- name: Remove Jack
-  become: yes
-  pacman:
-    name: jack2
-    state: absent
-
 - name: Install pipewire drop-in replacement for Jack
   become: yes
   pacman:
     name: pipewire-jack
     state: present
+    force: yes
