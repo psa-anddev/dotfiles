@@ -34,4 +34,4 @@
       dest: ~/.local/share/nvim/site/autoload/plug.vim
 
 - name: Configure Neovim
-  shell: nvim +PlugInstall +UpdateRemotePlugins +qa
+  shell: nvim -u ~/.config/nvim/plugins.vim +PlugInstall +UpdateRemotePlugins +qa
