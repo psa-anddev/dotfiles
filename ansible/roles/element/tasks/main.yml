@@ -1,0 +1,5 @@
+- name: Install Element
+  become: yes
+  pacman:
+    name: element-desktop
+    state: present
