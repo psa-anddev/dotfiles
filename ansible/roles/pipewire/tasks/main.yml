@@ -53,3 +53,9 @@
     name: pipewire-jack
     state: present
     force: yes
+
+- name: Install PulseAudio command line mixer
+  become: yes
+  pacman:
+      name: pamixer
+      state: present
