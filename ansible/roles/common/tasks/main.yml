@@ -136,5 +136,5 @@
 
 - name: Install Dragon drag and drop
   aur:
-    name: dragon-drag-and-drop-git
+    name: dragon-drop
     use: yay
