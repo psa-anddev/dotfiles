@@ -1,0 +1,11 @@
+- name: Install pass
+  become: yes
+  pacman:
+    name: pass
+    state: present
+    
+- name: Install pass otp
+  become: yes
+  pacman:
+    name: pass-otp
+    state: present

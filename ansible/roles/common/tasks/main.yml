@@ -87,11 +87,18 @@
           name: clipmenu
           state: present
 
+- name: Install xclip
+  become: yes 
+  pacman:
+    name: xclip
+    state: present
+
 - name: Install Clipnotify
   become: yes
   pacman:
           name: clipnotify
           state: present
+
 - name: Install libnotify
   become: yes
   pacman:
