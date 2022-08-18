@@ -5,8 +5,7 @@
           - common
           - ufw
           - bluetooth
-          - pulseaudio
-          - jack
+          - pipewire
           - monitors
           - xmonad
           - lightdm
