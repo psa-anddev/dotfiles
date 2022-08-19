@@ -1,0 +1,10 @@
+- name: Install mullvad application
+  aur:
+    name: mullvad-vpn-bin
+
+- name: Enable Mullvad service
+  become: yes
+  systemd:
+    name: mullvad-daemon
+    enabled: yes
+    state: started

@@ -5,6 +5,7 @@
           - common
           - input-devices
           - ufw
+          - mullvad
           - bluetooth
           - pipewire
           - monitors
