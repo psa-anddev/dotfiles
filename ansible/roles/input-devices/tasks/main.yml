@@ -1,0 +1,8 @@
+- name: Copy input device configuration files for X
+  become: yes
+  copy:
+    group: root
+    owner: root
+    mode: u=rw,g=r,o=r
+    src: "{{ ansible_env.PWD }}/roles/input-devices/files/xorg.conf.d"
+    dest: /etc/X11
