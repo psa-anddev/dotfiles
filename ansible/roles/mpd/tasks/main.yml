@@ -20,3 +20,8 @@
   file:
     path: ~/.local/share/mpd/playlists
     state: directory
+
+- name: Create music directory
+  file:
+    path: ~/music
+    state: directory
