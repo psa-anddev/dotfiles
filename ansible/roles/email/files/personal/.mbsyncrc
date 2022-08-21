@@ -1,7 +1,8 @@
 IMAPAccount personal
 Host imap.gmail.com
 User pablo.sanchez.alonso@gmail.com
-PassCmd "pass Personal/PersonalEmail/isyncPassword"
+AuthMechs XOAUTH2
+PassCmd "oauth2get google personal"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
