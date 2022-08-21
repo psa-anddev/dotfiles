@@ -48,7 +48,8 @@ SyncState *
 IMAPAccount spam
 Host imap.gmail.com
 User pablo.sanchez.alonso.uk@gmail.com
-PassCmd "pass Personal/SpamEmail/password"
+AuthMechs XOAUTH2
+PassCmd "oauth2get google spam"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -71,7 +72,8 @@ SyncState *
 IMAPAccount development
 Host imap.gmail.com
 User psa.anddev@gmail.com
-PassCmd "pass Personal/DevelopmentEmail/password"
+AuthMechs XOAUTH2
+PassCmd "oauth2get google development"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -94,7 +96,8 @@ SyncState *
 IMAPAccount clavelito
 Host imap.gmail.com
 User stjennypablo@gmail.com
-PassCmd "pass Personal/ClavelitoGmail/isyncPassword"
+AuthMechs XOAUTH2
+PassCmd "oauth2get google clavelito"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
