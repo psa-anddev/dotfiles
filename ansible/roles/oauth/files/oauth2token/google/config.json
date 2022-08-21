@@ -1,0 +1,8 @@
+{
+    "web": {
+        "client_id": "406964657835-aq8lmia8j95dhl1a2bvharmfk3t1hgqj.apps.googleusercontent.com",
+        "client_secret": "kSmqreRr0qwBWJgbf5Y-PjSU",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token"
+    }
+}

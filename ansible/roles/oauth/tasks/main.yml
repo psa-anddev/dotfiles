@@ -1,0 +1,14 @@
+- name: Install XOAUTH2 SASL plugin
+  aur:
+    name: cyrus-sasl-xoauth2-git
+
+- name: Install oauth2token
+  aur:
+    name: oauth2token
+
+- name: Link configuration
+  file:
+          src: "{{ ansible_env.PWD }}/roles/oauth/files/oauth2token"
+          path: ~/.config/oauth2token
+          state: link
+          force: yes

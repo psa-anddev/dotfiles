@@ -40,6 +40,7 @@
           - taskwarrior
           - transmission
           - flameshot
+          - oauth
           - email
           - avahi
           - printers
