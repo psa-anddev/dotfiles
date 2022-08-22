@@ -110,6 +110,7 @@ myShortcuts =
     , ("<XF86AudioPrev>", spawn "playerctl previous")
     , ("<XF86AudioNext>", spawn "playerctl next")
     , ("M-d <Return>", namedScratchpadAction scratchpads "terminal")
+    , ("M-f", spawn (defaultTerminal ++ " -e lf"))
     ]
 
 workspacesConfiguration :: [String]
