@@ -58,3 +58,9 @@
   template:
     src: "{{ ansible_env.PWD }}/roles/xmonad/templates/pacman-hook.j2"
     dest: "/etc/pacman.d/hooks/xmonad-{{ ansible_user_id }}.hook"
+
+- name: Install Haskell Language Server
+  become: yes
+  pacman:
+    name: haskell-language-server
+    state: present
