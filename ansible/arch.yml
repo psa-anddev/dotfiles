@@ -38,6 +38,7 @@
           - mpv
           - youtube-dl
           - taskwarrior
+          - timewarrior
           - transmission
           - flameshot
           - oauth

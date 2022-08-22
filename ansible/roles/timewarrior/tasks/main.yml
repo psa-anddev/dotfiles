@@ -1,0 +1,15 @@
+- name: Install Timewarrior
+  become: yes
+  pacman:
+    name: timew 
+    state: present
+
+- name: Copy the Taskwarrior hook
+  copy:
+    src: /usr/share/doc/timew/ext/on-modify.timewarrior 
+    dest: ~/.task/hooks
+
+- name: Make the hook executable
+  file:
+    path: ~/.task/hooks/on-modify.timewarrior
+    mode: "u=rwx,g=rx,o=rx"
