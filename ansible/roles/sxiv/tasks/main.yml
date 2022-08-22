@@ -1,0 +1,5 @@
+- name: Install sxiv
+  become: yes
+  pacman:
+    name: sxiv
+    state: present
