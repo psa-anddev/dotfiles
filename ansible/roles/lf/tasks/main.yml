@@ -1,3 +1,14 @@
 - name: Install lf
   aur:
     name: lf-bin
+
+- name: Make sure the configuration directory exists
+  file:
+    path: ~/.config/lf
+    state: directory
+
+- name: Symlink configuration
+  file:
+    src: "{{ ansible_env.PWD }}/roles/lf/files/lfrc"
+    path: ~/.config/lf/lfrc
+    state: link
