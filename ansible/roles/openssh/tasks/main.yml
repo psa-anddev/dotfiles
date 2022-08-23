@@ -3,3 +3,15 @@
   pacman:
       name: openssh
       state: present
+
+- name: Make sure the .ssh folder exists
+  file:
+    path: ~/.ssh
+    state: directory
+
+- name: Link configuration
+  file:
+    src: "{{ ansible_env.PWD }}/roles/openssh/files/.ssh/config"
+    path: ~/.ssh/config 
+    state: link 
+    force: yes
