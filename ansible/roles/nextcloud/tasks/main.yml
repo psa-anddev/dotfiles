@@ -1,0 +1,17 @@
+- name: Intall Gnome-Keyring
+  become: yes
+  pacman:
+    name: gnome-keyring 
+    state: present
+
+- name: Install Gnome keyring library
+  become: yes
+  pacman:
+    name: libgnome-keyring
+    state: present
+
+- name: Install Nextcloud
+  become: yes 
+  pacman:
+    name: nextcloud-client
+    state: present
