@@ -16,6 +16,10 @@
     name: lua-language-server
     state: present
 
+- name: Install Vim Language Server 
+  aur:
+    name: vim-language-server
+
 - name: Symlink configuration
   file:
           src: "{{ ansible_env.PWD }}/roles/vim/files/nvim"
