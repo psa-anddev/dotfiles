@@ -1,5 +1,6 @@
 "Set leader key to comma
 let mapleader=" "
+let maplocalleader="\\"
 
 lua << EOF
 local wk = require('which-key')
