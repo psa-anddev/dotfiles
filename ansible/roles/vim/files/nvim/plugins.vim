@@ -19,7 +19,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'guns/vim-sexp' "Add textobjects for lispy-like functions and other stuff.
 Plug 'tpope/vim-sexp-mappings-for-regular-people' "Add easier mappings to vim-sexp.
 Plug 'guns/vim-clojure-static' "Clojure syntax highlighting.
-Plug 'tpope/vim-fireplace' "Clojure integration with REPL
+Plug 'Olical/conjure'
 Plug 'tpope/vim-salve' "Integration with Leiningen
 Plug 'tpope/vim-classpath' "Sets path for the Java classpath.
 
