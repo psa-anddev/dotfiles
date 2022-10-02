@@ -6,7 +6,7 @@ lua << EOF
 local wk = require('which-key')
 local telescope = require('telescope.builtin')
 wk.register({
-f = { function() vim.cmd("NERDTreeToggle") end, "toggle file browser" },
+f = { function() vim.cmd("Telescope file_browser") end, "toggle file browser" },
 g = {
         name = 'git',
         s = { function () vim.cmd("Git") end, 'status' },

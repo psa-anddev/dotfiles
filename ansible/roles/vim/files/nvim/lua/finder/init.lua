@@ -16,6 +16,9 @@ telescope.setup {
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true
+        },
+        file_browser = { 
+            hijack_netrw = true
         }
     }
 }
@@ -23,3 +26,4 @@ telescope.setup {
 telescope.load_extension('fzy_native')
 telescope.load_extension('ui-select')
 require('telescope').load_extension('dap')
+require('telescope').load_extension('file_browser')
