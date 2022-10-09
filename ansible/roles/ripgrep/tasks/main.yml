@@ -1,0 +1,10 @@
+- name: Install Ripgrep
+  become: yes
+  pacman:
+    name: ripgrep 
+    state: present 
+- name: Install Ripgrep all
+  become: yes 
+  pacman: 
+    name: ripgrep-all 
+    state: present

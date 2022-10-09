@@ -56,3 +56,5 @@
           - signal
           - sxiv
           - nextcloud
+          - docker
+          - ripgrep
