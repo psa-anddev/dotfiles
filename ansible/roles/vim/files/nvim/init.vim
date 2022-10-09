@@ -12,3 +12,4 @@ source ~/.config/nvim/rainbow_config.vim
 lua require('dap.config').setup()
 lua require('tree-sitter')
 lua require('file-browser')
+lua require('notifications')

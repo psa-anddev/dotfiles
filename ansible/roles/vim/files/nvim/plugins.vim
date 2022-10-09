@@ -92,5 +92,8 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Coloured parenthesis (for Lisp)
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-projectionist'
+
+" Notifications 
+Plug 'rcarriga/nvim-notify'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
