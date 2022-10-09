@@ -37,6 +37,8 @@ Plug 'bazelbuild/vim-bazel'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -66,7 +68,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'nvim-telescope/telescope-dap.nvim'
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 
 " Colour previews
@@ -89,7 +90,7 @@ Plug 'honza/vim-snippets'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Coloured parenthesis (for Lisp)
-Plug 'luochen1990/rainbow'
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-projectionist'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
