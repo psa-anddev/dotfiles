@@ -1,5 +1,6 @@
 "     \ 'xml': ["java", "-jar", "~/repos/xml-lsp/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"],
 
+let g:conjure#mapping#doc_word = v:false
 autocmd BufReadPost *.tex setlocal filetype=tex
 lua << EOF
 local nvim_lsp = require('lspconfig')
@@ -9,7 +10,7 @@ buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 -- Mappings.
 local wk = require('which-key')
-wk.register({ K = { function () require('lspsaga.hover').render_hover_doc() end, 'hover docs' } }, {})
+wk.register({ K = { function () vim.lsp.buf.hover() end, 'hover docs' } }, {})
 wk.register({
 l = {
         name = "lsp",
@@ -20,7 +21,7 @@ l = {
                 i = {  function () vim.lsp.buf.implementation() end, 'implementation' },
                 r = {  function () vim.lsp.buf.references() end, 'references' }
             },
-        k = { function () require('lspsaga.signaturehelp').signature_help() end, 'signature help' }, 
+        k = { function () vim.lsp.buf.signature_help() end, 'signature help' }, 
         w = {
                 name = "workspace",
                 a = { function () vim.lsp.buf.add_workspace_folder() end, 'add folder' },
@@ -66,7 +67,4 @@ augroup jdtls_lsp
     autocmd FileType java lua require 'lsp.jdtls'.setup() 
 augroup END
 ]], true)
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
 EOF

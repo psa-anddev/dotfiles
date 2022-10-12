@@ -55,7 +55,6 @@ Plug 'mileszs/ack.vim'
 " Language Server client
 Plug 'neovim/nvim-lspconfig'
 Plug 'mfussenegger/nvim-jdtls'
-Plug 'tami5/lspsaga.nvim'
 
 " Debugger Adapter Protocol
 Plug 'mfussenegger/nvim-dap'

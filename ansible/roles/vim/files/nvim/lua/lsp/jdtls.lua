@@ -28,11 +28,11 @@ function M.setup()
         local wk = require('which-key')
         local jdtls = require('jdtls')
 
-        wk.register({ K = { function() require('lspsaga.hover').render_hover_doc() end, 'hover doc' }}, {})
+        wk.register({ K = { function() vim.lsp.buf.hover() end, 'hover doc' }}, {})
         wk.register({
             l = {
                 name = 'lsp',
-                k = { function() require('lspsaga.signaturehelp').signature_help() end, 'signature help' },
+                k = { function() vim.lsp.buf.signature_help() end, 'signature help' },
                 [ "=" ] = { function() vim.cmd("Format") end, "reformat" },
                 g = {
                     name = "go to",
