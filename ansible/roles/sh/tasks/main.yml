@@ -1,0 +1,11 @@
+- name: Install bash language server
+  become: yes
+  pacman:
+    name: bash-language-server
+    state: present
+
+- name: Install shellcheck
+  become: yes
+  pacman:
+    name: shellcheck
+    state: present
