@@ -46,6 +46,7 @@ startup = do
     spawnOnce "conky"
     spawnOnce "gnome-keyring-daemon --start"
     spawnOnce "nextcloud --background"
+    spawnOnce "/usr/lib/kdeconnectd"
 
 configuration = ewmh def
     { terminal = defaultTerminal
