@@ -14,6 +14,7 @@ import XMonad.StackSet as W
 import XMonad.ManageHook
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Scratchpad (scratchpadSpawnAction)
+import XMonad.Actions.CycleWS (Direction1D(..), moveTo, shiftTo, WSType(..), nextScreen, prevScreen)
 
 -- Theme --
 colorBackground = "#282a36"
@@ -78,6 +79,11 @@ myShortcuts =
     [("M-C-q", spawn "betterlockscreen -l")
     , ("M-<Space>", spawn "dmenu_run")
     , ("M-p", sendMessage NextLayout)
+    , ("M-<Tab>", sendMessage NextLayout)
+    , ("M-S-<Tab>", sendMessage FirstLayout)
+    , ("M-S-t", withFocused $ windows . W.sink)
+    , ("M-.", nextScreen)
+    , ("M-,", prevScreen)
     , ("M-C-p", spawn "dmenu_power")
     , ("M-S-p", spawn "preferences_menu")
     , ("<XF86AudioRaiseVolume>", spawn "volume_control -i 5")
