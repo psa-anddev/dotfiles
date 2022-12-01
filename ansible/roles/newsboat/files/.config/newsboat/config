@@ -31,6 +31,7 @@ bind-key ^U toggle-show-read-feeds
 
 macro v set browser "mpv"; open-in-browser ; set browser "qutebrowser"
 macro V set browser "ytdl-mpv"; open-in-browser; set browser "qutebrowser"
+macro y set browser "copy_url"; open-in-browser ; set browser "qutebrowser"
 download-path "~/podcasts/%n"
 download-filename-format "%t_%F.%e"
 player "podcast_player"
