@@ -51,11 +51,14 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
             'r': 'https://dle.rae.es/?w={}',
             'we': 'https://es.wikipedia.org/wiki/{}',
             'wd': 'https://de.wikipedia.org/wiki/{}',
+            'wt': 'https://tl.wikipedia.org/wiki/{}',
             'a': 'https://wiki.archlinux.org/index.php?search={}',
             's': 'https://stackoverflow.com/search?q={}',
             'c': 'https://dictionary.cambridge.org/dictionary/english/{}',
             'i': 'https://www.imdb.com/find?q={}',
-            'di': 'https://duckduckgo.com/?q={}&iax=images&ia=images'}
+            'di': 'https://duckduckgo.com/?q={}&iax=images&ia=images',
+            'dy': 'http://www.diksiyonaryo.ph/search/{}',
+            'o': 'https://odysee.com/$/search?q={}'}
 
 # Keep insert mode when page reloads
 config.set("input.insert_mode.leave_on_load", False)
