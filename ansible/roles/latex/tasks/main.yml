@@ -3,3 +3,12 @@
   pacman:
       name: texlive-most
       state: present
+
+- name: Install LaTeX LSP
+  become: yes
+  pacman:
+    name: texlab
+    state: present
+
+
+
