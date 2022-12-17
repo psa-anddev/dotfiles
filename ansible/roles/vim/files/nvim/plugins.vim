@@ -94,5 +94,7 @@ Plug 'tpope/vim-projectionist'
 
 " Notifications 
 Plug 'rcarriga/nvim-notify'
+
+Plug 'vimwiki/vimwiki'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.
