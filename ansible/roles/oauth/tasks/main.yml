@@ -6,9 +6,25 @@
   aur:
     name: oauth2token
 
-- name: Link configuration
+- name: Link oauth2token configuration 
   file:
           src: "{{ ansible_env.PWD }}/roles/oauth/files/oauth2token"
           path: ~/.config/oauth2token
           state: link
           force: yes
+
+- name: Install mailctl
+  aur:
+    name: mailctl-bin
+
+- name: Link mailctl configuration 
+  file:
+          src: "{{ ansible_env.PWD }}/roles/oauth/files/mailctl"
+          path: ~/.config/mailctl
+          state: link
+          force: yes
+
+- name: Create encryption folder for mailctl
+  file:
+    path: ~/.local/var/mailctl
+    state: directory

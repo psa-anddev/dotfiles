@@ -1,0 +1,29 @@
+# The primary purpose of mailctl is providing IMAP/SMTP clients with the
+# capabilities of renewal and authorization of OAuth2 credentials. 
+# Accordingly only the OAuth2 related config entries are mandatory.
+
+# These four entries should be use for OAuth2 access method
+services_file: /home/pablo/.config/mailctl/services.yaml
+oauth2_dir: /home/pablo/.local/var/mailctl
+# This encryption method using gnupg.
+# Alternatives like gnome-keyring can also be configured here.
+encrypt_cmd:
+  exec: gpg
+  args:
+    - --encrypt
+    - --recipient
+    - pablo.sanchez.alonso@gmail.com
+    - -o
+decrypt_cmd:
+  exec: gpg
+  args:
+    - --decrypt
+
+# Only if you are using a password manager for traditional access methods
+# This is an example of using `pass`
+password_store: /home/pablo/.password-store
+pass_cmd:
+  exec: pass
+  args:
+    - email/
+
