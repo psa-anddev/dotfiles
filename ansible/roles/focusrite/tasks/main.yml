@@ -1,0 +1,8 @@
+- name: Copy configuration for Focusrite Scarlett
+  become: yes
+  copy:
+    group: root
+    owner: root
+    mode: u=rw,g=r,o=r
+    src: "{{ ansible_env.PWD }}/roles/focusrite/files/snd_usb_audio.conf"
+    dest: /etc/modprobe.d
