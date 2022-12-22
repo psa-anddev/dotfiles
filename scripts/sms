@@ -1,0 +1,10 @@
+#!/bin/sh
+device=$(kdeconnect-cli -a | fzf | cut -f3 -d' ')
+to=$(khard phone -p | fzf | cut -f1 | sed 's/ //g')
+messageFile=$(mktemp)
+$EDITOR "$messageFile"
+[ -s "$messageFile" ] && \
+    kdeconnect-cli --send-sms "$(cat "$messageFile")" \
+    --destination "$to" -d "$device"
+rm "$messageFile"
+
