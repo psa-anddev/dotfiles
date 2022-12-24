@@ -49,7 +49,7 @@ IMAPAccount spam
 Host imap.gmail.com
 User pablo.sanchez.alonso.uk@gmail.com
 AuthMechs XOAUTH2
-PassCmd "oauth2get google spam"
+PassCmd "mailctl access pablo.sanchez.alonso.uk@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
