@@ -103,6 +103,7 @@ myShortcuts =
     , ("M-t p e", spawn "rm ~/.cache/pomodoro_session")
     , ("M-t p g", spawn "echo '5 1' > ~/.cache/pomodoro_session")
     , ("M-t t a", taskWarriorPrompt promptConfig)
+    , ("M-t t t", spawn (defaultTerminal ++ " -e vit"))
     , ("M-c s", spawn "signal-desktop")
     , ("M-c e", spawn "element-desktop")
     , ("M-c m", spawn(defaultTerminal ++ " -e neomutt"))

@@ -10,3 +10,9 @@
       path: ~/.taskrc
       state: link
       force: yes
+
+- name: Install Vit
+  become: yes 
+  pacman:
+    name: vit
+    state: present
