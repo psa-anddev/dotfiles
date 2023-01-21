@@ -16,3 +16,15 @@
   pacman:
     name: vit
     state: present
+
+- name: Install TaskOpen
+  aur:
+    name: taskopen
+
+- name: Set up configuration for TaskOpen
+  file:
+      src: "{{ ansible_env.PWD }}/roles/taskwarrior/files/taskopen"
+      path: ~/.config/taskopen
+      state: link
+      force: yes
+

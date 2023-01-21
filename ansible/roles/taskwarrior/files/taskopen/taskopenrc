@@ -1,0 +1,3 @@
+[Actions]
+openurl.regex = "^(?:https?://)?(?:[\\w]+\\.)(?:\\.?[\\w]{2,})+"
+openurl.command = "xdg-open $ANNOTATION"
