@@ -17,6 +17,13 @@
     name: vit
     state: present
 
+- name: Set Vit configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/taskwarrior/files/vit"
+      path: ~/.config/vit
+      state: link
+      force: yes
+
 - name: Install TaskOpen
   aur:
     name: taskopen
