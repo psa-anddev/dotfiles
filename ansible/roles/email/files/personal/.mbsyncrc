@@ -73,7 +73,7 @@ IMAPAccount development
 Host imap.gmail.com
 User psa.anddev@gmail.com
 AuthMechs XOAUTH2
-PassCmd "oauth2get google development"
+PassCmd "mailctl access psa.anddev@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
