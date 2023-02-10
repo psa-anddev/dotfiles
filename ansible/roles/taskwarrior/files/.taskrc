@@ -41,5 +41,7 @@ news.version=2.6.0
 report.conky.description=Conky report
 report.conky.columns=description,id,project,urgency
 report.conky.sort=urgency-
-report.conky.filter=status:pending limit:5
+report.conky.filter=status:pending -WAITING -BLOCKED limit:5
 report.conky.labels=
+
+report.next.filter=status:pending -WAITING -BLOCKED limit:page
