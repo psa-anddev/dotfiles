@@ -1,2 +1,2 @@
 #!/bin/sh
-yt-dlp $1 -o - | mpv -
+yt-dlp "$1" -o - | mpv -
