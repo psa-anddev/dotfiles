@@ -1,3 +1,7 @@
 [Actions]
 openurl.regex = "^(?:https?://)?(?:[\\w]+\\.)(?:\\.?[\\w]{2,})+"
 openurl.command = "xdg-open $ANNOTATION"
+openurlinmpv.regex = "^(?:https?://)?(?:[\\w]+\\.)(?:\\.?[\\w]{2,})+"
+openurlinmpv.command = "mpv $ANNOTATION"
+openurlinytdl-mpv.regex = "^(?:https?://)?(?:[\\w]+\\.)(?:\\.?[\\w]{2,})+"
+openurlinytdl-mpv.command = "ytdl-mpv $ANNOTATION"
