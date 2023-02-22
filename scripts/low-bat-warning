@@ -2,5 +2,8 @@
 status=$(cat /sys/class/power_supply/BAT0/status)
 capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 [ "$capacity" -le 10 ] && [ "$status" = "Discharging" ] && \
-    notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'
+    dunstify -u critical \
+    -r 108411 \
+    'Battery running out' 'Please, connect the charger before the computer hibernates' \
+    || dunstify -C 108411
 
