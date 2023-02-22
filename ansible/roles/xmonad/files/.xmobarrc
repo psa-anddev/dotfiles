@@ -23,7 +23,7 @@ Config {
                                 -- charged status
                                 , "-i"  , " \xf240  Charged "
                                 , "-A", "10"
-                                , "-a", "notify-send -u critical 'Battery running out' 'Please, connect the charger before the computer hibernates'"
+                                , "-a", "low-bat-warning"
                                 ] 50
         , Run DynNetwork     [ "--template" , " \xf0c2  <dev> \xf01b <tx> kB/s \xf01a <rx> kB/s "
                                 , "--Low"      , "1000"       -- units: B/s
