@@ -97,7 +97,7 @@ IMAPAccount clavelito
 Host imap.gmail.com
 User stjennypablo@gmail.com
 AuthMechs XOAUTH2
-PassCmd "oauth2get google clavelito"
+PassCmd "mailctl access stjennypablo@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
