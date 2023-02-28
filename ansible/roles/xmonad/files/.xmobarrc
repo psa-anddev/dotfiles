@@ -2,8 +2,8 @@ Config {
         alpha = 255
         , bgColor = "#282a36"
         , fgColor = "#f8f8f2"
-        -- , font = "xft:Hack Nerd Font:pixelsize=11:antialising=true:hinting=true"
-        , font = "xft:monospace-10"
+        , font = "Hack Nerd Font 11"
+        , position = TopSize L 100 17
 	,commands = [ Run StdinReader 
 	, Run Date "\xf073  %a, %d %b %Y \xf017 %H:%M:%S" "date" 10
 	, Run Cpu ["-t", " \xf109   <total>% ", "-H", "50", "--high", "#ff5555,#f1fa8c"] 10
