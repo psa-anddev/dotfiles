@@ -1,1 +1,5 @@
 set hidden
+map gh cd ~
+map gn cd ~/nextcloud
+map gm cd ~/movies
+map gd cd ~/downloads
