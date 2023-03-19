@@ -3,3 +3,9 @@
   pacman:
       name: mpv
       state: present
+
+- name: Link configuration
+  file:
+    src: "{{ ansible_env.PWD }}/roles/mpv/files/mpv.conf"
+    path: ~/.config/mpv/mpv.conf
+    state: link
