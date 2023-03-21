@@ -76,6 +76,8 @@ config.bind(",tm", "hint links spawn transmission-remote localhost -a \"{hint-ur
 # Download torrents to downloads folder
 config.bind(",td", "hint links spawn transmission-remote localhost -a \"{hint-url}\" -w " + homeFolder + "/downloads")
 
+config.bind(",yr", "hint links spawn sh -c \"yt-rss {hint-url} | xsel -ib\"")
+
 # Fill from Bitwarden
 config.bind(",fb", "spawn --userscript qute-bitwarden -p 'dmenu -p \"Master Password\" -l 0' -d 'dmenu -p Bitwarden'")
 
