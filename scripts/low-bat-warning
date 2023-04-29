@@ -1,9 +1,15 @@
 #!/bin/sh
 status=$(cat /sys/class/power_supply/BAT0/status)
 capacity=$(cat /sys/class/power_supply/BAT0/capacity)
-[ "$capacity" -le 10 ] && [ "$status" = "Discharging" ] && \
-    dunstify -u critical \
-    -r 108411 \
-    'Battery running out' 'Please, connect the charger before the computer hibernates' \
-    || dunstify -C 108411
+if [ "$status" = "Discharging" ]; then
+    if [ "$capacity" -le 5 ]; then 
+        systemctl hibernate
+    elif [ "$capacity" -le 10 ]; then 
+        dunstify -u critical \
+            -r 108411 \
+            'Battery running out' 'Please, connect the charger before the computer hibernates'
+     fi
+else
+    dunstify -C 108411
+fi
 
