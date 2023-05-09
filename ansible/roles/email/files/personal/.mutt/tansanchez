@@ -4,7 +4,7 @@ set from=pablo@tansanchez.net
 set sendmail="/usr/bin/msmtp -a tansanchez"
 
 set folder="~/.mail/tansanchez/"
-unset record
+set record = +Sent
 set spoolfile="+INBOX"
 set postponed="+Drafts"
 set mbox_type=Maildir
