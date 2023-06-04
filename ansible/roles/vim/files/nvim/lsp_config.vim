@@ -52,7 +52,7 @@ nvim_lsp.kotlin_language_server.setup { on_attach = on_attach, capabilities = ca
 nvim_lsp.pyright.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.hls.setup { on_attach = on_attach, capabilities = capabilities }
-require('lsp.sumneko_lua').setup(on_attach)
+nvim_lsp.lua_ls.setup { on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.racket_langserver.setup{ on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.groovyls.setup{
         cmd = { "/usr/lib/jvm/java-11-openjdk/bin/java", "-jar", 
