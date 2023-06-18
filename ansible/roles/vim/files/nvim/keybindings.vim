@@ -17,7 +17,13 @@ g = {
         l = { function () vim.cmd("Git log") end, 'log' },
         k = { function () vim.cmd("Git push") end, 'push' },
         t = { function () vim.cmd("Git pull") end, 'pull' },
-        m = { function () vim.cmd("Git mergetool") end, 'merge tool' },
+        -- m = { function () vim.cmd("Git mergetool") end, 'merge tool' },
+        m = { 
+            name = "merge",
+            t = { function () vim.cmd("Git mergetool") end, 'tool' },
+            h = { function () vim.cmd("diffget //2") end, 'pick left' },
+            l = { function () vim.cmd("diffget //3") end, 'pick right' }
+        },
         f = {
             name = "find",
             f = { function () telescope.git_files() end, 'find files in repository' },
