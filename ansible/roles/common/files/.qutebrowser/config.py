@@ -44,7 +44,10 @@ c.editor.command = ['nvim', '{file}']
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 
+c.url.searchengines = {'DEFAULT': 'http://localhost:8085/?q={}', 
+            'si': 'http://localhost:8085/?q={}&category_images=on', 
+            'sv': 'http://localhost:8085/?q={}&category_videos=on', 
+            'd': 'https://duckduckgo.com/?q={}', 
             'g': 'https://www.google.com/search?q={}', 
             'y': 'https://www.youtube.com/results?search_query={}', 
             'w': 'https://en.wikipedia.org/wiki/{}',
@@ -59,6 +62,8 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
             'di': 'https://duckduckgo.com/?q={}&iax=images&ia=images',
             'dy': 'http://www.diksiyonaryo.ph/search/{}',
             'o': 'https://odysee.com/$/search?q={}'}
+c.url.default_page = "http://localhost"
+c.url.start_pages = "http://localhost"
 
 # Keep insert mode when page reloads
 config.set("input.insert_mode.leave_on_load", False)
