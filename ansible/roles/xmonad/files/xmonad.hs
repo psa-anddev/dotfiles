@@ -49,7 +49,7 @@ startup = do
     spawnOnce "nextcloud --background"
     spawnOnce "/usr/lib/kdeconnectd"
 
-configuration = ewmh def
+configuration = ewmhFullscreen . ewmh $ def
     { terminal = defaultTerminal
     , modMask = mod4Mask
     , borderWidth = 3
