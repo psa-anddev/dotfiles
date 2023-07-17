@@ -44,3 +44,6 @@ urls-source "ocnews"
 ocnews-url "https://nextcloud.tansanchez.net"
 ocnews-login "pablo"
 ocnews-passwordeval "pass Personal/tansanchez/nextcloud/newsboat/pablo"
+
+
+keep-articles-days 60
