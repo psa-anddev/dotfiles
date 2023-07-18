@@ -1,0 +1,6 @@
+- name: Install gpm
+  become: yes
+  pacman:
+      name: gpm
+      state: present
+
