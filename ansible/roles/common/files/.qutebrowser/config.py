@@ -44,9 +44,9 @@ c.editor.command = ['nvim', '{file}']
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'http://10.14.5.6:8085/?q={}', 
-            'si': 'http://10.14.5.6:8085/?q={}&category_images=on', 
-            'sv': 'http://10.14.5.6:8085/?q={}&category_videos=on', 
+c.url.searchengines = {'DEFAULT': 'http://10.14.5.6/?q={}', 
+            'si': 'http://10.14.5.6/?q={}&category_images=on', 
+            'sv': 'http://10.14.5.6/?q={}&category_videos=on', 
             'd': 'https://duckduckgo.com/?q={}', 
             'g': 'https://www.google.com/search?q={}', 
             'y': 'https://www.youtube.com/results?search_query={}', 
