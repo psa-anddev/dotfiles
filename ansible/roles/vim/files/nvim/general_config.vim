@@ -37,3 +37,5 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " Reduce timeout len in order to display keybindings help
 set timeoutlen=500
+
+set cursorline
