@@ -45,8 +45,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Gradle / Android
 Plug 'hsanson/vim-android'
 
-"Plugin for watching man pages with Vim
-Plug 'jez/vim-superman'
 "Plugin to be able to comment lines 
 Plug 'tpope/vim-commentary'
 " Plugin to search using Ack/Ag

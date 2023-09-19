@@ -115,14 +115,6 @@ export PATH="$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# Launch neofetch
-neofetch
-
-# Add completions and alias for vman
-export PATH="$HOME/.local/share/nvim/plugged/vim-superman/bin/:$PATH"
-compdef vman="man"
-alias man="vman"
-
 # Fix error that prevents deleting when going from normal to insert mode
 bindkey "^?" backward-delete-char
 
@@ -133,3 +125,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 
 alias luamake=/home/pablo/repos/lsp/lua/lua-language-server/3rd/luamake/luamake
+
+export MANPAGER="nvim +Man!"
+
+# Launch neofetch
+neofetch
