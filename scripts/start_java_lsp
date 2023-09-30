@@ -1,6 +1,6 @@
 #!/bin/sh
-export GRADLE_HOME=$HOME/gradle 
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk 
+export GRADLE_HOME="$HOME/gradle"
+export JAVA_HOME=/usr/lib/jvm/java-20-openjdk 
 jdtls \
     -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044 \
     -Dlog.level=ALL \
@@ -8,4 +8,4 @@ jdtls \
     --add-modules=ALL-SYSTEM \
     --add-opens java.base/java.util=ALL-UNNAMED \
     --add-opens java.base/java.lang=ALL-UNNAMED \
-    $@
+    "$@"

@@ -57,6 +57,7 @@ Plug 'mfussenegger/nvim-jdtls'
 " Debugger Adapter Protocol
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'

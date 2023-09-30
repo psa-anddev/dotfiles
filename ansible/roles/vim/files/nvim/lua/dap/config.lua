@@ -4,6 +4,7 @@ function M.setup()
     local keybindings = require('which-key')
     local dap = require('dap')
     local dapui = require('dapui')
+    local dapvirtualtext = require('nvim-dap-virtual-text')
 
     dapui.setup()
     keybindings.register({
@@ -27,6 +28,16 @@ function M.setup()
             r = { function() dap.repl.open() end, "repl" }
         }
     }, { prefix = "<leader>" })
+    dapvirtualtext.setup()
+    dap.configurations.java = {
+        {
+            type = 'java';
+            request = 'attach';
+            name = "Debug (Attach) - Remote";
+            hostName = "127.0.0.1";
+            port = 5005;
+        },
+    }
 end
 
 return M
