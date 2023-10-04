@@ -32,6 +32,13 @@ g = {
             b = { function () telescope.git_branches() end, 'find branches' },
         }
     },
+a = {
+        name = 'alternate',
+        o = { function () vim.cmd("A") end, 'open' },
+        x = { function () vim.cmd("AS") end, 'open in horizontal split' },
+        v = { function () vim.cmd("AV") end, 'open in vertical split' },
+        t = { function () vim.cmd("AT") end, 'open in new tab' }
+    },
 ["<leader>"] = { function () telescope.find_files() end, "find files" },
 L = { function () telescope.live_grep() end, "find lines" },
 B = { function () telescope.buffers() end, "find buffers" }
