@@ -10,7 +10,7 @@ set postponed="+Drafts"
 set mbox_type=Maildir
 
 unmailboxes *
-mailboxes +INBOX +Drafts +Sent +Junk +Trash
+mailboxes +INBOX +Drafts +Sent +Archive +Junk +Trash
 
 bind index o noop
 macro index o '<shell-escape>mbsync tansanchez<enter>' 'Sync with server'
