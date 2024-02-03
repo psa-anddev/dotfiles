@@ -4,21 +4,9 @@
       name: alacritty
       state: present
 
-- name: Create Alacritty configuration folder
+- name: Symlink Alacritty configuration folder
   file:
+      src: "{{ ansible_env.PWD }}/roles/alacritty/files/alacritty"
       path: "~/.config/alacritty"
-      state: directory
-
-- name: Symlink Alacritty configuration
-  file:
-      src: "{{ ansible_env.PWD }}/roles/alacritty/files/alacritty.yml"
-      path: "~/.config/alacritty/alacritty.yml"
-      state: link
-      force: yes
-
-- name: Symlink Dracula theme
-  file:
-      src: "{{ ansible_env.PWD }}/roles/alacritty/files/dracula.yml"
-      path: "~/.config/alacritty/dracula.yml"
       state: link
       force: yes
