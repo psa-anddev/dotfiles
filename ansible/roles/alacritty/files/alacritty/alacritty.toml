@@ -1,0 +1,10 @@
+import = ["dracula.toml"]
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+opacity = 0.9
