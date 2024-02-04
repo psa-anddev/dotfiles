@@ -1,2 +1,12 @@
 #!/bin/sh
-echo -n "$1" | xsel -ib
+
+if [ -n "$WAYLAND_DISPLAY" ]; then 
+    copy_program=wl-copy
+elif [ -n "$DISPLAY" ]; then 
+    copy_program="xsel -ib"
+else
+    echo "Error: No supported graphical session detected. Please, run in X11 or Wayland" >&2
+    exit 1
+fi
+
+echo -n "$1" | $copy_program
