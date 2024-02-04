@@ -28,4 +28,4 @@ if [ "$wrong_arguments" = 't' ]; then
     exit 1
 fi
 
-qrencode -o "$output" "WIFI:T:$type;S:$ssid;P:$password;;"
+qrencode -s 7 -o "$output" "WIFI:T:$type;S:$ssid;P:$password;;"
