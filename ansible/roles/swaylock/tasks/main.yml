@@ -1,0 +1,29 @@
+- name: Install Swaylock and Swayidle
+  become: yes
+  pacman:
+      name: swaylock
+      state: present
+      name: swayidle
+      state: present
+
+- name: Set Swaylock configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/swaylock/files/swaylock"
+      path: ~/.config/swaylock
+      state: link
+      force: yes
+
+- name: Set Swayidle configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/swaylock/files/swayidle"
+      path: ~/.config/swayidle
+      state: link
+      force: yes
+
+
+
+
+
+
+
+

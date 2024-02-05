@@ -30,6 +30,7 @@ riverctl spawn mpd
 riverctl spawn mpDris2
 riverctl spawn "playerctld daemon"
 riverctl spawn udiskie
+riverctl spawn "swayidle -w"
 
 # Super+Space Run launcher
 riverctl map normal Super Space spawn "wofi --show=drun"
@@ -43,6 +44,9 @@ riverctl map normal Super+Shift C close
 
 # Super+Shift+Q to exit river
 riverctl map normal Super+Shift Q exit
+
+# Super+Control+Q Locks the screen
+riverctl map normal Super+Control Q spawn swaylock
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Super J focus-view next
