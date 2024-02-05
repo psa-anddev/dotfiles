@@ -1,0 +1,2 @@
+#!/bin/sh
+ls -1 ~/.wallpapers | shuf | head -n 1 | xargs -I{} swaybg -i "$HOME/.wallpapers/{}"
