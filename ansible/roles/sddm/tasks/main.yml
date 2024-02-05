@@ -1,0 +1,24 @@
+- name: Install SDDM
+  become: yes
+  pacman:
+          name: sddm
+          state: present
+
+- name: Install Simplicity theme
+  aur:
+          name: simplicity-sddm-theme
+          use: yay
+
+- name: Copy SDDM configuration
+  become: yes
+  copy:
+          src: "{{ ansible_env.PWD }}/roles/sddm/files/sddm.conf.d"
+          dest: /etc
+
+
+- name: Enable SDDM Service
+  become: yes
+  systemd:
+          name: sddm
+          enabled: yes
+
