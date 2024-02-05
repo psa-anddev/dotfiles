@@ -1,0 +1,14 @@
+- name: Install River
+  become: yes
+  pacman:
+      name: river
+      state: present
+
+- name: Set River configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/river/files/river"
+      path: ~/.config/river
+      state: link
+      force: yes
+
+
