@@ -1,0 +1,15 @@
+- name: Install Waybar
+  become: yes
+  pacman:
+      name: waybar
+      state: present
+
+- name: Set Waybar configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/waybar/files/waybar"
+      path: ~/.config/waybar
+      state: link
+      force: yes
+
+
+
