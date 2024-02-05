@@ -1,0 +1,15 @@
+- name: Install Kanshi
+  become: yes
+  pacman:
+      name: kanshi
+      state: present
+
+- name: Set Kanshi configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/kanshi/files/kanshi"
+      path: ~/.config/kanshi
+      state: link
+      force: yes
+
+
+
