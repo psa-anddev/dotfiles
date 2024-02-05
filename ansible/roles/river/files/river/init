@@ -10,6 +10,8 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
+# Make sure the SSH Agent is started 
+eval "$(ssh-agent)"
 # Set default layout to US-Colemak
 riverctl keyboard-layout -variant colemak -options "caps:escape,compose:menu,shift:both_capslock" us
 
