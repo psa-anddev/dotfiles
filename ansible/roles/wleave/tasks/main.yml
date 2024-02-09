@@ -1,0 +1,14 @@
+- name: Install wleave
+  aur:
+          name: wleave-git
+          use: yay
+
+- name: Set wleave configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/wleave/files/wleave"
+      path: ~/.config/wleave
+      state: link
+      force: yes
+
+
+
