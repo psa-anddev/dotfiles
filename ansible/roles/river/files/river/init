@@ -48,6 +48,9 @@ riverctl map normal Super+Shift Q exit
 # Super+Control+Q Locks the screen
 riverctl map normal Super+Control Q spawn swaylock
 
+# Super+Control+P Log out menu
+riverctl map normal Super+Control P spawn "wleave -k -p layer-shell"
+
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
