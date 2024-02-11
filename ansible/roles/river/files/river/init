@@ -199,6 +199,8 @@ TERMINAL=alacritty
 
 riverctl map normal Super V spawn "$TERMINAL -e $EDITOR"
 
+riverctl map normal  Super slash spawn passmenu
+
 riverctl declare-mode rss
 riverctl map normal Super R enter-mode rss
 riverctl map rss None Escape enter-mode normal
