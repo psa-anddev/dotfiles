@@ -207,3 +207,6 @@ riverctl map rss None Escape enter-mode normal
 riverctl map rss None n spawn "$TERMINAL -e newsboat"
 riverctl map rss None p spawn "$TERMINAL -e podboat"
 
+riverctl declare-mode time-task
+riverctl map normal Super t enter-mode time-task
+riverctl map time-task None t spawn "$TERMINAL -e vit"
