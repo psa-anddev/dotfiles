@@ -1,0 +1,14 @@
+- name: Install wob
+  aur:
+    name: wob
+    use: yay
+
+- name: Set wob configuration
+  file:
+      src: "{{ ansible_env.PWD }}/roles/wob/files/wob"
+      path: ~/.config/wob
+      state: link
+      force: yes
+
+
+
