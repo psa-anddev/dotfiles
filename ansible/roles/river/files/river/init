@@ -31,6 +31,7 @@ riverctl spawn mpDris2
 riverctl spawn "playerctld daemon"
 riverctl spawn udiskie
 riverctl spawn "swayidle -w"
+riverctl spawn "wolume daemonize"
 
 # Super+Space Run launcher
 riverctl map normal Super Space spawn "wofi --show=drun"
@@ -159,9 +160,9 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wolume raise'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'wolume lower'
+    riverctl map $mode None XF86AudioMute         spawn 'wolume toggle'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
     riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
