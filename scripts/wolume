@@ -1,0 +1,43 @@
+#!/bin/sh
+daemonize() {
+    ls /tmp/wolumepipe >/dev/null || mkfifo /tmp/wolumepipe
+    tail -f /tmp/wolumepipe | wob
+}
+
+raise() {
+    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+    update_bar
+}
+
+lower() {
+    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-
+    update_bar
+}
+
+toggle() {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    update_bar
+}
+
+update_bar() {
+    VOLUME="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2 | xargs -I{} echo "scale=0; {} * 100 / 1" | bc)"
+    MUTED="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f3 | sed 's/\[MUTED\]/muted/g')"
+    echo "$VOLUME $MUTED" > /tmp/wolumepipe
+}
+
+case "$1" in
+    daemonize)
+        daemonize
+        ;;
+    raise) 
+        raise 
+        ;;
+    lower) 
+        lower 
+        ;;
+    toggle) 
+        toggle 
+        ;;
+    *)
+        echo "Invalid parameters"
+esac
