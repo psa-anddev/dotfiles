@@ -45,9 +45,10 @@
         "tooltip-format": "{app}: {title}"
     },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        //"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format": "{stateIcon}  ({songPosition}/{queueLength}) {elapsedTime:%H:%M:%S}/{totalTime:%H:%M:%S}",
+        "format-disconnected": " Disconnected",
+        "format-stopped": "{consumeIcon} Stopped",
         "unknown-tag": "N/A",
         "interval": 2,
         "consume-icons": {
@@ -67,7 +68,8 @@
             "paused": "",
             "playing": ""
         },
-        "tooltip-format": "MPD (connected)",
+        "tooltip-format": "MPD(connected) {artist} - {title}",
+        "tooltip-format-stopped": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
