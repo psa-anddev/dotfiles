@@ -90,6 +90,10 @@ nvim_lsp.volar.setup{
   end,
 }
 
+nvim_lsp.clangd.setup {
+    on_attach = on_attach,
+}
+
 vim.api.nvim_exec([[
 augroup jdtls_lsp
     autocmd!
