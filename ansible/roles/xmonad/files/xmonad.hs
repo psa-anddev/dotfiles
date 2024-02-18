@@ -13,7 +13,6 @@ import Text.Printf
 import XMonad.StackSet as W 
 import XMonad.ManageHook
 import XMonad.Util.NamedScratchpad
-import XMonad.Util.Scratchpad (scratchpadSpawnAction)
 import XMonad.Actions.CycleWS (Direction1D(..), moveTo, shiftTo, WSType(..), nextScreen, prevScreen)
 
 -- Theme --
