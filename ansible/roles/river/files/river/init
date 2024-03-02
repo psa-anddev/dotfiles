@@ -134,7 +134,7 @@ riverctl map normal Super+Shift 0 set-view-tags $all_tags
 riverctl map normal Super+Shift Space toggle-float
 
 # Super+F to toggle fullscreen
-riverctl map normal Super F toggle-fullscreen
+riverctl map normal Super+Shift F toggle-fullscreen
 
 # Super+{Up,Right,Down,Left} to change layout orientation
 riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
@@ -201,6 +201,7 @@ TERMINAL=alacritty
 riverctl map normal Super V spawn "$TERMINAL -e $EDITOR"
 
 riverctl map normal  Super slash spawn passmenu
+riverctl map normal Super F spawn "$TERMINAL -e lf"
 
 riverctl declare-mode rss
 riverctl map normal Super R enter-mode rss
