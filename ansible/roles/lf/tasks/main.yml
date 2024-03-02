@@ -2,6 +2,12 @@
   aur:
     name: lf-bin
 
+- name: Install exiftools
+  become: yes
+  pacman:
+    name: perl-image-exiftool
+    state: present
+
 - name: Make sure the configuration directory exists
   file:
     path: ~/.config/lf

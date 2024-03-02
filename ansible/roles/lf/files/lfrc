@@ -1,5 +1,8 @@
 set hidden
+set preview true
+set previewer exiftool
 map gh cd ~
 map gn cd ~/nextcloud
 map gm cd ~/movies
+map gM cd ~/music
 map gd cd ~/downloads
