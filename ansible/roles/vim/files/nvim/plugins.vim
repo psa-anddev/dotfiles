@@ -97,5 +97,7 @@ Plug 'rcarriga/nvim-notify'
 Plug 'vimwiki/vimwiki'
 
 Plug 'mbbill/undotree'
+
+Plug 'sbdchd/neoformat'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.

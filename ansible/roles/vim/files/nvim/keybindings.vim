@@ -41,6 +41,7 @@ a = {
     },
 ["<leader>"] = { function () telescope.find_files() end, "find files" },
 L = { function () telescope.live_grep() end, "find lines" },
-B = { function () telescope.buffers() end, "find buffers" }
+B = { function () telescope.buffers() end, "find buffers" },
+["="] = { function () vim.cmd("Neoformat") end, 'format with neoformat' }
 }, { prefix = "<leader>" })
 EOF
