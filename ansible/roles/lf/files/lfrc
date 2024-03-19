@@ -6,3 +6,4 @@ map gn cd ~/nextcloud
 map gm cd ~/movies
 map gM cd ~/music
 map gd cd ~/downloads
+map gv cd ~/videos
