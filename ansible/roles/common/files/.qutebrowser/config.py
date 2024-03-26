@@ -74,6 +74,8 @@ config.bind(",v", "hint links spawn -d mpv \"{hint-url}\"")
 # Watch video in MPV through youtube-dl
 config.bind(",V", "hint links spawn -d ytdl-mpv \"{hint-url}\"")
 
+config.bind(",sb", "hint links spawn -d streamlink --player=mpv \"{hint-url}\" best")
+
 homeFolder = expanduser("~")
 
 # Download torrents to movies folder
