@@ -1,7 +1,7 @@
 @import url("colors.css");
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Ubuntu Mono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
@@ -26,8 +26,8 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
+window#waybar.qutebrowser {
+    background-color: @background-darker
 }
 
 window#waybar.chromium {
@@ -69,8 +69,8 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: @selection;
+    border-bottom: 3px solid @foreground;
 }
 
 #clock,
@@ -90,7 +90,7 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: @foreground;
 }
 
 #window,
@@ -109,29 +109,29 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: @pink;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @green;
+    color: @comment;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @foreground;
+    background-color: @orange;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @background;
+        color: @comment;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @red;
+    color: @foreground;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -144,47 +144,44 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: @yellow;
+    color: @comment;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: @purple;
 }
 
 #disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
+    background-color: @orange;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: @selection;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @red;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: @yellow;
+    color: @selection;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: @background-darker;
+    color: @comment;
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+    background-color: @yellow;
+    color: @selection;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: @background-darker;
+    color: @comment;
 }
 
 #custom-media {
@@ -202,15 +199,15 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: @orange;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @comment;
 }
 
 #tray > .passive {
@@ -219,65 +216,33 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @red
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: @background-darker;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: @green;
+    color: @comment;
 }
 
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: @pink;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+    background-color: @red;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
+    background-color: @background-darker;
+    color: @comment;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
+    background-color: @purple;
 }
 
 #tags button { 
@@ -297,6 +262,15 @@ label:focus {
 
 #tags button.urgent {
     color: @red;
+}
+    
+#layout {
+    background-color: @purple;
+}    
+
+#custom-pacman {
+    background-color: @comment;
+    min-width: 50px;
 }
     
 
