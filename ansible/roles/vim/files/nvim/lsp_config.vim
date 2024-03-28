@@ -10,6 +10,7 @@ buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 -- Mappings.
 local wk = require('which-key')
+local tb = require('telescope.builtin')
 wk.register({ K = { function () vim.lsp.buf.hover() end, 'hover docs' } }, {})
 wk.register({
 l = {
@@ -17,9 +18,10 @@ l = {
         g = {
                 name = "go-to",
                 D = { function () vim.lsp.buf.declaration() end, 'declaration' },
-                d = { function () vim.lsp.buf.definition() end, 'definition' },
-                i = {  function () vim.lsp.buf.implementation() end, 'implementation' },
-                r = {  function () vim.lsp.buf.references() end, 'references' }
+                d = { function () tb.lsp_definitions() end, 'definition' },
+                i = {  function () tb.lsp_implementations() end, 'implementation' },
+                r = {  function () tb.lsp_references() end, 'references' },
+                t = {  function () tb.lsp_type_definitions() end, 'type definition' },
             },
         k = { function () vim.lsp.buf.signature_help() end, 'signature help' }, 
         w = {
@@ -28,18 +30,19 @@ l = {
                 r = { function () vim.lsp.buf.remove_workspace_folder() end, 'remove folder' },
                 l = { function () print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'list folders' } 
             },
-        t = {  function () vim.lsp.buf.type_definition() end, 'type definition' },
         r = {
                 name = "refactor",
                 r = { function () vim.lsp.buf.rename() end, 'rename' },
-                q = { function () require('telescope.builtin').lsp_code_actions() end, 'code actions' }
+                q = { function () vim.lsp.buf.code_action() end, 'code actions' }
             },
         d = {
                 name = 'diagnostics',
                 s = { function () vim.lsp.diagnostic.show_line_diagnostics() end, 'show line' },
                 p = {  function () vim.lsp.diagnostic.goto_prev() end, 'go to previous' },
                 n = {  function () vim.lsp.diagnostic.goto_next() end, 'go to next' },
-                l = {  function () vim.lsp.diagnostic.set_loclist() end, 'set local list' }
+                l = {  function () vim.lsp.diagnostic.set_loclist() end, 'set local list' },
+                a = {  function () tb.diagnostics() end, 'all diagnostics' },
+                b = {  function () tb.diagnostics{bufnr=0} end, 'all diagnostics in buffer' },
             },
         [ "=" ] = { function () vim.lsp.buf.formatting() end, 'reformat' } 
     }

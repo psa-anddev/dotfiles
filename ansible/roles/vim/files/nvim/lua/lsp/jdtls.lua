@@ -27,6 +27,7 @@ function M.setup()
         -- Mappings.
         local wk = require('which-key')
         local jdtls = require('jdtls')
+        local tb = require('telescope.builtin')
 
         wk.register({ K = { function() vim.lsp.buf.hover() end, 'hover doc' }}, {})
         wk.register({
@@ -37,10 +38,10 @@ function M.setup()
                 g = {
                     name = "go to",
                     D = { function () vim.lsp.buf.declaration() end, 'declaration' },
-                    d = {  function () vim.lsp.buf.definition() end, 'definition' },
-                    i = {  function () vim.lsp.buf.implementation() end, 'implementation' },
-                    t = { function () vim.lsp.buf.type_definition() end, 'type definition' },
-                    r = {  function () vim.lsp.buf.references() end, 'references' }
+                    d = {  function () tb.lsp_definitions() end, 'definition' },
+                    i = {  function () tb.lsp_implementations() end, 'implementation' },
+                    t = { function () tb.lsp_type_definitions() end, 'type definition' },
+                    r = {  function () tb.lsp_references() end, 'references' }
                 },
                 w = {
                     name = "workspace",
@@ -66,6 +67,8 @@ function M.setup()
                     p = { function () vim.lsp.diagnostic.goto_prev() end, 'go to previous' },
                     n = {function () vim.lsp.diagnostic.goto_next() end, 'go to next' },
                     l = {function () vim.lsp.diagnostic.set_loclist() end, 'set local list' },
+                    a = {  function () tb.diagnostics() end, 'all diagnostics' },
+                    b = {  function () tb.diagnostics{bufnr=0} end, 'all diagnostics in buffer' },
                 },
                 t = {
                     name = "test",
