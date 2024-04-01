@@ -272,5 +272,10 @@ label:focus {
     background-color: @comment;
     min-width: 50px;
 }
+
+#custom-pymodoro { 
+    background-color: @red;
+    min-width: 50px;
+}
     
 

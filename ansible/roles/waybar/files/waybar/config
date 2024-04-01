@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["river/tags", "group/extras", "sway/scratchpad", "custom/media"],
     "modules-center": ["river/window"],
-    "modules-right": ["custom/pacman", "idle_inhibitor", "group/audio", "network", "group/hardware", "sway/language", "battery", "clock", "tray"],
+    "modules-right": ["custom/pymodoro","custom/pacman", "idle_inhibitor", "group/audio", "network", "group/hardware", "sway/language", "battery", "clock", "tray"],
 
     "group/extras": {
         "modules": [
@@ -187,9 +187,15 @@
         "exec": "pacman-updates",
         "min-length": 5,
         "max-length": 10,
+        "interval": 3600,
         "format-icons": {
             "default": "📦",
         },
-    }
+    },
+    "custom/pymodoro": {
+        "exec": "pymodoro -pp 🍅 -bp 🌴",
+        "min-length": 5,
+        "max-length": 20,
+    },
 }
 
