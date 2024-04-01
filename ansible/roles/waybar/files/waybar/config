@@ -193,7 +193,7 @@
         },
     },
     "custom/pymodoro": {
-        "exec": "pymodoro -pp 🍅 -bp 🌴",
+        "exec": "pymodoro -pp 🍅 -bp 🌴 -ah",
         "min-length": 5,
         "max-length": 20,
     },
