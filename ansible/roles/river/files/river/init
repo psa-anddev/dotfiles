@@ -212,4 +212,6 @@ riverctl map rss None p spawn "$TERMINAL -e podboat"
 riverctl declare-mode time-task
 riverctl map normal Super t enter-mode time-task
 riverctl map time-task None t spawn "$TERMINAL -e vit"
+riverctl map time-task None b spawn "touch ~/.cache/pomodoro_session"
+riverctl map time-task None e spawn "rm ~/.cache/pomodoro_session"
 riverctl map time-task None Escape enter-mode normal
