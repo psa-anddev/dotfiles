@@ -215,3 +215,13 @@ riverctl map time-task None t spawn "$TERMINAL -e vit"
 riverctl map time-task None b spawn "touch ~/.cache/pomodoro_session"
 riverctl map time-task None e spawn "rm ~/.cache/pomodoro_session"
 riverctl map time-task None Escape enter-mode normal
+
+# Notifications
+riverctl declare-mode notifications
+riverctl map normal Super n enter-mode notifications
+riverctl map notifications None Escape enter-mode normal
+riverctl map notifications None c spawn "dunstctl close"
+riverctl map notifications None a spawn "dunstctl close-all"
+riverctl map notifications None p spawn "dunstctl set-paused toggle"
+riverctl map notifications None x spawn "dunstctl context"
+riverctl map notifications None h spawn "dunstctl history-pop"
