@@ -100,5 +100,7 @@ Plug 'mbbill/undotree'
 
 Plug 'sbdchd/neoformat'
 Plug 'nvim-neotest/nvim-nio'
+
+Plug 'onsails/lspkind.nvim'
 call plug#end() "Ends the loading of the plug ins
 filetype plugin indent on "Reenables the filetypes.

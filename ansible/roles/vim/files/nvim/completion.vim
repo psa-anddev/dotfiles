@@ -2,6 +2,7 @@ set completeopt=menuone,noinsert,noselect
 
 lua <<EOF
     local cmp = require'cmp'
+    local lspkind = require('lspkind')
 
     cmp.setup({
         snippet = {
@@ -19,6 +20,13 @@ lua <<EOF
         mapping = cmp.mapping.preset.insert({
             ['<CR>'] = cmp.mapping.confirm({ select = true }), 
             ['<C-Space>'] = cmp.mapping.complete(),
-        })
+        }),
+        formatting = {
+            format = lspkind.cmp_format({
+                maxwidth = 50,
+                ellipsis_char = '...',
+                show_labelDetails = true,
+            }),
+        },
     })
 EOF
