@@ -4,10 +4,11 @@
           name: kitty
           state: present
 
-- name: Install Nerd fonts
-  aur:
-      name: nerd-fonts-complete
-      use: yay
+- name: Install Hack Nerd font
+  become: yes
+  pacman:
+    name: ttf-hack-nerd
+    state: present
 
 - name: Symlink Kitty configuration
   file:

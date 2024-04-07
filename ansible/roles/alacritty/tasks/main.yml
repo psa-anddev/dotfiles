@@ -10,3 +10,9 @@
       path: "~/.config/alacritty"
       state: link
       force: yes
+
+- name: Install Hack Nerd font
+  become: yes
+  pacman:
+    name: ttf-hack-nerd
+    state: present

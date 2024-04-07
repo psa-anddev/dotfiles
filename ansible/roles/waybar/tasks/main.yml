@@ -4,6 +4,13 @@
       name: waybar
       state: present
 
+- name: Install Ubuntu Mono Nerd font
+  become: yes
+  pacman: 
+    name: ttf-ubuntu-mono-nerd
+    state: present
+
+
 - name: Set Waybar configuration
   file:
       src: "{{ ansible_env.PWD }}/roles/waybar/files/waybar"
