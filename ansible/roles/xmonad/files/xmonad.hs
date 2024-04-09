@@ -47,6 +47,7 @@ startup = do
     spawnOnce "gnome-keyring-daemon --start"
     spawnOnce "nextcloud --background"
     spawnOnce "/usr/lib/kdeconnectd"
+    spawnOnce "numlockx on"
 
 configuration = ewmhFullscreen . ewmh $ def
     { terminal = defaultTerminal
