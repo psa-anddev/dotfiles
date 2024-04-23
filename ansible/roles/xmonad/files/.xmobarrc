@@ -33,7 +33,7 @@ Config {
                                 , "--normal"   , "#ffb86c,#ff79c6"
                                 , "--high"     , "#ff5555,#ff79c6"
                                 ] 10
-        , Run CommandReader "pymodoro -pp ' ' -bp ' '" "pomodoro"
+        , Run CommandReader "pymodoro -pp '  ' -ps ' ' -bp '  ' -bs ' ' -ah" "pomodoro"
         , Run Com "/home/pablo/repos/dotfiles/scripts/pacman-updates" [] "pacman" 3600
         , Run MPD ["-t", 
                    " <statei> <ppos>/<plength> <lapsed>/<length> [<flags>] ", 
@@ -43,5 +43,5 @@ Config {
 	]
 	, iconRoot = "/home/pablo/.config/xmobar/xpm" -- default: "."
 	, alignSep = "}{"
-	, template = "   <fc=#44475a>|</fc> %StdinReader% }{ <fc=#ff79c6,#8be9fd>  %pacman% </fc><fc=#f8f8f2,#ff5555> %pomodoro% </fc><fc=#f8f8f2,#ffb86c>%mpd%</fc><fc=#779900>%battery%</fc><fc=#282a36,#f1fa8c>%cpu%</fc><fc=#f8f8f2,#6272a4>%memory%</fc><fc=#f8f8f2,#bd93f9>%disku%</fc><fc=#282a36,#ff79c6>%dynnetwork%</fc><fc=#282a36,#8be9fd> %date%  </fc>"
+	, template = "   <fc=#44475a>|</fc> %StdinReader% }{ <fc=#ff79c6,#8be9fd>  %pacman% </fc><fc=#f8f8f2,#ff5555>%pomodoro%</fc><fc=#f8f8f2,#ffb86c>%mpd%</fc><fc=#779900>%battery%</fc><fc=#282a36,#f1fa8c>%cpu%</fc><fc=#f8f8f2,#6272a4>%memory%</fc><fc=#f8f8f2,#bd93f9>%disku%</fc><fc=#282a36,#ff79c6>%dynnetwork%</fc><fc=#282a36,#8be9fd> %date%  </fc>"
 }
