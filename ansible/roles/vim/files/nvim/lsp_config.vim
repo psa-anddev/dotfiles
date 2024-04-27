@@ -64,7 +64,8 @@ nvim_lsp.groovyls.setup{
         capabilities = capabilities
 }
 nvim_lsp.bashls.setup{ on_attach = on_attach, capabilities = capabilities }
-nvim_lsp.tflint.setup{}
+nvim_lsp.tflint.setup{ on_attach= on_attach, capabilities = capabilities }
+nvim_lsp.yamlls.setup{ on_attach= on_attach, capabilities = capabilities }
 
 local util = require 'lspconfig.util'
 local function get_typescript_server_path(root_dir)
