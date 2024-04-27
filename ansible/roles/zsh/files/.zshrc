@@ -128,5 +128,7 @@ alias luamake=/home/pablo/repos/lsp/lua/lua-language-server/3rd/luamake/luamake
 
 export MANPAGER="nvim +Man!"
 
+export PATH=~/bin:$PATH
+
 # Launch neofetch
 neofetch
