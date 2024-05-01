@@ -3,43 +3,43 @@
   when: ansible_facts['os_family']|lower == 'arch'
 
 - name: Install Pacman contrib
-  become: yes
+  become: true
   pacman:
     name: pacman-contrib
     state: present
 
 - name: Ensure the hooks folder for Pacman exists
-  become: yes
+  become: true
   file:
     path: /etc/pacman.d/hooks
     state: directory
 
 - name: Copy clean cache hook
-  become: yes
+  become: true
   copy:
     src: "{{ ansible_env.PWD }}/roles/common/files/hooks/clean-cache.hook" 
     dest: /etc/pacman.d/hooks/clean-cache.hook
 
 - name: Install alsa utils
-  become: yes
+  become: true
   pacman:
           name: alsa-utils
           state: present
 
 - name: Install X-Windows
-  become: yes
+  become: true
   pacman:
           name: xorg
           state: present
 
 - name: Install accounts service
-  become: yes
+  become: true
   pacman:
           name: accountsservice
           state: present
 
 - name: Install dmenu
-  become: yes
+  become: true
   pacman:
           name: dmenu
           state: present
@@ -52,7 +52,7 @@
       force: yes
 
 - name: Install qutebrowser
-  become: yes
+  become: true
   pacman:
           name: qutebrowser
           state: present
@@ -75,38 +75,38 @@
         state=link
         force=yes
 
-- name: Install neofetch
-  become: yes
+- name: Install fastfetch
+  become: true
   pacman:
-          name: neofetch
+          name: fastfetch
           state: present
 
 - name: Install clipmenu
-  become: yes
+  become: true
   pacman:
           name: clipmenu
           state: present
 
 - name: Install xclip
-  become: yes 
+  become: true 
   pacman:
     name: xclip
     state: present
 
 - name: Install Clipnotify
-  become: yes
+  become: true
   pacman:
           name: clipnotify
           state: present
 
 - name: Install libnotify
-  become: yes
+  become: true
   pacman:
           name: libnotify
           state: present
 
 - name: Install fzf
-  become: yes
+  become: true
   pacman:
       name: fzf
       state: present
@@ -117,19 +117,19 @@
           use: yay
 
 - name: Install text-based web browser
-  become: yes
+  become: true
   pacman:
       name: w3m
       state: present
 
 - name: Install udisks2
-  become: yes
+  become: true
   pacman:
       name: udisks2
       state: present
 
 - name: Install udiskie
-  become: yes
+  become: true
   pacman:
       name: udiskie
       state: present
