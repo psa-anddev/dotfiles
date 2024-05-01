@@ -130,5 +130,5 @@ export MANPAGER="nvim +Man!"
 
 export PATH=~/bin:$PATH
 
-# Launch neofetch
-neofetch
+# Launch fastfetch
+fastfetch
