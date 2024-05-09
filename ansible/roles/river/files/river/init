@@ -225,3 +225,7 @@ riverctl map notifications None a spawn "dunstctl close-all"
 riverctl map notifications None p spawn "dunstctl set-paused toggle"
 riverctl map notifications None x spawn "dunstctl context"
 riverctl map notifications None h spawn "dunstctl history-pop"
+
+# Screenshots 
+riverctl map normal None Print spawn "grim - | wl-copy && notify-send 'River' 'Screenshot taken'"
+riverctl map normal Super Print spawn 'grim -g "$(slurp)" - | wl-copy && notify-send "River" "Screenshot taken"'
