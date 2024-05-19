@@ -229,3 +229,6 @@ riverctl map notifications None h spawn "dunstctl history-pop"
 # Screenshots 
 riverctl map normal None Print spawn "grim - | wl-copy && notify-send 'River' 'Screenshot taken'"
 riverctl map normal Super Print spawn 'grim -g "$(slurp)" - | wl-copy && notify-send "River" "Screenshot taken"'
+
+# Emojis
+riverctl map normal Super Backslash spawn "pick-emoji"
