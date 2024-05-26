@@ -232,3 +232,7 @@ riverctl map normal Super Print spawn 'grim -g "$(slurp)" - | wl-copy && notify-
 
 # Emojis
 riverctl map normal Super Backslash spawn "pick-emoji"
+
+# App rules
+# Make Zathura use SSD
+riverctl rule-add -app-id org.pwmt.zathura ssd
