@@ -275,7 +275,7 @@ label:focus {
 
 #custom-pymodoro { 
     background-color: @red;
-    min-width: 50px;
+    min-width: 150px;
 }
     
 

@@ -1,13 +1,13 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["river/tags", "group/extras", "sway/scratchpad", "custom/media"],
     "modules-center": ["river/window"],
-    "modules-right": ["custom/pymodoro","custom/pacman", "idle_inhibitor", "group/audio", "network", "group/hardware", "sway/language", "battery", "clock", "tray"],
+    "modules-right": ["custom/pacman", "idle_inhibitor", "group/audio", "group/hardware", "sway/language", "battery", "group/timetrack", "tray"],
 
     "group/extras": {
         "modules": [
@@ -27,10 +27,18 @@
             "transition-duration": 500
         },
         "modules": [
+            "network",
             "temperature",
             "cpu",
             "memory"
         ]
+    },
+
+    "group/timetrack": {
+        "modules": [
+            "clock",
+            "custom/pymodoro"
+        ],
     },
     // Modules configuration
     "river/tags": {
