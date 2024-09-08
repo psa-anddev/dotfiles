@@ -37,10 +37,10 @@ l = {
             },
         d = {
                 name = 'diagnostics',
-                s = { function () vim.lsp.diagnostic.show_line_diagnostics() end, 'show line' },
-                p = {  function () vim.lsp.diagnostic.goto_prev() end, 'go to previous' },
-                n = {  function () vim.lsp.diagnostic.goto_next() end, 'go to next' },
-                l = {  function () vim.lsp.diagnostic.set_loclist() end, 'set local list' },
+                s = { function () vim.diagnostic.open_float() end, 'show line' },
+                p = {  function () vim.diagnostic.goto_prev() end, 'go to previous' },
+                n = {  function () vim.diagnostic.goto_next() end, 'go to next' },
+                l = {  function () vim.diagnostic.setloclist() end, 'set local list' },
                 a = {  function () tb.diagnostics() end, 'all diagnostics' },
                 b = {  function () tb.diagnostics{bufnr=0} end, 'all diagnostics in buffer' },
             },
@@ -66,6 +66,11 @@ nvim_lsp.groovyls.setup{
 nvim_lsp.bashls.setup{ on_attach = on_attach, capabilities = capabilities }
 nvim_lsp.tflint.setup{ on_attach= on_attach, capabilities = capabilities }
 nvim_lsp.yamlls.setup{ on_attach= on_attach, capabilities = capabilities }
+nvim_lsp.ts_ls.setup{ 
+   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+    on_attach= on_attach, 
+    capabilities = capabilities 
+}
 
 local util = require 'lspconfig.util'
 local function get_typescript_server_path(root_dir)
