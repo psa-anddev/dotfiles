@@ -1,0 +1,4 @@
+#!/bin/sh
+lf -print-selection | 
+    sed 's/ /^V /g' | 
+    awk 'BEGIN {printf "%s", "push "} {printf "%s", "<attach-file>\""$0"\"<enter>"}'
