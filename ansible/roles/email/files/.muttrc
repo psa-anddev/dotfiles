@@ -35,3 +35,7 @@ bind pager                             H                       display-toggle-we
 bind attach,index,pager                \CD                     next-page
 bind attach,index,pager                \CU                     previous-page
 bind index,pager                        R                      group-reply
+
+macro compose A "<shell-escape>mutt-filepicker > /tmp/attachments<enter><enter-command>source /tmp/attachments<enter><shell-escape>rm /tmp/attachments<enter>" "Attach with your file manager"
+macro attach S "<shell-escape>mutt-dir-picker > /tmp/attachments<enter><enter-command>source /tmp/attachments<enter><shell-escape>rm /tmp/attachments<enter>" "Choose folder with your file manager"
+
