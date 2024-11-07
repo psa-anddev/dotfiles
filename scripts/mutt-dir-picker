@@ -1,0 +1,4 @@
+#!/bin/sh
+lf -print-last-dir | 
+    sed 's/ /^V /g' |
+    awk 'BEGIN {printf "%s", "push "} {printf "%s", "<save-entry>\""$0"\"<enter>"}'
