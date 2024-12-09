@@ -36,7 +36,7 @@ taskd.certificate=~/.task/pablo.cert.pem
 taskd.key=~/.task/pablo.key.pem
 taskd.ca=~/.task/ca.cert.pem
 taskd.trust=strict
-news.version=2.6.0
+news.version=3.2.0
 
 report.conky.description=Conky report
 report.conky.columns=description,id,project,urgency
