@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -n "$WAYLAND_DISPLAY" ]; then
-    wofi -d < "$(dirname "$0")/emojis.txt" | cut -d' ' -f1 | xargs echo -n | wl-copy 
+    rofi -dmenu < "$(dirname "$0")/emojis.txt" | cut -d' ' -f1 | xargs echo -n | wl-copy 
 elif [ -n "$DISPLAY" ]; then 
     dmenu < "$(dirname "$0")/emojis.txt" | cut -d' ' -f1 | xargs echo -n | xsel -ib
 fi
