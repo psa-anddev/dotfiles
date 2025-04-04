@@ -52,23 +52,36 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: @purple;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @background-darker;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: @foreground;
+    box-shadow: inset 0 -3px @foreground;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    box-shadow: inset 0 -3px @green;
+}
+#workspaces button.empty {
+    color: @comment;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: @red;
 }
 
 #mode {
+    background-color: @selection;
+    border-bottom: 3px solid @foreground;
+}
+
+#submap {
     background-color: @selection;
     border-bottom: 3px solid @foreground;
 }
