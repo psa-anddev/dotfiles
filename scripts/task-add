@@ -1,0 +1,5 @@
+#!/bin/sh
+
+description=$(rofi -dmenu -p "Add task")
+task add $description
+notify-send "Task added" "Added task \"$description\""
